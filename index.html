@@ -41,14 +41,14 @@
         const { useState, useMemo } = React;
 
         const allProjects = [
-            // IA & BIG DATA (5)
+            // IA & BIG DATA
             { id: 1, title: "The Market Architect v13.1", category: "IA & Big Data", tag: "Big Data & GenAI", desc: "Motor de inteligência que processa +390k logs para extração de personas e estratégias de vendas via API Gemini.", icon: "fa-solid fa-microchip", stats: "390.000+ LOGS" },
             { id: 2, title: "Nexus AI Command Center", category: "IA & Big Data", tag: "Orquestração", desc: "Sistema central de comando para agentes autónomos. Gerencia núcleos sentinelas e dashboards táticos.", icon: "fa-solid fa-network-wired", stats: "AGENTES AUTÓNOMOS" },
             { id: 3, title: "Sentinel Core Engine", category: "IA & Big Data", tag: "Segurança de Dados", desc: "Monitor de integridade de processos e segurança tática para infraestruturas de automação local.", icon: "fa-solid fa-shield-halved" },
             { id: 4, title: "AI Log Predictor", category: "IA & Big Data", tag: "Machine Learning", desc: "Algoritmo de análise preditiva para antecipação de falhas em sistemas de ERP.", icon: "fa-solid fa-brain" },
             { id: 5, title: "Deep Insight Analytics", category: "IA & Big Data", tag: "Data Mining", desc: "Ferramenta de mineração de dados para descoberta de padrões de consumo em bases SQL massivas.", icon: "fa-solid fa-magnifying-glass-chart" },
 
-            // ERP & GESTÃO (6)
+            // ERP & GESTÃO
             { id: 6, title: "MarketMaster ERP", category: "ERP & Gestão", tag: "Varejo", desc: "Ecossistema completo de gestão comercial com PDV, controle de estoque avançado e gestão de acesso.", icon: "fa-solid fa-store" },
             { id: 7, title: "AutoDrive System", category: "ERP & Gestão", tag: "Automotivo", desc: "Solução verticalizada para centros automotivos, integrando ordens de serviço e gestão de peças.", icon: "fa-solid fa-car-side" },
             { id: 8, title: "SoftGestão Enterprise", category: "ERP & Gestão", tag: "B2B SaaS", desc: "ERP modular para médias empresas com foco em automação financeira e fluxo de caixa.", icon: "fa-solid fa-building-columns" },
@@ -56,21 +56,21 @@
             { id: 10, title: "Gestão 360", category: "ERP & Gestão", tag: "Dashboard", desc: "Painel administrativo unificado para múltiplos pontos de venda com sincronização em nuvem.", icon: "fa-solid fa-gauge-high" },
             { id: 11, title: "PDV Fast", category: "ERP & Gestão", tag: "Checkout", desc: "Sistema de frente de caixa ultra-rápido para alta demanda, focado em UX de balcão.", icon: "fa-solid fa-cash-register" },
 
-            // JURÍDICO & COMPLIANCE (5)
+            // JURÍDICO & COMPLIANCE
             { id: 12, title: "Auditores Jurídicos v4", category: "Jurídico & Compliance", tag: "Legal Tech", desc: "Suíte de 4 softwares especializados em auditoria documental com escudos anti-alucinação via Regex.", icon: "fa-solid fa-scale-balanced", stats: "ZERO ALUCINAÇÃO" },
             { id: 13, title: "Protocolo LGPD Monitor", category: "Jurídico & Compliance", tag: "Privacidade", desc: "Ferramenta de conformidade de dados para adequação automática de sistemas ao marco civil da internet.", icon: "fa-solid fa-user-lock" },
             { id: 14, title: "LexGuard Auditor", category: "Jurídico & Compliance", tag: "Compliance", desc: "Analista automatizado de contratos que identifica cláusulas de risco e inconsistências legais.", icon: "fa-solid fa-file-shield" },
             { id: 15, title: "Compliance Flow", category: "Jurídico & Compliance", tag: "Processos", desc: "Workflow de aprovação ética e governança para departamentos jurídicos corporativos.", icon: "fa-solid fa-list-check" },
             { id: 16, title: "Legal Miner AI", category: "Jurídico & Compliance", tag: "IA Jurídica", desc: "Motor de busca inteligente em jurisprudências para suporte à decisão em processos cíveis.", icon: "fa-solid fa-gavel" },
 
-            // GROWTH & UX (5)
+            // GROWTH & UX
             { id: 17, title: "WebCut Studio", category: "Growth & UX", tag: "Multimídia Web", desc: "Editor de vídeo online com timeline interativa, processamento em Canvas e interface estilo CapCut.", icon: "fa-solid fa-photo-film" },
             { id: 18, title: "SoftGestão Analytics", category: "Growth & UX", tag: "BI", desc: "Dashboard imersivo para visualização de performance de vendas e funis de conversão.", icon: "fa-solid fa-chart-line" },
             { id: 19, title: "Brand Architect UI", category: "Growth & UX", tag: "Design System", desc: "Biblioteca de componentes de interface focada em conversão e experiência do usuário (UX).", icon: "fa-solid fa-pen-nib" },
             { id: 20, title: "Conversion Optimizer", category: "Growth & UX", tag: "Marketing Tech", desc: "Motor de testes A/B automatizado que ajusta elementos de UI para maximizar vendas.", icon: "fa-solid fa-bullseye" },
             { id: 21, title: "UX Heatmap Engine", category: "Growth & UX", tag: "Analytics", desc: "Rastreador de comportamento de clique e scroll para otimização de interfaces SaaS.", icon: "fa-solid fa-fire" },
 
-            // MOBILE & AUTOMAÇÃO (5)
+            // MOBILE & AUTOMAÇÃO
             { id: 22, title: "PWA Personal Master", category: "Mobile & Automação", tag: "Saúde", desc: "Plataforma de acompanhamento de treinos e saúde com interface mobile-first de alta performance.", icon: "fa-solid fa-dumbbell" },
             { id: 23, title: "Health Track Mobile", category: "Mobile & Automação", tag: "Mobile App", desc: "Aplicativo para monitorização de métricas de saúde integrado a dispositivos IoT.", icon: "fa-solid fa-heart-pulse" },
             { id: 24, title: "TaskFlow PWA", category: "Mobile & Automação", tag: "Produtividade", desc: "Gerenciador de tarefas offline-first para equipas de campo com sincronização inteligente.", icon: "fa-solid fa-list-check" },
@@ -162,7 +162,7 @@
                                 Minha trajetória é marcada pela entrega constante. Se você procura uma profissional que domina a estratégia de produto e a engenharia de IA, vamos conversar.
                             </p>
                             <div className="flex justify-center gap-6">
-                                <a href="https://www.linkedin.com/in/adriana-sousa-tech/" target="_blank" className="text-4xl text-slate-400 hover:text-sky-400 transition-colors"><i className="fa-brands fa-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/in/adriana-sousa-tech/" target="_blank" className="text-4xl text-slate-400 hover:text-sky-400 transition-colors"><i className="fa-brands fa-linkedin-in"></i></a>
                                 <a href="https://github.com/adrianasousa-dev" target="_blank" className="text-4xl text-slate-400 hover:text-white transition-colors"><i className="fa-brands fa-github"></i></a>
                                 <a href="mailto:adrianasousa.dev@gmail.com" className="text-4xl text-slate-400 hover:text-red-400 transition-colors"><i className="fa-solid fa-envelope"></i></a>
                             </div>
@@ -179,27 +179,27 @@
                             <div className="bg-slate-900 border border-slate-700 rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl relative p-8 md:p-12 animate-fade">
                                 <button onClick={() => setShowLetter(false)} className="absolute top-6 right-6 text-slate-400 hover:text-white text-2xl"><i className="fa-solid fa-xmark"></i></button>
                                 
-                                <div className="mb-8 border-b border-slate-800 pb-6">
+                                <div className="mb-8 border-b border-slate-800 pb-6 text-center md:text-left">
                                     <h2 className="text-4xl font-black text-white mb-2 tracking-tighter uppercase italic">Manifesto de Engenharia & Gestão</h2>
                                     <p className="text-sky-500 font-bold text-sm uppercase tracking-[4px]">Estratégia · IA · Performance</p>
                                 </div>
 
                                 <div className="space-y-8 text-slate-300 leading-relaxed text-sm md:text-base text-justify">
                                     <p>
-                                        Atuo na intersecção crítica onde a **Visão de Produto** encontra a **Engenharia de Alta Performance**. Ao longo do último ciclo, liderei a concepção e entrega de <strong>26 sistemas proprietários</strong>, transformando gargalos operacionais em vantagens competitivas escaláveis através de automação inteligente e análise de dados massivos.
+                                        Atuo na intersecção crítica onde a <strong>Visão de Produto</strong> encontra a <strong>Engenharia de Alta Performance</strong>. Ao longo do último ciclo, liderei a concepção e entrega de <strong>26 sistemas proprietários</strong>, transformando gargalos operacionais em vantagens competitivas escaláveis através de automação inteligente e análise de dados massivos.
                                     </p>
                                     
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4 text-left">
                                         <div className="glass p-6 rounded-2xl border-l-4 border-l-sky-500">
                                             <h4 className="text-white font-black mb-2 uppercase text-xs tracking-widest">Big Data & IA</h4>
                                             <p className="text-xs text-slate-400 leading-relaxed">
-                                                Domínio de processamento de pipelines de <strong>+390 mil logs</strong>. Implementação de arquiteturas com <strong>Gemini API</strong> para extração qualitativa de dados, geração preditiva de personas (ICP) e orquestração de agentes autônomos.
+                                                Domínio de processamento de pipelines de <strong>+390 mil logs</strong>. Implementação de arquiteturas com <strong>Gemini API</strong> para extração qualitativa de dados, geração preditiva de personas (ICP) e orquestração de agentes autónomos.
                                             </p>
                                         </div>
                                         <div className="glass p-6 rounded-2xl border-l-4 border-l-amber-500">
                                             <h4 className="text-white font-black mb-2 uppercase text-xs tracking-widest">Product Leadership</h4>
                                             <p className="text-xs text-slate-400 leading-relaxed">
-                                                Especialista em orquestrar o ciclo de vida completo do produto (SDLC). Do mapeamento de dores do usuário à prototipagem rápida e deployment de ERPs verticais robustos para os setores de varejo, automotivo e jurídico.
+                                                Especialista em orquestrar o ciclo de vida completo do produto (SDLC). Do mapeamento de dores do utilizador à prototipagem rápida e deployment de ERPs verticais robustos para os setores de varejo, automotivo e jurídico.
                                             </p>
                                         </div>
                                     </div>
@@ -208,7 +208,7 @@
                                         Minha abordagem como <strong>AI Solutions Architect</strong> não se limita apenas à escrita de código limpo (Python/React), mas sim à arquitetura de ecossistemas protegidos por protocolos de integridade — como o meu <strong>Sentinel Core</strong> — e escudos de conformidade técnica via Regex, garantindo auditorias precisas e "zero alucinação" em ambientes de IA.
                                     </p>
 
-                                    <p className="italic border-l-2 border-slate-700 pl-4 text-slate-400">
+                                    <p className="italic border-l-2 border-slate-700 pl-4 text-slate-400 text-left">
                                         "Não entrego software; entrego ativos digitais que reduzem o custo operacional e maximizam a inteligência de mercado. Minha missão é traduzir a complexidade tecnológica em crescimento exponencial para o negócio."
                                     </p>
                                 </div>
@@ -216,7 +216,7 @@
                                 <div className="pt-8 mt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
                                     <div className="text-center md:text-left">
                                         <p className="font-black text-white text-2xl uppercase tracking-tighter">Adriana Mendes da Cruz Sousa</p>
-                                        <div className="flex gap-4 mt-1">
+                                        <div className="flex gap-4 mt-1 justify-center md:justify-start">
                                             <span className="text-sky-500 font-bold text-[10px] uppercase tracking-widest bg-sky-500/10 px-2 py-1 rounded">Product Manager</span>
                                             <span className="text-amber-500 font-bold text-[10px] uppercase tracking-widest bg-amber-500/10 px-2 py-1 rounded">AI Architect</span>
                                         </div>
