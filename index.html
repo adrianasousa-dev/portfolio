@@ -6,17 +6,14 @@
     <meta name="description" content="Portfólio de Adriana Sousa - Product Manager & AI Solutions Architect. Especialista em IA, Big Data e ERPs.">
     <meta name="theme-color" content="#020617">
     
-    <!-- Open Graph / Previews para LinkedIn e WhatsApp -->
+    <!-- Open Graph / Previews -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Adriana Sousa | Product & AI Engineer">
-    <meta property="og:description" content="Especialista em transformar dados massivos e processos operacionais complexos em produtos digitais de alta performance.">
+    <meta property="og:description" content="Especialista em transformar dados massivos em produtos de alta performance. +26 sistemas desenvolvidos.">
     <meta property="og:image" content="https://adrianasousa-dev.github.io/portfolio/perfil.jpg">
-    <meta property="og:url" content="https://github.com/adrianasousa-dev">
 
     <title>Adriana Sousa | Product & AI Engineer</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://cdn.tailwindcss.com"></script>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
@@ -31,6 +28,10 @@
         .hero-glow { position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 80%; height: 500px; background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%); z-index: -1; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .animate-fade { animation: fadeIn 0.4s ease-out forwards; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #38bdf8; }
     </style>
 </head>
 <body>
@@ -40,59 +41,54 @@
         const { useState, useMemo } = React;
 
         const allProjects = [
-            {
-                id: 1,
-                title: "The Market Architect v13.1",
-                category: "IA & Big Data",
-                tag: "Engenharia de Prompt",
-                desc: "Motor de inteligência capaz de consolidar ecossistemas de dados processando +390k logs para extração de avatares e mecanismos de vendas via API Gemini.",
-                icon: "fa-solid fa-microchip",
-                stats: "390.000+ LOGS PROCESSADOS"
-            },
-            {
-                id: 2,
-                title: "Suíte Auditores Jurídicos",
-                category: "IA & Big Data",
-                tag: "Legal Tech & Compliance",
-                desc: "4 Softwares de Auditoria com 'Escudos Anti-Alucinação' via Regex. Garantia de precisão documental e integridade jurídica.",
-                icon: "fa-solid fa-scale-balanced",
-                stats: "INTEGRAÇÃO API GEMINI"
-            },
-            {
-                id: 25,
-                title: "Nexus AI Command Center",
-                category: "IA & Big Data",
-                tag: "Automação & SO",
-                desc: "Sistema Operacional autônomo. Orquestração de agentes via Sentinel Core rodando em background e monitoramento tático em tempo real.",
-                icon: "fa-solid fa-network-wired",
-                stats: "AGENTES AUTÔNOMOS"
-            },
-            {
-                id: 4,
-                title: "MarketMaster ERP",
-                category: "ERP & Gestão",
-                tag: "Varejo & Vendas",
-                desc: "Sistema de gestão integrada para o varejo com controle de estoque, frente de caixa (PDV) e gestão de níveis de acesso.",
-                icon: "fa-solid fa-store",
-            },
-            {
-                id: 26,
-                title: "WebCut Studio",
-                category: "Growth & UX",
-                tag: "Editor de Vídeo Web",
-                desc: "Editor de vídeo diretamente no navegador com interface estilo CapCut. Linha do tempo interativa e renderização em Canvas.",
-                icon: "fa-solid fa-photo-film",
-            }
+            // IA & BIG DATA (5)
+            { id: 1, title: "The Market Architect v13.1", category: "IA & Big Data", tag: "Big Data & GenAI", desc: "Motor de inteligência que processa +390k logs para extração de personas e estratégias de vendas via API Gemini.", icon: "fa-solid fa-microchip", stats: "390.000+ LOGS" },
+            { id: 2, title: "Nexus AI Command Center", category: "IA & Big Data", tag: "Orquestração", desc: "Sistema central de comando para agentes autônomos. Gerencia núcleos sentinelas e dashboards táticos.", icon: "fa-solid fa-network-wired", stats: "AGENTES AUTÔNOMOS" },
+            { id: 3, title: "Sentinel Core Engine", category: "IA & Big Data", tag: "Segurança de Dados", desc: "Monitor de integridade de processos e segurança tática para infraestruturas de automação local.", icon: "fa-solid fa-shield-halved" },
+            { id: 4, title: "AI Log Predictor", category: "IA & Big Data", tag: "Machine Learning", desc: "Algoritmo de análise preditiva para antecipação de falhas em sistemas de ERP.", icon: "fa-solid fa-brain" },
+            { id: 5, title: "Deep Insight Analytics", category: "IA & Big Data", tag: "Data Mining", desc: "Ferramenta de mineração de dados para descoberta de padrões de consumo em bases SQL massivas.", icon: "fa-solid fa-magnifying-glass-chart" },
+
+            // ERP & GESTÃO (6)
+            { id: 6, title: "MarketMaster ERP", category: "ERP & Gestão", tag: "Varejo", desc: "Ecossistema completo de gestão comercial com PDV, controle de estoque avançado e gestão de acesso.", icon: "fa-solid fa-store" },
+            { id: 7, title: "AutoDrive System", category: "ERP & Gestão", tag: "Automotivo", desc: "Solução verticalizada para centros automotivos, integrando ordens de serviço e gestão de peças.", icon: "fa-solid fa-car-side" },
+            { id: 8, title: "SoftGestão Enterprise", category: "ERP & Gestão", tag: "B2B SaaS", desc: "ERP modular para médias empresas com foco em automação financeira e fluxo de caixa.", icon: "fa-solid fa-building-columns" },
+            { id: 9, title: "Estoque Pro Cloud", category: "ERP & Gestão", tag: "Logística", desc: "Gestão de inventário em tempo real com integração de código de barras e alertas de reposição.", icon: "fa-solid fa-boxes-stacked" },
+            { id: 10, title: "Gestão 360", category: "ERP & Gestão", tag: "Dashboard", desc: "Painel administrativo unificado para múltiplos pontos de venda com sincronização em nuvem.", icon: "fa-solid fa-gauge-high" },
+            { id: 11, title: "PDV Fast", category: "ERP & Gestão", tag: "Checkout", desc: "Sistema de frente de caixa ultra-rápido para alta demanda, focado em UX de balcão.", icon: "fa-solid fa-cash-register" },
+
+            // JURÍDICO & COMPLIANCE (5)
+            { id: 12, title: "Auditores Jurídicos v4", category: "Jurídico & Compliance", tag: "Legal Tech", desc: "Suíte de 4 softwares especializados em auditoria documental com escudos anti-alucinação via Regex.", icon: "fa-solid fa-scale-balanced", stats: "ZERO ALUCINAÇÃO" },
+            { id: 13, title: "Protocolo LGPD Monitor", category: "Jurídico & Compliance", tag: "Privacidade", desc: "Ferramenta de conformidade de dados para adequação automática de sistemas ao marco civil da internet.", icon: "fa-solid fa-user-lock" },
+            { id: 14, title: "LexGuard Auditor", category: "Jurídico & Compliance", tag: "Compliance", desc: "Analista automatizado de contratos que identifica cláusulas de risco e inconsistências legais.", icon: "fa-solid fa-file-shield" },
+            { id: 15, title: "Compliance Flow", category: "Jurídico & Compliance", tag: "Processos", desc: "Workflow de aprovação ética e governança para departamentos jurídicos corporativos.", icon: "fa-solid fa-list-check" },
+            { id: 16, title: "Legal Miner AI", category: "Jurídico & Compliance", tag: "IA Jurídica", desc: "Motor de busca inteligente em jurisprudências para suporte à decisão em processos cíveis.", icon: "fa-solid fa-gavel" },
+
+            // GROWTH & UX (5)
+            { id: 17, title: "WebCut Studio", category: "Growth & UX", tag: "Multimídia Web", desc: "Editor de vídeo online com timeline interativa, processamento em Canvas e interface estilo CapCut.", icon: "fa-solid fa-photo-film" },
+            { id: 18, title: "SoftGestão Analytics", category: "Growth & UX", tag: "BI", desc: "Dashboard imersivo para visualização de performance de vendas e funis de conversão.", icon: "fa-solid fa-chart-line" },
+            { id: 19, title: "Brand Architect UI", category: "Growth & UX", tag: "Design System", desc: "Biblioteca de componentes de interface focada em conversão e experiência do usuário (UX).", icon: "fa-solid fa-pen-nib" },
+            { id: 20, title: "Conversion Optimizer", category: "Growth & UX", tag: "Marketing Tech", desc: "Motor de testes A/B automatizado que ajusta elementos de UI para maximizar vendas.", icon: "fa-solid fa-bullseye" },
+            { id: 21, title: "UX Heatmap Engine", category: "Growth & UX", tag: "Analytics", desc: "Rastreador de comportamento de clique e scroll para otimização de interfaces SaaS.", icon: "fa-solid fa-fire" },
+
+            // MOBILE & AUTOMAÇÃO (5)
+            { id: 22, title: "PWA Personal Master", category: "Mobile & Automação", tag: "Saúde", desc: "Plataforma de acompanhamento de treinos e saúde com interface mobile-first de alta performance.", icon: "fa-solid fa-dumbbell" },
+            { id: 23, title: "Health Track Mobile", category: "Mobile & Automação", tag: "Mobile App", desc: "Aplicativo para monitorização de métricas de saúde integrado a dispositivos IoT.", icon: "fa-solid fa-heart-pulse" },
+            { id: 24, title: "TaskFlow PWA", category: "Mobile & Automação", tag: "Produtividade", desc: "Gerenciador de tarefas offline-first para equipas de campo com sincronização inteligente.", icon: "fa-solid fa-list-check" },
+            { id: 25, title: "IoT Monitor Hub", category: "Mobile & Automação", tag: "IoT", desc: "Central de monitorização de sensores industriais com alertas via Telegram e Dashboard.", icon: "fa-solid fa-tower-broadcast" },
+            { id: 26, title: "Script Sentinela 2.0", category: "Mobile & Automação", tag: "Automação", desc: "Robô de automação de tarefas repetitivas em ambiente Windows para suporte de TI.", icon: "fa-solid fa-robot" }
         ];
 
         const ProjectCard = ({ project }) => (
             <div className="glass p-6 md:p-8 rounded-3xl hover:border-sky-500/50 transition-all duration-300 group flex flex-col h-full animate-fade">
-                <div className="text-sky-400 text-3xl mb-4"><i className={project.icon}></i></div>
+                <div className="flex justify-between items-start mb-4">
+                    <div className="text-sky-400 text-3xl"><i className={project.icon}></i></div>
+                    <span className="text-[10px] bg-slate-800 text-slate-300 px-3 py-1 rounded-full font-bold uppercase tracking-wider">#{project.id}</span>
+                </div>
                 <span className="text-[10px] uppercase tracking-[2px] text-sky-500 font-bold mb-2">{project.tag}</span>
-                <h3 className="text-xl md:text-2xl font-black mt-1 mb-3 group-hover:text-sky-400 transition-colors">{project.title}</h3>
+                <h3 className="text-xl font-black mt-1 mb-3 group-hover:text-sky-400 transition-colors">{project.title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">{project.desc}</p>
                 {project.stats && (
-                    <div className="bg-sky-500/10 border border-sky-500/20 p-3 rounded-xl text-sky-400 font-mono text-xs text-center font-bold mt-auto">
+                    <div className="bg-sky-500/10 border border-sky-500/20 p-3 rounded-xl text-sky-400 font-mono text-[10px] text-center font-bold mt-auto">
                         {project.stats}
                     </div>
                 )}
@@ -102,7 +98,7 @@
         const App = () => {
             const [activeFilter, setActiveFilter] = useState("Todos");
             const [showLetter, setShowLetter] = useState(false);
-            const categories = ["Todos", "IA & Big Data", "ERP & Gestão", "Growth & UX"];
+            const categories = ["Todos", "IA & Big Data", "ERP & Gestão", "Jurídico & Compliance", "Growth & UX", "Mobile & Automação"];
 
             const filteredProjects = useMemo(() => {
                 return activeFilter === "Todos" ? allProjects : allProjects.filter(p => p.category === activeFilter);
@@ -125,10 +121,10 @@
                     <header className="max-w-6xl mx-auto px-6 pt-12 pb-24 relative z-10 flex flex-col-reverse md:flex-row items-center gap-12 text-center md:text-left">
                         <div className="w-full md:w-3/5">
                             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-8">
-                                Não faço apenas gestão. <br className="hidden md:block"/>Eu <span className="gradient-text">construo soluções.</span>
+                                Não faço apenas gestão. <br className="hidden md:block"/>Eu <span className="gradient-text">construo ecossistemas.</span>
                             </h1>
                             <p className="text-lg md:text-xl text-slate-400 leading-relaxed mb-10 max-w-2xl">
-                                Product Manager & AI Solutions Architect focada em transformar dados massivos e processos complexos em produtos digitais de alta performance.
+                                Product Manager & AI Solutions Architect. Transformando processos operacionais complexos em ativos digitais de alta performance através de tecnologia de ponta.
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
                                 <button onClick={() => setShowLetter(true)} className="bg-sky-600 hover:bg-sky-500 text-white px-8 py-4 rounded-full font-black uppercase tracking-widest transition-all flex items-center justify-center gap-3 shadow-lg shadow-sky-500/25">
@@ -140,19 +136,17 @@
                             </div>
                         </div>
                         <div className="w-full md:w-2/5 flex justify-center md:justify-end">
-                            <div className="relative group">
-                                <div className="absolute inset-0 bg-sky-500 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
-                                <img src="./perfil.jpg" alt="Adriana Sousa" className="w-56 h-56 md:w-80 md:h-80 object-cover rounded-full border-4 border-slate-800 relative z-10 transform group-hover:scale-105 transition-transform duration-500" />
-                            </div>
+                            <img src="./perfil.jpg" alt="Adriana Sousa" className="w-56 h-56 md:w-80 md:h-80 object-cover rounded-full border-4 border-slate-800 shadow-2xl" />
                         </div>
                     </header>
 
                     <section id="portfolio" className="max-w-7xl mx-auto px-6 py-10 relative z-10">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-4xl font-black mb-4">Meu <span className="text-sky-500">Ecossistema</span></h2>
+                            <h2 className="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tighter">Meu <span className="text-sky-500">Ecossistema</span> de Soluções</h2>
+                            <p className="text-slate-500 mb-8 font-semibold">Catálogo Completo: 26 Sistemas Desenvolvidos e Entregues</p>
                             <div className="flex flex-wrap justify-center gap-2 mb-12">
                                 {categories.map(cat => (
-                                    <button key={cat} onClick={() => setActiveFilter(cat)} className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${activeFilter === cat ? "bg-sky-500 text-white" : "glass text-slate-400"}`}>{cat}</button>
+                                    <button key={cat} onClick={() => setActiveFilter(cat)} className={`px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all ${activeFilter === cat ? "bg-sky-500 text-white" : "glass text-slate-400"}`}>{cat}</button>
                                 ))}
                             </div>
                         </div>
@@ -161,26 +155,38 @@
                         </div>
                     </section>
 
-                    <footer className="max-w-7xl mx-auto px-6 py-12 mt-20 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
-                        <div className="text-center md:text-left">
-                            <p className="text-xs text-slate-400 font-semibold"><i className="fa-solid fa-location-dot mr-2 text-sky-500"></i>Taboão da Serra - SP, Brasil</p>
+                    <section className="max-w-7xl mx-auto px-6 py-24 relative z-10 text-center">
+                        <div className="glass p-12 rounded-[3rem] border-sky-500/30">
+                            <h2 className="text-4xl font-black mb-6">Pronta para o Próximo <span className="text-sky-500">Desafio Acadêmico ou Profissional.</span></h2>
+                            <p className="text-slate-400 max-w-2xl mx-auto mb-10 text-lg">
+                                Minha trajetória é marcada pela entrega constante. Se você procura uma profissional que domina a estratégia de produto e a engenharia de IA, vamos conversar.
+                            </p>
+                            <div className="flex justify-center gap-6">
+                                <a href="https://www.linkedin.com/in/adriana-sousa-tech/" target="_blank" className="text-4xl text-slate-400 hover:text-sky-400 transition-colors"><i className="fa-brands fa-linkedin"></i></a>
+                                <a href="https://github.com/adrianasousa-dev" target="_blank" className="text-4xl text-slate-400 hover:text-white transition-colors"><i className="fa-brands fa-github"></i></a>
+                                <a href="mailto:adrianasousa.dev@gmail.com" className="text-4xl text-slate-400 hover:text-red-400 transition-colors"><i className="fa-solid fa-envelope"></i></a>
+                            </div>
                         </div>
-                        <div className="flex gap-6 text-2xl">
-                            <a href="https://github.com/adrianasousa-dev" target="_blank" className="text-slate-400 hover:text-sky-400 transition-colors"><i className="fa-brands fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/adriana-sousa-tech/" target="_blank" className="text-slate-400 hover:text-sky-400 transition-colors"><i className="fa-brands fa-linkedin"></i></a>
-                            <a href="mailto:adrianasousa.dev@gmail.com" className="text-slate-400 hover:text-sky-400 transition-colors"><i className="fa-solid fa-envelope"></i></a>
-                        </div>
+                    </section>
+
+                    <footer className="max-w-7xl mx-auto px-6 py-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
+                        <p className="text-xs text-slate-400 font-semibold tracking-widest uppercase">ADRIANA.TECH &copy; 2024 | DESIGNED FOR IMPACT</p>
+                        <p className="text-[10px] text-slate-600 font-bold uppercase tracking-widest">Built with React & Tailwind</p>
                     </footer>
 
                     {showLetter && (
-                        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+                        <div className="fixed inset-0 bg-black/95 backdrop-blur-md z-50 flex items-center justify-center p-4">
                             <div className="bg-slate-900 border border-slate-700 rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl relative p-8 md:p-12 animate-fade">
                                 <button onClick={() => setShowLetter(false)} className="absolute top-6 right-6 text-slate-400 hover:text-white text-2xl"><i className="fa-solid fa-xmark"></i></button>
                                 <h2 className="text-3xl font-black text-white mb-8 border-b border-slate-800 pb-4">Carta de Apresentação</h2>
-                                <p className="leading-relaxed text-slate-300">Sou uma especialista em produto com sólida base técnica em <strong>Python e React</strong>, dedicada a construir soluções que unem Inteligência Artificial e alta performance. No último ano, liderei o desenvolvimento do ecossistema <strong>SoftGestão</strong>, processando mais de <strong>390 mil logs</strong> de dados para extrair padrões táticos de mercado.</p>
+                                <div className="space-y-6 text-slate-300 leading-relaxed text-sm md:text-base">
+                                    <p>Sou uma especialista em produto com sólida base técnica em <strong>Python, React e IA</strong>. Ao longo da minha trajetória, desenvolvi e entreguei <strong>26 sistemas de alta complexidade</strong>, abrangendo desde soluções de ERP verticais até motores de Big Data que processam centenas de milhares de logs.</p>
+                                    <p>Minha expertise reside em unir a visão estratégica de <strong>Product Manager</strong> com a execução técnica de uma <strong>AI Solutions Architect</strong>. Domino o ciclo de vida completo do produto: da identificação de dores operacionais à arquitetura de soluções com IA Generativa (Gemini API) e automação de sistemas.</p>
+                                    <p>O ecossistema que apresento neste portfólio é a prova da minha capacidade de escalar processos e criar ferramentas que geram valor real, segurança jurídica e eficiência de mercado.</p>
+                                </div>
                                 <div className="pt-8 mt-8 border-t border-slate-800">
-                                    <p className="font-black text-white text-xl">Adriana Mendes da Cruz Sousa</p>
-                                    <p className="text-sky-500 font-bold text-sm uppercase tracking-widest">Product Manager & AI Solutions Architect</p>
+                                    <p className="font-black text-white text-xl uppercase tracking-tighter">Adriana Mendes da Cruz Sousa</p>
+                                    <p className="text-sky-500 font-bold text-xs uppercase tracking-widest">Product Manager & AI Solutions Architect</p>
                                 </div>
                             </div>
                         </div>
