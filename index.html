@@ -43,7 +43,7 @@
         const allProjects = [
             // IA & BIG DATA (5)
             { id: 1, title: "The Market Architect v13.1", category: "IA & Big Data", tag: "Big Data & GenAI", desc: "Motor de inteligência que processa +390k logs para extração de personas e estratégias de vendas via API Gemini.", icon: "fa-solid fa-microchip", stats: "390.000+ LOGS" },
-            { id: 2, title: "Nexus AI Command Center", category: "IA & Big Data", tag: "Orquestração", desc: "Sistema central de comando para agentes autônomos. Gerencia núcleos sentinelas e dashboards táticos.", icon: "fa-solid fa-network-wired", stats: "AGENTES AUTÔNOMOS" },
+            { id: 2, title: "Nexus AI Command Center", category: "IA & Big Data", tag: "Orquestração", desc: "Sistema central de comando para agentes autónomos. Gerencia núcleos sentinelas e dashboards táticos.", icon: "fa-solid fa-network-wired", stats: "AGENTES AUTÓNOMOS" },
             { id: 3, title: "Sentinel Core Engine", category: "IA & Big Data", tag: "Segurança de Dados", desc: "Monitor de integridade de processos e segurança tática para infraestruturas de automação local.", icon: "fa-solid fa-shield-halved" },
             { id: 4, title: "AI Log Predictor", category: "IA & Big Data", tag: "Machine Learning", desc: "Algoritmo de análise preditiva para antecipação de falhas em sistemas de ERP.", icon: "fa-solid fa-brain" },
             { id: 5, title: "Deep Insight Analytics", category: "IA & Big Data", tag: "Data Mining", desc: "Ferramenta de mineração de dados para descoberta de padrões de consumo em bases SQL massivas.", icon: "fa-solid fa-magnifying-glass-chart" },
@@ -157,7 +157,7 @@
 
                     <section className="max-w-7xl mx-auto px-6 py-24 relative z-10 text-center">
                         <div className="glass p-12 rounded-[3rem] border-sky-500/30">
-                            <h2 className="text-4xl font-black mb-6">Pronta para o Próximo <span className="text-sky-500">Desafio Acadêmico ou Profissional.</span></h2>
+                            <h2 className="text-4xl font-black mb-6">Pronta para o Próximo <span className="text-sky-500">Grande Projeto ou Oportunidade Estratégica.</span></h2>
                             <p className="text-slate-400 max-w-2xl mx-auto mb-10 text-lg">
                                 Minha trajetória é marcada pela entrega constante. Se você procura uma profissional que domina a estratégia de produto e a engenharia de IA, vamos conversar.
                             </p>
@@ -178,15 +178,53 @@
                         <div className="fixed inset-0 bg-black/95 backdrop-blur-md z-50 flex items-center justify-center p-4">
                             <div className="bg-slate-900 border border-slate-700 rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl relative p-8 md:p-12 animate-fade">
                                 <button onClick={() => setShowLetter(false)} className="absolute top-6 right-6 text-slate-400 hover:text-white text-2xl"><i className="fa-solid fa-xmark"></i></button>
-                                <h2 className="text-3xl font-black text-white mb-8 border-b border-slate-800 pb-4">Carta de Apresentação</h2>
-                                <div className="space-y-6 text-slate-300 leading-relaxed text-sm md:text-base">
-                                    <p>Sou uma especialista em produto com sólida base técnica em <strong>Python, React e IA</strong>. Ao longo da minha trajetória, desenvolvi e entreguei <strong>26 sistemas de alta complexidade</strong>, abrangendo desde soluções de ERP verticais até motores de Big Data que processam centenas de milhares de logs.</p>
-                                    <p>Minha expertise reside em unir a visão estratégica de <strong>Product Manager</strong> com a execução técnica de uma <strong>AI Solutions Architect</strong>. Domino o ciclo de vida completo do produto: da identificação de dores operacionais à arquitetura de soluções com IA Generativa (Gemini API) e automação de sistemas.</p>
-                                    <p>O ecossistema que apresento neste portfólio é a prova da minha capacidade de escalar processos e criar ferramentas que geram valor real, segurança jurídica e eficiência de mercado.</p>
+                                
+                                <div className="mb-8 border-b border-slate-800 pb-6">
+                                    <h2 className="text-4xl font-black text-white mb-2 tracking-tighter uppercase italic">Manifesto de Engenharia & Gestão</h2>
+                                    <p className="text-sky-500 font-bold text-sm uppercase tracking-[4px]">Estratégia · IA · Performance</p>
                                 </div>
-                                <div className="pt-8 mt-8 border-t border-slate-800">
-                                    <p className="font-black text-white text-xl uppercase tracking-tighter">Adriana Mendes da Cruz Sousa</p>
-                                    <p className="text-sky-500 font-bold text-xs uppercase tracking-widest">Product Manager & AI Solutions Architect</p>
+
+                                <div className="space-y-8 text-slate-300 leading-relaxed text-sm md:text-base text-justify">
+                                    <p>
+                                        Atuo na intersecção crítica onde a **Visão de Produto** encontra a **Engenharia de Alta Performance**. Ao longo do último ciclo, liderei a concepção e entrega de <strong>26 sistemas proprietários</strong>, transformando gargalos operacionais em vantagens competitivas escaláveis através de automação inteligente e análise de dados massivos.
+                                    </p>
+                                    
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4">
+                                        <div className="glass p-6 rounded-2xl border-l-4 border-l-sky-500">
+                                            <h4 className="text-white font-black mb-2 uppercase text-xs tracking-widest">Big Data & IA</h4>
+                                            <p className="text-xs text-slate-400 leading-relaxed">
+                                                Domínio de processamento de pipelines de <strong>+390 mil logs</strong>. Implementação de arquiteturas com <strong>Gemini API</strong> para extração qualitativa de dados, geração preditiva de personas (ICP) e orquestração de agentes autônomos.
+                                            </p>
+                                        </div>
+                                        <div className="glass p-6 rounded-2xl border-l-4 border-l-amber-500">
+                                            <h4 className="text-white font-black mb-2 uppercase text-xs tracking-widest">Product Leadership</h4>
+                                            <p className="text-xs text-slate-400 leading-relaxed">
+                                                Especialista em orquestrar o ciclo de vida completo do produto (SDLC). Do mapeamento de dores do usuário à prototipagem rápida e deployment de ERPs verticais robustos para os setores de varejo, automotivo e jurídico.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <p>
+                                        Minha abordagem como <strong>AI Solutions Architect</strong> não se limita apenas à escrita de código limpo (Python/React), mas sim à arquitetura de ecossistemas protegidos por protocolos de integridade — como o meu <strong>Sentinel Core</strong> — e escudos de conformidade técnica via Regex, garantindo auditorias precisas e "zero alucinação" em ambientes de IA.
+                                    </p>
+
+                                    <p className="italic border-l-2 border-slate-700 pl-4 text-slate-400">
+                                        "Não entrego software; entrego ativos digitais que reduzem o custo operacional e maximizam a inteligência de mercado. Minha missão é traduzir a complexidade tecnológica em crescimento exponencial para o negócio."
+                                    </p>
+                                </div>
+
+                                <div className="pt-8 mt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+                                    <div className="text-center md:text-left">
+                                        <p className="font-black text-white text-2xl uppercase tracking-tighter">Adriana Mendes da Cruz Sousa</p>
+                                        <div className="flex gap-4 mt-1">
+                                            <span className="text-sky-500 font-bold text-[10px] uppercase tracking-widest bg-sky-500/10 px-2 py-1 rounded">Product Manager</span>
+                                            <span className="text-amber-500 font-bold text-[10px] uppercase tracking-widest bg-amber-500/10 px-2 py-1 rounded">AI Architect</span>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <a href="https://www.linkedin.com/in/adriana-sousa-tech/" target="_blank" className="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-sky-400 transition-all"><i className="fa-brands fa-linkedin-in"></i></a>
+                                        <a href="https://github.com/adrianasousa-dev" target="_blank" className="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white transition-all"><i className="fa-brands fa-github"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
