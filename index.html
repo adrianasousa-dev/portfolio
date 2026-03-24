@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Adriana Sousa - Product Manager & AI Solutions Architect. Especialista em IA, Big Data e ERPs.">
+    <meta name="description" content="Portfólio de Adriana Sousa - AI Solutions Architect & Engenheira de Software Sênior. Especialista em Agentes Autônomos, Big Data e Sistemas de Missão Crítica.">
     <meta name="theme-color" content="#020617">
     
     <!-- Open Graph / Previews -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Adriana Sousa | Product & AI Engineer">
-    <meta property="og:description" content="Especialista em transformar dados massivos em produtos de alta performance. +26 sistemas desenvolvidos.">
-    <meta property="og:image" content="https://adrianasousa-dev.github.io/portfolio/perfil.jpg">
+    <meta property="og:title" content="Adriana Sousa | AI Architect & Software Engineer">
+    <meta property="og:description" content="Especialista em transformar dados massivos em ecossistemas inteligentes. +28 sistemas entregues em IA, Legal Tech, ERPs e Fintech.">
+    <meta property="og:image" content="./perfil.jpg">
 
-    <title>Adriana Sousa | Product & AI Engineer</title>
+    <title>Adriana Sousa | AI & Software Architect</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
@@ -42,40 +42,44 @@
 
         const allProjects = [
             // IA & BIG DATA
-            { id: 1, title: "The Market Architect v13.1", category: "IA & Big Data", tag: "Big Data & GenAI", desc: "Motor de inteligência que processa +390k logs para extração de personas e estratégias de vendas via API Gemini.", icon: "fa-solid fa-microchip", stats: "390.000+ LOGS" },
-            { id: 2, title: "Nexus AI Command Center", category: "IA & Big Data", tag: "Orquestração", desc: "Sistema central de comando para agentes autónomos. Gerencia núcleos sentinelas e dashboards táticos.", icon: "fa-solid fa-network-wired", stats: "AGENTES AUTÓNOMOS" },
-            { id: 3, title: "Sentinel Core Engine", category: "IA & Big Data", tag: "Segurança de Dados", desc: "Monitor de integridade de processos e segurança tática para infraestruturas de automação local.", icon: "fa-solid fa-shield-halved" },
-            { id: 4, title: "AI Log Predictor", category: "IA & Big Data", tag: "Machine Learning", desc: "Algoritmo de análise preditiva para antecipação de falhas em sistemas de ERP.", icon: "fa-solid fa-brain" },
-            { id: 5, title: "Deep Insight Analytics", category: "IA & Big Data", tag: "Data Mining", desc: "Ferramenta de mineração de dados para descoberta de padrões de consumo em bases SQL massivas.", icon: "fa-solid fa-magnifying-glass-chart" },
+            { id: 1, title: "The Market Architect v13.1", category: "IA & Big Data", tag: "Data Engineering", desc: "Motor de inteligência massiva. Processamento contínuo de +390k logs usando IA Generativa (Gemini API) para extração tática de dados e estruturação de pipelines de RAG.", icon: "fa-solid fa-database", stats: "+390.000 LOGS" },
+            { id: 2, title: "NEXUS AI Command Center", category: "IA & Big Data", tag: "Multi-Agent Systems", desc: "Orquestrador de Agentes Autônomos (LangGraph). Implementa State Machines e integração MCP (Model Context Protocol) para fluxos cognitivos complexos.", icon: "fa-solid fa-network-wired", stats: "AGENTES AUTÔNOMOS" },
+            { id: 3, title: "Sentinel Core Engine", category: "IA & Big Data", tag: "AI Observability", desc: "Camada de AgentOps e Guardrails. Monitora latência, consumo de tokens e atua como escudo lógico para mitigação de alucinações de LLMs em produção.", icon: "fa-solid fa-shield-halved", stats: "ZERO ALUCINAÇÃO" },
+            { id: 4, title: "JurisVision (OAB Prep)", category: "IA & Big Data", tag: "EdTech & Acessibilidade", desc: "Plataforma adaptativa baseada em RAG e Vector DBs (Pinecone). Focada em acessibilidade (WCAG) e análise de desempenho via LLMs para educação jurídica.", icon: "fa-solid fa-graduation-cap", stats: "RAG & VECTOR DB" },
+            { id: 5, title: "Sistema Jud (Themis)", category: "IA & Big Data", tag: "Automação Legal", desc: "Auditor de processos com deploy em Streamlit e Python. Automação de extração de inteligência em peças jurídicas com rigor absoluto de compliance.", icon: "fa-solid fa-scale-unbalanced", stats: "LEGAL TECH" },
 
             // ERP & GESTÃO
-            { id: 6, title: "MarketMaster ERP", category: "ERP & Gestão", tag: "Varejo", desc: "Ecossistema completo de gestão comercial com PDV, controle de estoque avançado e gestão de acesso.", icon: "fa-solid fa-store" },
-            { id: 7, title: "AutoDrive System", category: "ERP & Gestão", tag: "Automotivo", desc: "Solução verticalizada para centros automotivos, integrando ordens de serviço e gestão de peças.", icon: "fa-solid fa-car-side" },
-            { id: 8, title: "SoftGestão Enterprise", category: "ERP & Gestão", tag: "B2B SaaS", desc: "ERP modular para médias empresas com foco em automação financeira e fluxo de caixa.", icon: "fa-solid fa-building-columns" },
-            { id: 9, title: "Estoque Pro Cloud", category: "ERP & Gestão", tag: "Logística", desc: "Gestão de inventário em tempo real com integração de código de barras e alertas de reposição.", icon: "fa-solid fa-boxes-stacked" },
-            { id: 10, title: "Gestão 360", category: "ERP & Gestão", tag: "Dashboard", desc: "Painel administrativo unificado para múltiplos pontos de venda com sincronização em nuvem.", icon: "fa-solid fa-gauge-high" },
-            { id: 11, title: "PDV Fast", category: "ERP & Gestão", tag: "Checkout", desc: "Sistema de frente de caixa ultra-rápido para alta demanda, focado em UX de balcão.", icon: "fa-solid fa-cash-register" },
+            { id: 6, title: "SoftGestão Enterprise", category: "ERP & Gestão", tag: "B2B SaaS", desc: "ERP modular em nuvem (arquitetura serverless AWS). Foco em automação financeira, alta disponibilidade e processamento assíncrono.", icon: "fa-solid fa-building-columns" },
+            { id: 7, title: "MarketMaster ERP", category: "ERP & Gestão", tag: "Varejo", desc: "Ecossistema de PDV e gestão comercial. Sincronização offline-first inteligente e conciliação bancária em tempo real.", icon: "fa-solid fa-store" },
+            { id: 8, title: "AutoDrive System", category: "ERP & Gestão", tag: "Automotivo", desc: "Solução verticalizada integrando ordens de serviço, controle preditivo de peças automotivas e faturamento.", icon: "fa-solid fa-car-side" },
+            { id: 9, title: "Estoque Pro Cloud", category: "ERP & Gestão", tag: "Logística", desc: "Gestão de inventário distribuído. Arquitetura orientada a eventos (Event-Driven) para alertas preditivos de ruptura de estoque.", icon: "fa-solid fa-boxes-stacked" },
+            { id: 10, title: "Gestão 360 Analytics", category: "ERP & Gestão", tag: "Business Intelligence", desc: "Painel gerencial multi-tenant. Agrega dados de filiais usando pipelines robustos de BI para tomada de decisão em nível C-Level.", icon: "fa-solid fa-chart-pie" },
+            { id: 11, title: "PDV Fast API", category: "ERP & Gestão", tag: "Checkout", desc: "Frente de caixa ultra-otimizada. Foco em performance extrema (tempo de resposta em milissegundos) para operações de alta rotatividade.", icon: "fa-solid fa-cash-register" },
 
             // JURÍDICO & COMPLIANCE
-            { id: 12, title: "Auditores Jurídicos v4", category: "Jurídico & Compliance", tag: "Legal Tech", desc: "Suíte de 4 softwares especializados em auditoria documental com escudos anti-alucinação via Regex.", icon: "fa-solid fa-scale-balanced", stats: "ZERO ALUCINAÇÃO" },
-            { id: 13, title: "Protocolo LGPD Monitor", category: "Jurídico & Compliance", tag: "Privacidade", desc: "Ferramenta de conformidade de dados para adequação automática de sistemas ao marco civil da internet.", icon: "fa-solid fa-user-lock" },
-            { id: 14, title: "LexGuard Auditor", category: "Jurídico & Compliance", tag: "Compliance", desc: "Analista automatizado de contratos que identifica cláusulas de risco e inconsistências legais.", icon: "fa-solid fa-file-shield" },
-            { id: 15, title: "Compliance Flow", category: "Jurídico & Compliance", tag: "Processos", desc: "Workflow de aprovação ética e governança para departamentos jurídicos corporativos.", icon: "fa-solid fa-list-check" },
-            { id: 16, title: "Legal Miner AI", category: "Jurídico & Compliance", tag: "IA Jurídica", desc: "Motor de busca inteligente em jurisprudências para suporte à decisão em processos cíveis.", icon: "fa-solid fa-gavel" },
+            { id: 12, title: "LexGuard Auditor", category: "Jurídico & Compliance", tag: "NLP & Contratos", desc: "Analista de contratos movido a Inteligência Artificial. Identifica inconsistências e riscos de conformidade usando NLP.", icon: "fa-solid fa-file-contract" },
+            { id: 13, title: "Protocolo LGPD Monitor", category: "Jurídico & Compliance", tag: "Privacidade e Dados", desc: "Motor de conformidade automatizada. Varre bases SQL/NoSQL para garantir a anonimização e aderência estrita à LGPD e GDPR.", icon: "fa-solid fa-user-shield" },
+            { id: 14, title: "Compliance Flow RBAC", category: "Jurídico & Compliance", tag: "Governança", desc: "Workflow de aprovação e auditoria de acessos. Rastreia e documenta a cadeia de custódia de dados sensíveis e Logs de sistema.", icon: "fa-solid fa-list-check" },
+            { id: 15, title: "Legal Miner AI", category: "Jurídico & Compliance", tag: "Busca Semântica", desc: "Motor de busca em jurisprudência. Converte linguagem natural em queries complexas sobre bases não estruturadas.", icon: "fa-solid fa-magnifying-glass" },
+            { id: 16, title: "Contract Vault Zero", category: "Jurídico & Compliance", tag: "Segurança", desc: "Cofre digital imutável para documentos de risco. Utiliza criptografia avançada e trilhas de auditoria ponta a ponta.", icon: "fa-solid fa-vault" },
 
-            // GROWTH & UX
-            { id: 17, title: "WebCut Studio", category: "Growth & UX", tag: "Multimídia Web", desc: "Editor de vídeo online com timeline interativa, processamento em Canvas e interface estilo CapCut.", icon: "fa-solid fa-photo-film" },
-            { id: 18, title: "SoftGestão Analytics", category: "Growth & UX", tag: "BI", desc: "Dashboard imersivo para visualização de performance de vendas e funis de conversão.", icon: "fa-solid fa-chart-line" },
-            { id: 19, title: "Brand Architect UI", category: "Growth & UX", tag: "Design System", desc: "Biblioteca de componentes de interface focada em conversão e experiência do usuário (UX).", icon: "fa-solid fa-pen-nib" },
-            { id: 20, title: "Conversion Optimizer", category: "Growth & UX", tag: "Marketing Tech", desc: "Motor de testes A/B automatizado que ajusta elementos de UI para maximizar vendas.", icon: "fa-solid fa-bullseye" },
-            { id: 21, title: "UX Heatmap Engine", category: "Growth & UX", tag: "Analytics", desc: "Rastreador de comportamento de clique e scroll para otimização de interfaces SaaS.", icon: "fa-solid fa-fire" },
+            // CORE & PERFORMANCE (Ex Growth & UX)
+            { id: 17, title: "Meu Editor Video", category: "Core & Performance", tag: "Desktop App", desc: "Software de edição de vídeo de alta performance. Arquitetado em React, Electron e processamento de baixo nível em C e FFMPEG.", icon: "fa-solid fa-film", stats: "REACT + ELECTRON" },
+            { id: 18, title: "WebCut Studio", category: "Core & Performance", tag: "Web Assembly", desc: "Editor multimídia web. Utiliza manipulação direta de Canvas API e WebGL para renderização fluida no lado do cliente.", icon: "fa-solid fa-photo-film" },
+            { id: 19, title: "Brand Architect UI", category: "Core & Performance", tag: "Design System", desc: "Biblioteca de componentes React proprietária. Focada em escalabilidade, acessibilidade (WCAG 2.1) e micro-interações.", icon: "fa-solid fa-pen-nib" },
+            { id: 20, title: "Conversion Optimizer", category: "Core & Performance", tag: "A/B Testing", desc: "Plataforma de testes programáticos. Roteamento dinâmico de tráfego para otimização contínua de funis de conversão.", icon: "fa-solid fa-bullseye" },
+            { id: 21, title: "UX Telemetry Engine", category: "Core & Performance", tag: "Observabilidade UX", desc: "Rastreador de telemetria de interface. Processa e armazena milhares de eventos assíncronos via WebSockets.", icon: "fa-solid fa-satellite-dish" },
 
-            // MOBILE & AUTOMAÇÃO
-            { id: 22, title: "PWA Personal Master", category: "Mobile & Automação", tag: "Saúde", desc: "Plataforma de acompanhamento de treinos e saúde com interface mobile-first de alta performance.", icon: "fa-solid fa-dumbbell" },
-            { id: 23, title: "Health Track Mobile", category: "Mobile & Automação", tag: "Mobile App", desc: "Aplicativo para monitorização de métricas de saúde integrado a dispositivos IoT.", icon: "fa-solid fa-heart-pulse" },
-            { id: 24, title: "TaskFlow PWA", category: "Mobile & Automação", tag: "Produtividade", desc: "Gerenciador de tarefas offline-first para equipas de campo com sincronização inteligente.", icon: "fa-solid fa-list-check" },
-            { id: 25, title: "IoT Monitor Hub", category: "Mobile & Automação", tag: "IoT", desc: "Central de monitorização de sensores industriais com alertas via Telegram e Dashboard.", icon: "fa-solid fa-tower-broadcast" },
-            { id: 26, title: "Script Sentinela 2.0", category: "Mobile & Automação", tag: "Automação", desc: "Robô de automação de tarefas repetitivas em ambiente Windows para suporte de TI.", icon: "fa-solid fa-robot" }
+            // MOBILE, CLOUD & AUTOMAÇÃO
+            { id: 22, title: "PWA Personal Master", category: "Mobile & Automação", tag: "HealthTech", desc: "Progressive Web App para o setor de saúde. Cache inteligente com Service Workers para funcionamento offline.", icon: "fa-solid fa-dumbbell" },
+            { id: 23, title: "Health Track Native", category: "Mobile & Automação", tag: "Mobile OS", desc: "App para monitoramento de sinais vitais. Integrações Bluetooth para captura de dados de dispositivos médicos/wearables.", icon: "fa-solid fa-heart-pulse" },
+            { id: 24, title: "TaskFlow Mobile", category: "Mobile & Automação", tag: "Edge Computing", desc: "Gerenciador offline-first para equipes de campo. Motor de resolução automática de conflitos de banco de dados na reconexão.", icon: "fa-solid fa-mobile-screen" },
+            { id: 25, title: "IoT Monitor Hub", category: "Mobile & Automação", tag: "Cloud Architecture", desc: "Central de telemetria IoT. Consome filas AWS SQS/MQTT e aciona webhooks em caso de anomalias industriais.", icon: "fa-solid fa-tower-broadcast" },
+            { id: 26, title: "Script Sentinela 2.0", category: "Mobile & Automação", tag: "DevOps & Automação", desc: "Orquestrador de tarefas de infraestrutura. Automação de pipelines CI/CD e rotinas de manutenção preditiva em servidores.", icon: "fa-solid fa-terminal" },
+            
+            // FINTECH & TRADING
+            { id: 27, title: "Nexus Quant B3 (Mini Índice)", category: "Fintech & Trading", tag: "Algorithmic Trading", desc: "Robô de operações automatizadas para mini índice (WIN) na B3. Implementa gestão de risco tática, trailing stop e análise de price action em tempo real.", icon: "fa-solid fa-arrow-trend-up", stats: "ALGO TRADING" },
+            { id: 28, title: "iGaming Odds Sentinel", category: "Fintech & Trading", tag: "Risk Management", desc: "Monitor de anomalias para plataformas de iGaming. Analisa padrões de probabilidade e aplica regras de AML (Anti-Lavagem de Dinheiro) em tempo real.", icon: "fa-solid fa-dice-d20", stats: "COMPLIANCE" }
         ];
 
         const ProjectCard = ({ project }) => (
@@ -88,7 +92,7 @@
                 <h3 className="text-xl font-black mt-1 mb-3 group-hover:text-sky-400 transition-colors">{project.title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">{project.desc}</p>
                 {project.stats && (
-                    <div className="bg-sky-500/10 border border-sky-500/20 p-3 rounded-xl text-sky-400 font-mono text-[10px] text-center font-bold mt-auto">
+                    <div className="bg-sky-500/10 border border-sky-500/20 p-3 rounded-xl text-sky-400 font-mono text-[10px] text-center font-bold mt-auto tracking-widest uppercase">
                         {project.stats}
                     </div>
                 )}
@@ -98,7 +102,7 @@
         const App = () => {
             const [activeFilter, setActiveFilter] = useState("Todos");
             const [showLetter, setShowLetter] = useState(false);
-            const categories = ["Todos", "IA & Big Data", "ERP & Gestão", "Jurídico & Compliance", "Growth & UX", "Mobile & Automação"];
+            const categories = ["Todos", "IA & Big Data", "ERP & Gestão", "Jurídico & Compliance", "Core & Performance", "Mobile & Automação", "Fintech & Trading"];
 
             const filteredProjects = useMemo(() => {
                 return activeFilter === "Todos" ? allProjects : allProjects.filter(p => p.category === activeFilter);
@@ -111,7 +115,7 @@
                     <nav className="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center relative z-10">
                         <div className="text-xl font-black tracking-tighter">ADRIANA<span className="text-sky-500">.</span>TECH</div>
                         <div className="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-slate-400">
-                            <a href="#portfolio" className="hover:text-white transition-colors">Portfólio</a>
+                            <a href="#portfolio" className="hover:text-white transition-colors">Ecossistema</a>
                             <a href="https://github.com/adrianasousa-dev" target="_blank" className="hover:text-white transition-colors">GitHub</a>
                             <a href="https://www.linkedin.com/in/adriana-sousa-tech/" target="_blank" className="hover:text-white transition-colors">LinkedIn</a>
                         </div>
@@ -121,17 +125,17 @@
                     <header className="max-w-6xl mx-auto px-6 pt-12 pb-24 relative z-10 flex flex-col-reverse md:flex-row items-center gap-12 text-center md:text-left">
                         <div className="w-full md:w-3/5">
                             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-8">
-                                Não faço apenas gestão. <br className="hidden md:block"/>Eu <span className="gradient-text">construo ecossistemas.</span>
+                                Não faço apenas código. <br className="hidden md:block"/>Eu <span className="gradient-text">arquiteto inteligência.</span>
                             </h1>
                             <p className="text-lg md:text-xl text-slate-400 leading-relaxed mb-10 max-w-2xl">
-                                Product Manager & AI Solutions Architect. Transformando processos operacionais complexos em ativos digitais de alta performance através de tecnologia de ponta.
+                                AI Solutions Architect & Engenheira de Software. Transformando processos críticos em ecossistemas escaláveis e seguros através de observabilidade, IA Generativa e rigor técnico.
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
                                 <button onClick={() => setShowLetter(true)} className="bg-sky-600 hover:bg-sky-500 text-white px-8 py-4 rounded-full font-black uppercase tracking-widest transition-all flex items-center justify-center gap-3 shadow-lg shadow-sky-500/25">
-                                    <i className="fa-solid fa-envelope-open-text"></i> Carta de Apresentação
+                                    <i className="fa-solid fa-code-branch"></i> Manifesto Técnico
                                 </button>
                                 <a href="https://github.com/adrianasousa-dev" target="_blank" className="glass hover:bg-slate-800 text-white px-8 py-4 rounded-full font-black uppercase tracking-widest transition-all flex items-center justify-center gap-3">
-                                    <i className="fa-brands fa-github text-xl"></i> Ver GitHub
+                                    <i className="fa-brands fa-github text-xl"></i> Ver Repositórios
                                 </a>
                             </div>
                         </div>
@@ -143,10 +147,10 @@
                     <section id="portfolio" className="max-w-7xl mx-auto px-6 py-10 relative z-10">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tighter">Meu <span className="text-sky-500">Ecossistema</span> de Soluções</h2>
-                            <p className="text-slate-500 mb-8 font-semibold">Catálogo Completo: 26 Sistemas Desenvolvidos e Entregues</p>
+                            <p className="text-slate-500 mb-8 font-semibold uppercase tracking-widest text-xs">Catálogo Enterprise: 28 Sistemas Arquitetados e Entregues</p>
                             <div className="flex flex-wrap justify-center gap-2 mb-12">
                                 {categories.map(cat => (
-                                    <button key={cat} onClick={() => setActiveFilter(cat)} className={`px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all ${activeFilter === cat ? "bg-sky-500 text-white" : "glass text-slate-400"}`}>{cat}</button>
+                                    <button key={cat} onClick={() => setActiveFilter(cat)} className={`px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all ${activeFilter === cat ? "bg-sky-500 text-white shadow-lg shadow-sky-500/20" : "glass text-slate-400 hover:text-white"}`}>{cat}</button>
                                 ))}
                             </div>
                         </div>
@@ -157,9 +161,9 @@
 
                     <section className="max-w-7xl mx-auto px-6 py-24 relative z-10 text-center">
                         <div className="glass p-12 rounded-[3rem] border-sky-500/30">
-                            <h2 className="text-4xl font-black mb-6">Pronta para o Próximo <span className="text-sky-500">Grande Projeto ou Oportunidade Estratégica.</span></h2>
+                            <h2 className="text-4xl font-black mb-6">Procurando um perfil de <span className="text-sky-500">Liderança Técnica em IA?</span></h2>
                             <p className="text-slate-400 max-w-2xl mx-auto mb-10 text-lg">
-                                Minha trajetória é marcada pela entrega constante. Se você procura uma profissional que domina a estratégia de produto e a engenharia de IA, vamos conversar.
+                                Minha trajetória é validada por entregas robustas. Se sua empresa enfrenta desafios em orquestração de Agentes, RAG e escalabilidade em nuvem, nós precisamos conversar.
                             </p>
                             <div className="flex justify-center gap-6">
                                 <a href="https://www.linkedin.com/in/adriana-sousa-tech/" target="_blank" className="text-4xl text-slate-400 hover:text-sky-400 transition-colors"><i className="fa-brands fa-linkedin-in"></i></a>
@@ -170,8 +174,8 @@
                     </section>
 
                     <footer className="max-w-7xl mx-auto px-6 py-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
-                        <p className="text-xs text-slate-400 font-semibold tracking-widest uppercase">ADRIANA.TECH &copy; 2024 | DESIGNED FOR IMPACT</p>
-                        <p className="text-[10px] text-slate-600 font-bold uppercase tracking-widest">Built with React & Tailwind</p>
+                        <p className="text-xs text-slate-400 font-semibold tracking-widest uppercase">ADRIANA.TECH &copy; 2026 | BUILT FOR SCALE</p>
+                        <p className="text-[10px] text-slate-600 font-bold uppercase tracking-widest">React • Tailwind • Cloud Native</p>
                     </footer>
 
                     {showLetter && (
@@ -180,45 +184,45 @@
                                 <button onClick={() => setShowLetter(false)} className="absolute top-6 right-6 text-slate-400 hover:text-white text-2xl"><i className="fa-solid fa-xmark"></i></button>
                                 
                                 <div className="mb-8 border-b border-slate-800 pb-6 text-center md:text-left">
-                                    <h2 className="text-4xl font-black text-white mb-2 tracking-tighter uppercase italic">Manifesto de Engenharia & Gestão</h2>
-                                    <p className="text-sky-500 font-bold text-sm uppercase tracking-[4px]">Estratégia · IA · Performance</p>
+                                    <h2 className="text-4xl font-black text-white mb-2 tracking-tighter uppercase italic">Manifesto Técnico & Visão</h2>
+                                    <p className="text-sky-500 font-bold text-sm uppercase tracking-[4px]">Cloud Architecture · Multi-Agents · Compliance</p>
                                 </div>
 
                                 <div className="space-y-8 text-slate-300 leading-relaxed text-sm md:text-base text-justify">
                                     <p>
-                                        Atuo na intersecção crítica onde a <strong>Visão de Produto</strong> encontra a <strong>Engenharia de Alta Performance</strong>. Ao longo do último ciclo, liderei a concepção e entrega de <strong>26 sistemas proprietários</strong>, transformando gargalos operacionais em vantagens competitivas escaláveis através de automação inteligente e análise de dados massivos.
+                                        Atuo na intersecção crítica onde a <strong>Arquitetura Cloud</strong> encontra a <strong>Inteligência Artificial Aplicada</strong>. Como fundadora da SoftGestão, concebi e entreguei <strong>28 sistemas de produção</strong> end-to-end, transformando gargalos operacionais em ecossistemas digitais de alta performance e resiliência.
                                     </p>
                                     
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4 text-left">
                                         <div className="glass p-6 rounded-2xl border-l-4 border-l-sky-500">
-                                            <h4 className="text-white font-black mb-2 uppercase text-xs tracking-widest">Big Data & IA</h4>
+                                            <h4 className="text-white font-black mb-2 uppercase text-xs tracking-widest">AgentOps & Escala Massiva</h4>
                                             <p className="text-xs text-slate-400 leading-relaxed">
-                                                Domínio de processamento de pipelines de <strong>+390 mil logs</strong>. Implementação de arquiteturas com <strong>Gemini API</strong> para extração qualitativa de dados, geração preditiva de personas (ICP) e orquestração de agentes autónomos.
+                                                Especialista no processamento paralelo de <strong>+390 mil logs</strong> e orquestração de Agentes Autônomos. Através do NEXUS Sentinel e frameworks como LangGraph, implemento observabilidade e protocolos de segurança (MCP) em fluxos de IA Generativa.
                                             </p>
                                         </div>
                                         <div className="glass p-6 rounded-2xl border-l-4 border-l-amber-500">
-                                            <h4 className="text-white font-black mb-2 uppercase text-xs tracking-widest">Product Leadership</h4>
+                                            <h4 className="text-white font-black mb-2 uppercase text-xs tracking-widest">Compliance & Zero Alucinação</h4>
                                             <p className="text-xs text-slate-400 leading-relaxed">
-                                                Especialista em orquestrar o ciclo de vida completo do produto (SDLC). Do mapeamento de dores do utilizador à prototipagem rápida e deployment de ERPs verticais robustos para os setores de varejo, automotivo e jurídico.
+                                                Com forte background em Legal Tech, minha engenharia foca na mitigação de riscos. Utilizo Vector DBs (RAG) combinados com escudos lógicos via Regex para garantir auditorias técnicas impecáveis e "Zero Alucinação" em sistemas mission-critical.
                                             </p>
                                         </div>
                                     </div>
 
                                     <p>
-                                        Minha abordagem como <strong>AI Solutions Architect</strong> não se limita apenas à escrita de código limpo (Python/React), mas sim à arquitetura de ecossistemas protegidos por protocolos de integridade — como o meu <strong>Sentinel Core</strong> — e escudos de conformidade técnica via Regex, garantindo auditorias precisas e "zero alucinação" em ambientes de IA.
+                                        Minha abordagem arquitetural transcende linguagens isoladas (Node.js, Python, Java). Desenho pipelines voltados a otimização de custo (Model Routing), redução de latência e integração profunda com serviços em nuvem (AWS/GCP), sempre garantindo a conformidade regulatória e a estabilidade do sistema em ambiente corporativo.
                                     </p>
 
-                                    <p className="italic border-l-2 border-slate-700 pl-4 text-slate-400 text-left">
-                                        "Não entrego software; entrego ativos digitais que reduzem o custo operacional e maximizam a inteligência de mercado. Minha missão é traduzir a complexidade tecnológica em crescimento exponencial para o negócio."
+                                    <p className="italic border-l-2 border-slate-700 pl-4 text-slate-400 text-left font-semibold">
+                                        "A verdadeira senioridade não se mede pelo número de frameworks, mas pela capacidade de orquestrar a complexidade tecnológica para entregar resultados previsíveis, escaláveis e seguros."
                                     </p>
                                 </div>
 
                                 <div className="pt-8 mt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
                                     <div className="text-center md:text-left">
-                                        <p className="font-black text-white text-2xl uppercase tracking-tighter">Adriana Mendes da Cruz Sousa</p>
-                                        <div className="flex gap-4 mt-1 justify-center md:justify-start">
-                                            <span className="text-sky-500 font-bold text-[10px] uppercase tracking-widest bg-sky-500/10 px-2 py-1 rounded">Product Manager</span>
-                                            <span className="text-amber-500 font-bold text-[10px] uppercase tracking-widest bg-amber-500/10 px-2 py-1 rounded">AI Architect</span>
+                                        <p className="font-black text-white text-2xl uppercase tracking-tighter">Adriana Mendes Sousa</p>
+                                        <div className="flex gap-4 mt-2 justify-center md:justify-start">
+                                            <span className="text-sky-500 font-bold text-[10px] uppercase tracking-widest bg-sky-500/10 px-2 py-1 rounded">AI Architect</span>
+                                            <span className="text-amber-500 font-bold text-[10px] uppercase tracking-widest bg-amber-500/10 px-2 py-1 rounded">Senior Engineer</span>
                                         </div>
                                     </div>
                                     <div className="flex gap-4">
