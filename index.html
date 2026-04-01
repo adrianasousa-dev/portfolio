@@ -6,7 +6,6 @@
     <meta name="description" content="Portfólio de Adriana Sousa - AI Solutions Architect & Engenheira de Software Sênior. Especialista em Agentes Autônomos, Big Data e Sistemas de Missão Crítica.">
     <meta name="theme-color" content="#020617">
     
-    <!-- Open Graph / Previews -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Adriana Sousa | AI Architect & Software Engineer">
     <meta property="og:description" content="Especialista em transformar dados massivos em ecossistemas inteligentes. +28 sistemas entregues em IA, Legal Tech, ERPs e Fintech.">
@@ -64,7 +63,7 @@
             { id: 16, title: "Contract Vault Zero", category: "Jurídico & Compliance", tag: "Segurança", desc: "Cofre digital imutável para documentos de risco. Utiliza criptografia avançada e trilhas de auditoria ponta a ponta.", icon: "fa-solid fa-vault" },
 
             // CORE & PERFORMANCE (Ex Growth & UX)
-            { id: 17, title: "Meu Editor Video", category: "Core & Performance", tag: "Desktop App", desc: "Software de edição de vídeo de alta performance. Arquitetado em React, Electron e processamento de baixo nível em C e FFMPEG.", icon: "fa-solid fa-film", stats: "REACT + ELECTRON" },
+            { id: 17, title: "Meu Editor Video", category: "Core & Performance", tag: "Desktop App & Cloud", desc: "Software de edição de vídeo de alta performance. Arquitetado em React, Electron, processamento C/FFMPEG e modelagem NoSQL avançada (DynamoDB).", icon: "fa-solid fa-film", stats: "REACT + DYNAMODB" },
             { id: 18, title: "WebCut Studio", category: "Core & Performance", tag: "Web Assembly", desc: "Editor multimídia web. Utiliza manipulação direta de Canvas API e WebGL para renderização fluida no lado do cliente.", icon: "fa-solid fa-photo-film" },
             { id: 19, title: "Brand Architect UI", category: "Core & Performance", tag: "Design System", desc: "Biblioteca de componentes React proprietária. Focada em escalabilidade, acessibilidade (WCAG 2.1) e micro-interações.", icon: "fa-solid fa-pen-nib" },
             { id: 20, title: "Conversion Optimizer", category: "Core & Performance", tag: "A/B Testing", desc: "Plataforma de testes programáticos. Roteamento dinâmico de tráfego para otimização contínua de funis de conversão.", icon: "fa-solid fa-bullseye" },
@@ -127,9 +126,20 @@
                             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-8">
                                 Não faço apenas código. <br className="hidden md:block"/>Eu <span className="gradient-text">arquiteto inteligência.</span>
                             </h1>
-                            <p className="text-lg md:text-xl text-slate-400 leading-relaxed mb-10 max-w-2xl">
+                            <p className="text-lg md:text-xl text-slate-400 leading-relaxed mb-6 max-w-2xl">
                                 AI Solutions Architect & Engenheira de Software. Transformando processos críticos em ecossistemas escaláveis e seguros através de observabilidade, IA Generativa e rigor técnico.
                             </p>
+                            
+                            {/* NOVAS BADGES DE AUTORIDADE */}
+                            <div className="flex flex-wrap justify-center md:justify-start items-center gap-3 mb-10">
+                                <span className="bg-sky-500/10 border border-sky-500/30 text-sky-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2 w-fit">
+                                    <i className="fa-solid fa-graduation-cap"></i> Graduanda em IA - FMU
+                                </span>
+                                <span className="bg-amber-500/10 border border-amber-500/30 text-amber-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2 w-fit">
+                                    <i className="fa-brands fa-aws"></i> AWS Certified
+                                </span>
+                            </div>
+
                             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
                                 <button onClick={() => setShowLetter(true)} className="bg-sky-600 hover:bg-sky-500 text-white px-8 py-4 rounded-full font-black uppercase tracking-widest transition-all flex items-center justify-center gap-3 shadow-lg shadow-sky-500/25">
                                     <i className="fa-solid fa-code-branch"></i> Manifesto Técnico
@@ -191,6 +201,11 @@
                                 <div className="space-y-8 text-slate-300 leading-relaxed text-sm md:text-base text-justify">
                                     <p>
                                         Atuo na intersecção crítica onde a <strong>Arquitetura Cloud</strong> encontra a <strong>Inteligência Artificial Aplicada</strong>. Como fundadora da SoftGestão, concebi e entreguei <strong>28 sistemas de produção</strong> end-to-end, transformando gargalos operacionais em ecossistemas digitais de alta performance e resiliência.
+                                    </p>
+                                    
+                                    {/* NOVO PARÁGRAFO ACADÊMICO */}
+                                    <p className="mt-4">
+                                        Atualmente, consolido essa expertise prática através da graduação em <strong>Tecnologia em Inteligência Artificial pela FMU</strong>, unindo a visão de negócios à ciência acadêmica de ponta (Deep Learning e NLP).
                                     </p>
                                     
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4 text-left">
