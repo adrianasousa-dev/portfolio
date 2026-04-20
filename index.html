@@ -157,7 +157,7 @@
                     <section id="portfolio" className="max-w-7xl mx-auto px-6 py-10 relative z-10">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tighter">Meu <span className="text-sky-500">Ecossistema</span> de Soluções</h2>
-                            <p className="text-slate-500 mb-8 font-semibold uppercase tracking-widest text-xs">Catálogo Enterprise: 29 Sistemas Arquitetados e Entregues</p>
+                            <p className="text-slate-500 mb-8 font-semibold uppercase tracking-widest text-xs">Catálogo Enterprise: {allProjects.length} Sistemas Arquitetados e Entregues</p>
                             <div className="flex flex-wrap justify-center gap-2 mb-12">
                                 {categories.map(cat => (
                                     <button key={cat} onClick={() => setActiveFilter(cat)} className={`px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all ${activeFilter === cat ? "bg-sky-500 text-white shadow-lg shadow-sky-500/20" : "glass text-slate-400 hover:text-white"}`}>{cat}</button>
@@ -200,7 +200,7 @@
 
                                 <div className="space-y-8 text-slate-300 leading-relaxed text-sm md:text-base text-justify">
                                     <p>
-                                        Atuo na intersecção crítica onde a <strong>Arquitetura Cloud</strong> encontra a <strong>Inteligência Artificial Aplicada</strong>. Como fundadora da SoftGestão, concebi e entreguei <strong>29 sistemas de produção</strong> end-to-end, transformando gargalos operacionais em ecossistemas digitais de alta performance e resiliência.
+                                        Atuo na intersecção crítica onde a <strong>Arquitetura Cloud</strong> encontra a <strong>Inteligência Artificial Aplicada</strong>. Como fundadora da SoftGestão, concebi e entreguei <strong>28 sistemas de produção</strong> end-to-end, transformando gargalos operacionais em ecossistemas digitais de alta performance e resiliência.
                                     </p>
                                     
                                     <p className="mt-4">
@@ -211,7 +211,7 @@
                                         <div className="glass p-6 rounded-2xl border-l-4 border-l-sky-500">
                                             <h4 className="text-white font-black mb-2 uppercase text-xs tracking-widest">AgentOps & Escala Massiva</h4>
                                             <p className="text-xs text-slate-400 leading-relaxed">
-                                                Especialista no processamento paralelo de <strong>+390 mil logs</strong> e orquestração de Agentes Autônomos através do projeto <strong>ROO ADRIANA (Themis M.A)</strong>. Utilizo frameworks de memória persistente e protocolos swarm para fluxos complexos de IA Generativa.
+                                                Especialista no processamento paralelo de <strong>+390 mil logs</strong> e orquestração de Agentes Autônomos. Através do NEXUS Sentinel e frameworks como LangGraph, implemento observabilidade e protocolos de segurança (MCP) em fluxos de IA Generativa.
                                             </p>
                                         </div>
                                         <div className="glass p-6 rounded-2xl border-l-4 border-l-amber-500">
