@@ -3,29 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Adriana Sousa - AI Security Architect & Engenheira de Software Sênior.">
+    <meta name="description" content="Portfólio de Adriana Sousa - AI Security Architect & Engenheira de Software Sênior. Especialista em Segurança da Informação, Agentes Autônomos e Sistemas de Missão Crítica.">
     <meta name="theme-color" content="#020617">
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="Adriana Sousa | AI Security Architect & Software Engineer">
-    <meta property="og:description" content="Especialista em transformar dados massivos em ecossistemas inteligentes e seguros.">
+    <meta property="og:description" content="Especialista em transformar dados massivos em ecossistemas inteligentes e seguros. +28 sistemas entregues em IA, Legal Tech, ERPs e Governança Corporativa.">
     <meta property="og:image" content="./perfil.jpg">
 
     <title>Adriana Sousa | AI Security & Software Architect</title>
     
-    <!-- ✅ FIX 1: Tailwind via CDN com data-no-transform para evitar conflito com Babel -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    
-    <!-- ✅ FIX 2: Versão mais estável do Babel Standalone -->
     <script src="https://unpkg.com/@babel/standalone@7.23.9/babel.min.js"></script>
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    
-    <!-- ✅ FIX 3: Adiciona favicon inline para eliminar o 404 -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     
     <style>
@@ -44,48 +37,78 @@
 <body>
     <div id="root"></div>
 
-    <!-- ✅ FIX 4: data-presets="react" garante que o Babel processe apenas JSX, sem tentar resolver módulos ES -->
     <script type="text/babel" data-presets="react">
         const { useState, useMemo, useEffect, useRef } = React;
 
-        // ✅ FIX 5: CredlyBadge reescrito com useRef + flag de controle para evitar
-        // que o Babel re-intercepte o appendChild e cause o erro fatal
-        const CredlyBadge = () => {
-            const containerRef = useRef(null);
-            const loaded = useRef(false);
-
-            useEffect(() => {
-                if (loaded.current || !containerRef.current) return;
-                loaded.current = true;
-
-                // Cria o script fora do fluxo do Babel usando setTimeout
-                // para garantir que o DOM esteja completamente renderizado
-                setTimeout(() => {
-                    const script = document.createElement("script");
-                    script.src = "//cdn.credly.com/assets/utilities/embed.js";
-                    script.async = true;
-                    // ✅ Não define type="module" nem type="text/babel"
-                    // para o Babel não tentar reprocessar
-                    document.body.appendChild(script);
-                }, 100);
-            }, []);
+        // ✅ BADGE CISCO — card elegante com imagem real
+        const CiscoBadge = () => {
+            const [hovered, setHovered] = React.useState(false);
+            const badgeUrl = "https://www.credly.com/badges/a0452422-2292-4247-9577-e3c46e6d71fe/public_url";
 
             return (
-                <div className="mt-8 flex justify-center animate-fade">
-                    <div className="bg-slate-900/50 p-2 rounded-2xl border border-slate-800 shadow-2xl">
-                        <div 
-                            ref={containerRef}
-                            data-iframe-width="150" 
-                            data-iframe-height="270" 
-                            data-share-badge-id="a0452422-2292-4247-9577-e3c46e6d71fe" 
-                            data-share-badge-host="https://www.credly.com"
-                        ></div>
+                <a
+                    href={badgeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onMouseEnter={() => setHovered(true)}
+                    onMouseLeave={() => setHovered(false)}
+                    className="mt-6 block animate-fade"
+                    style={{ textDecoration: 'none' }}
+                >
+                    <div className={`glass p-4 rounded-2xl transition-all duration-300 ${hovered ? 'border-emerald-400/60 shadow-lg shadow-emerald-500/15' : 'border-slate-700/60'}`}
+                         style={{ border: '1px solid', borderColor: hovered ? 'rgba(52,211,153,0.6)' : 'rgba(51,65,85,0.5)' }}>
+                        
+                        <div className="flex items-center gap-4">
+                            {/* Imagem do badge */}
+                            <div className="relative flex-shrink-0">
+                                <img
+                                    src="./I2CS__1.jpg"
+                                    alt="Cisco Networking Academy - Introduction to Cybersecurity"
+                                    className="w-16 h-16 rounded-xl object-cover shadow-lg"
+                                    style={{
+                                        filter: hovered ? 'brightness(1.1)' : 'brightness(0.95)',
+                                        transition: 'filter 0.3s ease'
+                                    }}
+                                />
+                                {/* Dot verde de verificado sobre a imagem */}
+                                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full border-2 border-slate-900 flex items-center justify-center">
+                                    <i className="fa-solid fa-check text-slate-900" style={{ fontSize: '7px' }}></i>
+                                </div>
+                            </div>
+
+                            {/* Texto */}
+                            <div className="flex-1 text-left min-w-0">
+                                <p className="text-[9px] uppercase tracking-[3px] text-emerald-400 font-black mb-0.5">
+                                    Cisco Networking Academy
+                                </p>
+                                <p className="text-white font-black text-sm leading-tight">
+                                    Intro to Cybersecurity
+                                </p>
+                                <div className="flex items-center gap-1.5 mt-1.5">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
+                                    <span className="text-[9px] text-emerald-400/80 font-bold uppercase tracking-widest">Verified</span>
+                                </div>
+                            </div>
+
+                            {/* Seta */}
+                            <div className={`flex-shrink-0 transition-all duration-300 ${hovered ? 'translate-x-1 opacity-100' : 'opacity-30'}`}>
+                                <i className="fa-solid fa-arrow-up-right-from-square text-emerald-400 text-xs"></i>
+                            </div>
+                        </div>
+
+                        {/* CTA revelado no hover */}
+                        <div className={`transition-all duration-300 overflow-hidden text-center ${hovered ? 'max-h-8 opacity-100 mt-3' : 'max-h-0 opacity-0 mt-0'}`}>
+                            <div className="border-t border-slate-700/60 pt-2">
+                                <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest">
+                                    Ver Credencial <i className="fa-solid fa-shield-check ml-1"></i>
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </a>
             );
         };
 
-        // ... (resto do seu código permanece idêntico) ...
         const allProjects = [
             { id: 29, title: "ROO ADRIANA (Themis M.A)", category: "IA & Big Data", tag: "Agentic Swarm", desc: "Arquitetura avançada de orquestração de múltiplos agentes com memória persistente (PostgreSQL) e sistema de backup resiliente. Especializado em fluxos jurídicos e auditoria de contexto massivo.", icon: "fa-solid fa-brain-circuit", stats: "SWARM & LONG-TERM MEMORY" },
             { id: 1, title: "The Market Architect v13.1", category: "IA & Big Data", tag: "Data Engineering", desc: "Motor de inteligência massiva. Processamento contínuo de +390k logs usando IA Generativa (Gemini API) para extração tática de dados e estruturação de pipelines de RAG.", icon: "fa-solid fa-database", stats: "+390.000 LOGS" },
@@ -147,6 +170,7 @@
             return (
                 <div className="min-h-screen relative">
                     <div className="hero-glow"></div>
+
                     <nav className="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center relative z-10">
                         <div className="text-xl font-black tracking-tighter">ADRIANA<span className="text-sky-500">.</span>TECH</div>
                         <div className="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-slate-400">
@@ -163,8 +187,9 @@
                                 Não faço apenas código. <br className="hidden md:block"/>Eu <span className="gradient-text">arquiteto inteligência.</span>
                             </h1>
                             <p className="text-lg md:text-xl text-slate-400 leading-relaxed mb-6 max-w-2xl">
-                                AI Security Architect & Engenheira de Software. Transformando processos críticos em ecossistemas escaláveis e seguros.
+                                AI Security Architect & Engenheira de Software. Transformando processos críticos em ecossistemas escaláveis e seguros através de observabilidade, IA Generativa e rigor técnico.
                             </p>
+
                             <div className="flex flex-wrap justify-center md:justify-start items-center gap-3 mb-10">
                                 <span className="bg-sky-500/10 border border-sky-500/30 text-sky-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2 w-fit">
                                     <i className="fa-solid fa-shield-halved"></i> Segurança da Informação - FMU
@@ -173,6 +198,7 @@
                                     <i className="fa-brands fa-aws"></i> AWS Certified
                                 </span>
                             </div>
+
                             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
                                 <button onClick={() => setShowLetter(true)} className="bg-sky-600 hover:bg-sky-500 text-white px-8 py-4 rounded-full font-black uppercase tracking-widest transition-all flex items-center justify-center gap-3 shadow-lg shadow-sky-500/25">
                                     <i className="fa-solid fa-code-branch"></i> Manifesto Técnico
@@ -182,9 +208,14 @@
                                 </a>
                             </div>
                         </div>
+
+                        {/* Coluna da foto + badge */}
                         <div className="w-full md:w-2/5 flex flex-col items-center justify-center">
-                            <img src="./perfil.jpg" alt="Adriana Sousa" className="w-56 h-56 md:w-80 md:h-80 object-cover rounded-full border-4 border-slate-800 shadow-2xl z-10" />
-                            <CredlyBadge />
+                            <img src="./perfil.jpg" alt="Adriana Sousa" className="w-56 h-56 md:w-72 md:h-72 object-cover rounded-full border-4 border-slate-800 shadow-2xl z-10" />
+                            {/* ✅ Badge Cisco elegante */}
+                            <div className="w-full max-w-xs mt-2">
+                                <CiscoBadge />
+                            </div>
                         </div>
                     </header>
 
@@ -226,25 +257,44 @@
                         <div className="fixed inset-0 bg-black/95 backdrop-blur-md z-50 flex items-center justify-center p-4">
                             <div className="bg-slate-900 border border-slate-700 rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl relative p-8 md:p-12 animate-fade">
                                 <button onClick={() => setShowLetter(false)} className="absolute top-6 right-6 text-slate-400 hover:text-white text-2xl"><i className="fa-solid fa-xmark"></i></button>
+                                
                                 <div className="mb-8 border-b border-slate-800 pb-6 text-center md:text-left">
                                     <h2 className="text-4xl font-black text-white mb-2 tracking-tighter uppercase italic">Manifesto Técnico & Visão</h2>
                                     <p className="text-sky-500 font-bold text-sm uppercase tracking-[4px]">Cloud Architecture · Multi-Agents · Compliance</p>
                                 </div>
+
                                 <div className="space-y-8 text-slate-300 leading-relaxed text-sm md:text-base text-justify">
-                                    <p>Atuo na intersecção crítica onde a <strong>Arquitetura Cloud</strong> encontra a <strong>Inteligência Artificial Aplicada</strong> e a <strong>Cibersegurança</strong>. Como fundadora da SoftGestão, concebi e entreguei <strong>28 sistemas de produção</strong> end-to-end.</p>
-                                    <p className="mt-4">Atualmente, consolido essa expertise prática através do <strong>Tecnólogo em Segurança da Informação pela FMU Level Up (2026-2028)</strong>. Minha formação tem foco em Computação Forense, Auditoria de Sistemas, Cloud Security, Criptografia, Governança de TI e Gestão de Riscos (Alinhado à ISO/IEC 27000).</p>
+                                    <p>
+                                        Atuo na intersecção crítica onde a <strong>Arquitetura Cloud</strong> encontra a <strong>Inteligência Artificial Aplicada</strong> e a <strong>Cibersegurança</strong>. Como fundadora da SoftGestão, concebi e entreguei <strong>28 sistemas de produção</strong> end-to-end, transformando gargalos operacionais em ecossistemas digitais de alta performance e resiliência.
+                                    </p>
+                                    <p className="mt-4">
+                                        Atualmente, consolido essa expertise prática através do <strong>Tecnólogo em Segurança da Informação pela FMU Level Up (2026-2028)</strong>. Minha formação tem foco em Computação Forense, Auditoria de Sistemas, Cloud Security, Criptografia, Governança de TI e Gestão de Riscos (Alinhado à ISO/IEC 27000).
+                                    </p>
+                                    
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4 text-left">
                                         <div className="glass p-6 rounded-2xl border-l-4 border-l-sky-500">
                                             <h4 className="text-white font-black mb-2 uppercase text-xs tracking-widest">AgentOps & Escala Massiva</h4>
-                                            <p className="text-xs text-slate-400 leading-relaxed">Especialista no processamento paralelo de <strong>+390 mil logs</strong> e na orquestração de Agentes Autônomos via LangGraph, com observabilidade e protocolos de segurança (MCP).</p>
+                                            <p className="text-xs text-slate-400 leading-relaxed">
+                                                Especialista no processamento paralelo de <strong>+390 mil logs</strong> e na orquestração de Agentes Autônomos. Através do NEXUS Sentinel e de frameworks como LangGraph, implemento observabilidade e protocolos de segurança (MCP) em fluxos de IA Generativa.
+                                            </p>
                                         </div>
                                         <div className="glass p-6 rounded-2xl border-l-4 border-l-amber-500">
                                             <h4 className="text-white font-black mb-2 uppercase text-xs tracking-widest">Compliance & Zero Alucinação</h4>
-                                            <p className="text-xs text-slate-400 leading-relaxed">Vector DBs (RAG) combinados com escudos lógicos via Regex para garantir auditorias técnicas impecáveis em sistemas mission-critical.</p>
+                                            <p className="text-xs text-slate-400 leading-relaxed">
+                                                Com forte background em Legal Tech, minha engenharia foca na mitigação de riscos. Utilizo Vector DBs (RAG) combinados com escudos lógicos via Regex para garantir auditorias técnicas impecáveis e "Zero Alucinação" em sistemas mission-critical.
+                                            </p>
                                         </div>
                                     </div>
-                                    <p className="italic border-l-2 border-slate-700 pl-4 text-slate-400 text-left font-semibold">"A verdadeira senioridade não se mede pelo número de frameworks, mas pela capacidade de orquestrar a complexidade tecnológica para entregar resultados previsíveis, escaláveis e seguros."</p>
+
+                                    <p>
+                                        Minha abordagem arquitetural transcende linguagens isoladas (Node.js, Python, Java). Desenho pipelines voltados a otimização de custo (Model Routing), redução de latência e integração profunda com serviços em nuvem (AWS/GCP), sempre garantindo a conformidade regulatória e a estabilidade do sistema em ambiente corporativo.
+                                    </p>
+
+                                    <p className="italic border-l-2 border-slate-700 pl-4 text-slate-400 text-left font-semibold">
+                                        "A verdadeira senioridade não se mede pelo número de frameworks, mas pela capacidade de orquestrar a complexidade tecnológica para entregar resultados previsíveis, escaláveis e seguros."
+                                    </p>
                                 </div>
+
                                 <div className="pt-8 mt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
                                     <div className="text-center md:text-left">
                                         <p className="font-black text-white text-2xl uppercase tracking-tighter">Adriana Mendes da Cruz Sousa</p>
