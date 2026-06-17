@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfólio de Adriana Sousa - AI Security Architect & Engenheira de Software Sênior. Especialista em Segurança da Informação, Agentes Autônomos e Sistemas de Missão Crítica.">
     <meta name="theme-color" content="#020617">
-    
     <meta property="og:type" content="website">
     <meta property="og:title" content="Adriana Sousa | AI Security Architect & Software Engineer">
     <meta property="og:description" content="Especialista em transformar dados massivos em ecossistemas inteligentes e seguros. +28 sistemas entregues em IA, Legal Tech, ERPs e Governança Corporativa.">
     <meta property="og:image" content="./perfil.jpg">
-
     <title>Adriana Sousa | AI Security & Software Architect</title>
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
@@ -20,7 +17,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-    
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f8fafc; overflow-x: hidden; }
         .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(51, 65, 85, 0.5); }
@@ -38,65 +34,41 @@
     <div id="root"></div>
 
     <script type="text/babel" data-presets="react">
-        const { useState, useMemo, useEffect, useRef } = React;
+        const { useState, useMemo, useRef } = React;
 
-        // ✅ BADGE CISCO — card elegante com imagem real
+        // ─── BADGE CISCO ───────────────────────────────────────────────
         const CiscoBadge = () => {
             const [hovered, setHovered] = React.useState(false);
-            const badgeUrl = "https://www.credly.com/badges/a0452422-2292-4247-9577-e3c46e6d71fe/public_url";
-
             return (
-                <a
-                    href={badgeUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onMouseEnter={() => setHovered(true)}
-                    onMouseLeave={() => setHovered(false)}
-                    className="mt-6 block animate-fade"
-                    style={{ textDecoration: 'none' }}
-                >
-                    <div className={`glass p-4 rounded-2xl transition-all duration-300 ${hovered ? 'border-emerald-400/60 shadow-lg shadow-emerald-500/15' : 'border-slate-700/60'}`}
-                         style={{ border: '1px solid', borderColor: hovered ? 'rgba(52,211,153,0.6)' : 'rgba(51,65,85,0.5)' }}>
-                        
+                <a href="https://www.credly.com/badges/a0452422-2292-4247-9577-e3c46e6d71fe/public_url"
+                   target="_blank" rel="noopener noreferrer"
+                   onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
+                   className="mt-6 block animate-fade" style={{ textDecoration: 'none' }}>
+                    <div className="glass p-4 rounded-2xl transition-all duration-300"
+                         style={{ border: '1px solid', borderColor: hovered ? 'rgba(52,211,153,0.6)' : 'rgba(51,65,85,0.5)', boxShadow: hovered ? '0 8px 32px rgba(52,211,153,0.1)' : 'none' }}>
                         <div className="flex items-center gap-4">
-                            {/* Imagem do badge */}
                             <div className="relative flex-shrink-0">
-                                <img
-                                    src="./I2CS__1.jpg"
-                                    alt="Cisco Networking Academy - Introduction to Cybersecurity"
-                                    className="w-16 h-16 rounded-xl object-cover shadow-lg"
-                                    style={{
-                                        filter: hovered ? 'brightness(1.1)' : 'brightness(0.95)',
-                                        transition: 'filter 0.3s ease'
-                                    }}
-                                />
-                                {/* Dot verde de verificado sobre a imagem */}
+                                <div className="w-16 h-16 rounded-xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a3a1a, #0f2010)' }}>
+                                    <img src="./I2CS__1.png" alt="Cisco Intro to Cybersecurity"
+                                         className="w-full h-full object-contain p-0.5"
+                                         style={{ filter: hovered ? 'brightness(1.1)' : 'brightness(0.9)', transition: 'filter 0.3s ease' }} />
+                                </div>
                                 <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full border-2 border-slate-900 flex items-center justify-center">
                                     <i className="fa-solid fa-check text-slate-900" style={{ fontSize: '7px' }}></i>
                                 </div>
                             </div>
-
-                            {/* Texto */}
                             <div className="flex-1 text-left min-w-0">
-                                <p className="text-[9px] uppercase tracking-[3px] text-emerald-400 font-black mb-0.5">
-                                    Cisco Networking Academy
-                                </p>
-                                <p className="text-white font-black text-sm leading-tight">
-                                    Intro to Cybersecurity
-                                </p>
+                                <p className="text-[9px] uppercase tracking-[3px] text-emerald-400 font-black mb-0.5">Cisco Networking Academy</p>
+                                <p className="text-white font-black text-sm leading-tight">Intro to Cybersecurity</p>
                                 <div className="flex items-center gap-1.5 mt-1.5">
                                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
-                                    <span className="text-[9px] text-emerald-400/80 font-bold uppercase tracking-widest">Verified</span>
+                                    <span className="text-[9px] text-emerald-400/80 font-bold uppercase tracking-widest">Verified · Credly</span>
                                 </div>
                             </div>
-
-                            {/* Seta */}
                             <div className={`flex-shrink-0 transition-all duration-300 ${hovered ? 'translate-x-1 opacity-100' : 'opacity-30'}`}>
                                 <i className="fa-solid fa-arrow-up-right-from-square text-emerald-400 text-xs"></i>
                             </div>
                         </div>
-
-                        {/* CTA revelado no hover */}
                         <div className={`transition-all duration-300 overflow-hidden text-center ${hovered ? 'max-h-8 opacity-100 mt-3' : 'max-h-0 opacity-0 mt-0'}`}>
                             <div className="border-t border-slate-700/60 pt-2">
                                 <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest">
@@ -109,6 +81,225 @@
             );
         };
 
+        // ─── DADOS DAS CERTIFICAÇÕES ───────────────────────────────────
+        const certGroups = [
+            {
+                institution: "Amazon Web Services",
+                color: "#FF9900",
+                bgColor: "rgba(255,153,0,0.08)",
+                borderColor: "rgba(255,153,0,0.3)",
+                textColor: "text-amber-400",
+                icon: "fa-brands fa-aws",
+                certs: [
+                    {
+                        title: "AWS Cloud Practitioner",
+                        subtitle: "Certificação Principal",
+                        tag: "⭐ DESTAQUE",
+                        tagColor: "bg-amber-500 text-black",
+                        file: "./CERTIFICADO-MAIS-IMPORTANTE_AWS-Cloud-Practitioner.pdf",
+                        date: "Mar 2026",
+                        hours: null
+                    },
+                    {
+                        title: "AWS Cloud Practitioner Essentials",
+                        subtitle: "Completion Certificate",
+                        tag: "CONCLUÍDO",
+                        tagColor: "bg-amber-500/20 text-amber-400",
+                        file: "./aws.jpg",
+                        date: "Mar 2026",
+                        hours: null
+                    },
+                    {
+                        title: "AWS Technical Essentials",
+                        subtitle: "Training & Certification",
+                        tag: "CONCLUÍDO",
+                        tagColor: "bg-amber-500/20 text-amber-400",
+                        file: "./CERTIFICADO-AWS-Technical-Essentials.pdf",
+                        date: "2026",
+                        hours: null
+                    },
+                    {
+                        title: "AWS Cloud Quest",
+                        subtitle: "Cloud Practitioner",
+                        tag: "CONCLUÍDO",
+                        tagColor: "bg-amber-500/20 text-amber-400",
+                        file: "./Certificado-AWS-Cloud-Quest_Cloud-Practitioner.pdf",
+                        date: "2026",
+                        hours: null
+                    }
+                ]
+            },
+            {
+                institution: "FIAP — Centro Universitário",
+                color: "#e91e8c",
+                bgColor: "rgba(233,30,140,0.08)",
+                borderColor: "rgba(233,30,140,0.3)",
+                textColor: "text-pink-400",
+                icon: "fa-solid fa-graduation-cap",
+                certs: [
+                    {
+                        title: "IA Responsável",
+                        subtitle: "Nano Course · FIAP",
+                        tag: "80h",
+                        tagColor: "bg-pink-500/20 text-pink-400",
+                        file: "./Prova-de-Certificacao-Inteligencia-Artificial-Responsavel.jpg",
+                        date: "Abr 2026",
+                        hours: "80h"
+                    },
+                    {
+                        title: "IA e Computacional",
+                        subtitle: "Nano Course · FIAP",
+                        tag: "80h",
+                        tagColor: "bg-pink-500/20 text-pink-400",
+                        file: "./Prova-certificacao-Inteligencia-artificial-e-Computacional.jpg",
+                        date: "Abr 2026",
+                        hours: "80h"
+                    }
+                ]
+            },
+            {
+                institution: "Fundação Bradesco",
+                color: "#cc0000",
+                bgColor: "rgba(204,0,0,0.08)",
+                borderColor: "rgba(204,0,0,0.3)",
+                textColor: "text-red-400",
+                icon: "fa-solid fa-building-columns",
+                certs: [
+                    {
+                        title: "Projetos de Sistemas de TI",
+                        subtitle: "Escola Virtual · Bradesco",
+                        tag: "15h",
+                        tagColor: "bg-red-500/20 text-red-400",
+                        file: "./Certificado-de-conclusao-PROJETOS-DE-SISTEMAS-DE-TI.pdf",
+                        date: "Mar 2026",
+                        hours: "15h"
+                    },
+                    {
+                        title: "Modelagem de Dados",
+                        subtitle: "Escola Virtual · Bradesco",
+                        tag: "CONCLUÍDO",
+                        tagColor: "bg-red-500/20 text-red-400",
+                        file: "./Certificado-MODELAGEM-DE-DADOS.pdf",
+                        date: "2026",
+                        hours: null
+                    },
+                    {
+                        title: "Python — Orientado a Objetos",
+                        subtitle: "Escola Virtual · Bradesco",
+                        tag: "CONCLUÍDO",
+                        tagColor: "bg-red-500/20 text-red-400",
+                        file: "./Certificado-Desenvolvimento-orientado-a-objetos-utilizando-a-linguagem-python.pdf",
+                        date: "2026",
+                        hours: null
+                    },
+                    {
+                        title: "IA para Profissionais do Direito",
+                        subtitle: "Escola Virtual · Bradesco",
+                        tag: "JURÍDICO",
+                        tagColor: "bg-red-500/20 text-red-400",
+                        file: "./Certificado-DE-CONCLUSAO-IA-PARA-PROFISSIONAIS-DO-DIREITO.pdf",
+                        date: "2026",
+                        hours: null
+                    }
+                ]
+            }
+        ];
+
+        // ─── CARD DE CERTIFICAÇÃO ──────────────────────────────────────
+        const CertCard = ({ cert, color, textColor }) => {
+            const [hovered, setHovered] = React.useState(false);
+            return (
+                <a href={cert.file} target="_blank" rel="noopener noreferrer"
+                   onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
+                   className="block" style={{ textDecoration: 'none' }}>
+                    <div className="glass p-4 rounded-xl transition-all duration-300 h-full"
+                         style={{
+                             borderColor: hovered ? color : 'rgba(51,65,85,0.5)',
+                             boxShadow: hovered ? `0 4px 20px ${color}20` : 'none'
+                         }}>
+                        <div className="flex items-start justify-between gap-3">
+                            <div className="flex-1 min-w-0">
+                                <div className="flex items-center gap-2 mb-2 flex-wrap">
+                                    <span className={`text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full ${cert.tagColor}`}>
+                                        {cert.tag}
+                                    </span>
+                                    <span className="text-[9px] text-slate-500 font-mono">{cert.date}</span>
+                                </div>
+                                <p className="text-white font-black text-sm leading-tight mb-1">{cert.title}</p>
+                                <p className={`text-[10px] font-semibold ${textColor} opacity-70`}>{cert.subtitle}</p>
+                            </div>
+                            <div className={`flex-shrink-0 mt-1 transition-all duration-300 ${hovered ? 'opacity-100 translate-x-0.5' : 'opacity-20'}`}>
+                                <i className="fa-solid fa-arrow-up-right-from-square text-slate-400 text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            );
+        };
+
+        // ─── SEÇÃO CERTIFICAÇÕES ───────────────────────────────────────
+        const CertificationsSection = () => (
+            <section className="max-w-7xl mx-auto px-6 py-16 relative z-10">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tighter">
+                        Certificações & <span className="text-sky-500">Formação Técnica</span>
+                    </h2>
+                    <p className="text-slate-500 font-semibold uppercase tracking-widest text-xs">
+                        {certGroups.reduce((acc, g) => acc + g.certs.length, 0) + 1} Certificações Verificáveis · Clique para abrir
+                    </p>
+                </div>
+
+                <div className="space-y-8">
+                    {certGroups.map((group) => (
+                        <div key={group.institution} className="glass rounded-3xl p-6 md:p-8"
+                             style={{ borderColor: group.borderColor, background: group.bgColor }}>
+                            {/* Header do grupo */}
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                     style={{ background: group.bgColor, border: `1px solid ${group.borderColor}` }}>
+                                    <i className={`${group.icon} text-lg`} style={{ color: group.color }}></i>
+                                </div>
+                                <div>
+                                    <h3 className="text-white font-black text-base">{group.institution}</h3>
+                                    <p className="text-[10px] uppercase tracking-widest font-bold" style={{ color: group.color }}>
+                                        {group.certs.length} certificado{group.certs.length > 1 ? 's' : ''}
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Grid de certificados */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                                {group.certs.map((cert) => (
+                                    <CertCard key={cert.title} cert={cert} color={group.color} textColor={group.textColor} />
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+
+                    {/* Cisco — card único especial */}
+                    <div className="glass rounded-3xl p-6 md:p-8"
+                         style={{ borderColor: 'rgba(52,211,153,0.3)', background: 'rgba(52,211,153,0.05)' }}>
+                        <div className="flex items-center gap-4 mb-6">
+                            <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                 style={{ background: 'rgba(52,211,153,0.1)', border: '1px solid rgba(52,211,153,0.3)' }}>
+                                <i className="fa-solid fa-shield-halved text-emerald-400 text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 className="text-white font-black text-base">Cisco Networking Academy</h3>
+                                <p className="text-[10px] uppercase tracking-widest font-bold text-emerald-400">
+                                    1 certificado · Verificado via Credly
+                                </p>
+                            </div>
+                        </div>
+                        <div className="max-w-sm">
+                            <CiscoBadge />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        );
+
+        // ─── PROJETOS ──────────────────────────────────────────────────
         const allProjects = [
             { id: 29, title: "ROO ADRIANA (Themis M.A)", category: "IA & Big Data", tag: "Agentic Swarm", desc: "Arquitetura avançada de orquestração de múltiplos agentes com memória persistente (PostgreSQL) e sistema de backup resiliente. Especializado em fluxos jurídicos e auditoria de contexto massivo.", icon: "fa-solid fa-brain-circuit", stats: "SWARM & LONG-TERM MEMORY" },
             { id: 1, title: "The Market Architect v13.1", category: "IA & Big Data", tag: "Data Engineering", desc: "Motor de inteligência massiva. Processamento contínuo de +390k logs usando IA Generativa (Gemini API) para extração tática de dados e estruturação de pipelines de RAG.", icon: "fa-solid fa-database", stats: "+390.000 LOGS" },
@@ -158,6 +349,7 @@
             </div>
         );
 
+        // ─── APP PRINCIPAL ─────────────────────────────────────────────
         const App = () => {
             const [activeFilter, setActiveFilter] = useState("Todos");
             const [showLetter, setShowLetter] = useState(false);
@@ -171,16 +363,19 @@
                 <div className="min-h-screen relative">
                     <div className="hero-glow"></div>
 
+                    {/* NAV */}
                     <nav className="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center relative z-10">
                         <div className="text-xl font-black tracking-tighter">ADRIANA<span className="text-sky-500">.</span>TECH</div>
                         <div className="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-slate-400">
                             <a href="#portfolio" className="hover:text-white transition-colors">Ecossistema</a>
+                            <a href="#certs" className="hover:text-white transition-colors">Certificações</a>
                             <a href="https://github.com/adrianasousa-dev" target="_blank" className="hover:text-white transition-colors">GitHub</a>
                             <a href="https://www.linkedin.com/in/adriana-sousa-tech/" target="_blank" className="hover:text-white transition-colors">LinkedIn</a>
                         </div>
                         <a href="mailto:adrianasousa.dev@gmail.com" className="bg-white text-black px-6 py-2 rounded-full text-xs font-black uppercase hover:bg-sky-500 hover:text-white transition-all">Contato</a>
                     </nav>
 
+                    {/* HERO */}
                     <header className="max-w-6xl mx-auto px-6 pt-12 pb-24 relative z-10 flex flex-col-reverse md:flex-row items-center gap-12 text-center md:text-left">
                         <div className="w-full md:w-3/5">
                             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-8">
@@ -189,7 +384,6 @@
                             <p className="text-lg md:text-xl text-slate-400 leading-relaxed mb-6 max-w-2xl">
                                 AI Security Architect & Engenheira de Software. Transformando processos críticos em ecossistemas escaláveis e seguros através de observabilidade, IA Generativa e rigor técnico.
                             </p>
-
                             <div className="flex flex-wrap justify-center md:justify-start items-center gap-3 mb-10">
                                 <span className="bg-sky-500/10 border border-sky-500/30 text-sky-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2 w-fit">
                                     <i className="fa-solid fa-shield-halved"></i> Segurança da Informação - FMU
@@ -198,7 +392,6 @@
                                     <i className="fa-brands fa-aws"></i> AWS Certified
                                 </span>
                             </div>
-
                             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
                                 <button onClick={() => setShowLetter(true)} className="bg-sky-600 hover:bg-sky-500 text-white px-8 py-4 rounded-full font-black uppercase tracking-widest transition-all flex items-center justify-center gap-3 shadow-lg shadow-sky-500/25">
                                     <i className="fa-solid fa-code-branch"></i> Manifesto Técnico
@@ -208,17 +401,20 @@
                                 </a>
                             </div>
                         </div>
-
-                        {/* Coluna da foto + badge */}
                         <div className="w-full md:w-2/5 flex flex-col items-center justify-center">
                             <img src="./perfil.jpg" alt="Adriana Sousa" className="w-56 h-56 md:w-72 md:h-72 object-cover rounded-full border-4 border-slate-800 shadow-2xl z-10" />
-                            {/* ✅ Badge Cisco elegante */}
                             <div className="w-full max-w-xs mt-2">
                                 <CiscoBadge />
                             </div>
                         </div>
                     </header>
 
+                    {/* CERTIFICAÇÕES */}
+                    <div id="certs">
+                        <CertificationsSection />
+                    </div>
+
+                    {/* PORTFÓLIO */}
                     <section id="portfolio" className="max-w-7xl mx-auto px-6 py-10 relative z-10">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tighter">Meu <span className="text-sky-500">Ecossistema</span> de Soluções</h2>
@@ -234,6 +430,7 @@
                         </div>
                     </section>
 
+                    {/* CTA */}
                     <section className="max-w-7xl mx-auto px-6 py-24 relative z-10 text-center">
                         <div className="glass p-12 rounded-[3rem] border-sky-500/30">
                             <h2 className="text-4xl font-black mb-6">Procurando um perfil de <span className="text-sky-500">Liderança Técnica em IA?</span></h2>
@@ -248,53 +445,37 @@
                         </div>
                     </section>
 
+                    {/* FOOTER */}
                     <footer className="max-w-7xl mx-auto px-6 py-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
                         <p className="text-xs text-slate-400 font-semibold tracking-widest uppercase">ADRIANA.TECH © 2026 | BUILT FOR SCALE</p>
                         <p className="text-[10px] text-slate-600 font-bold uppercase tracking-widest">React • Tailwind • Cloud Native</p>
                     </footer>
 
+                    {/* MANIFESTO MODAL */}
                     {showLetter && (
                         <div className="fixed inset-0 bg-black/95 backdrop-blur-md z-50 flex items-center justify-center p-4">
                             <div className="bg-slate-900 border border-slate-700 rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl relative p-8 md:p-12 animate-fade">
                                 <button onClick={() => setShowLetter(false)} className="absolute top-6 right-6 text-slate-400 hover:text-white text-2xl"><i className="fa-solid fa-xmark"></i></button>
-                                
                                 <div className="mb-8 border-b border-slate-800 pb-6 text-center md:text-left">
                                     <h2 className="text-4xl font-black text-white mb-2 tracking-tighter uppercase italic">Manifesto Técnico & Visão</h2>
                                     <p className="text-sky-500 font-bold text-sm uppercase tracking-[4px]">Cloud Architecture · Multi-Agents · Compliance</p>
                                 </div>
-
                                 <div className="space-y-8 text-slate-300 leading-relaxed text-sm md:text-base text-justify">
-                                    <p>
-                                        Atuo na intersecção crítica onde a <strong>Arquitetura Cloud</strong> encontra a <strong>Inteligência Artificial Aplicada</strong> e a <strong>Cibersegurança</strong>. Como fundadora da SoftGestão, concebi e entreguei <strong>28 sistemas de produção</strong> end-to-end, transformando gargalos operacionais em ecossistemas digitais de alta performance e resiliência.
-                                    </p>
-                                    <p className="mt-4">
-                                        Atualmente, consolido essa expertise prática através do <strong>Tecnólogo em Segurança da Informação pela FMU Level Up (2026-2028)</strong>. Minha formação tem foco em Computação Forense, Auditoria de Sistemas, Cloud Security, Criptografia, Governança de TI e Gestão de Riscos (Alinhado à ISO/IEC 27000).
-                                    </p>
-                                    
+                                    <p>Atuo na intersecção crítica onde a <strong>Arquitetura Cloud</strong> encontra a <strong>Inteligência Artificial Aplicada</strong> e a <strong>Cibersegurança</strong>. Como fundadora da SoftGestão, concebi e entreguei <strong>28 sistemas de produção</strong> end-to-end, transformando gargalos operacionais em ecossistemas digitais de alta performance e resiliência.</p>
+                                    <p>Atualmente, consolido essa expertise prática através do <strong>Tecnólogo em Segurança da Informação pela FMU Level Up (2026-2028)</strong>. Minha formação tem foco em Computação Forense, Auditoria de Sistemas, Cloud Security, Criptografia, Governança de TI e Gestão de Riscos (Alinhado à ISO/IEC 27000).</p>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4 text-left">
                                         <div className="glass p-6 rounded-2xl border-l-4 border-l-sky-500">
                                             <h4 className="text-white font-black mb-2 uppercase text-xs tracking-widest">AgentOps & Escala Massiva</h4>
-                                            <p className="text-xs text-slate-400 leading-relaxed">
-                                                Especialista no processamento paralelo de <strong>+390 mil logs</strong> e na orquestração de Agentes Autônomos. Através do NEXUS Sentinel e de frameworks como LangGraph, implemento observabilidade e protocolos de segurança (MCP) em fluxos de IA Generativa.
-                                            </p>
+                                            <p className="text-xs text-slate-400 leading-relaxed">Especialista no processamento paralelo de <strong>+390 mil logs</strong> e na orquestração de Agentes Autônomos. Através do NEXUS Sentinel e de frameworks como LangGraph, implemento observabilidade e protocolos de segurança (MCP) em fluxos de IA Generativa.</p>
                                         </div>
                                         <div className="glass p-6 rounded-2xl border-l-4 border-l-amber-500">
                                             <h4 className="text-white font-black mb-2 uppercase text-xs tracking-widest">Compliance & Zero Alucinação</h4>
-                                            <p className="text-xs text-slate-400 leading-relaxed">
-                                                Com forte background em Legal Tech, minha engenharia foca na mitigação de riscos. Utilizo Vector DBs (RAG) combinados com escudos lógicos via Regex para garantir auditorias técnicas impecáveis e "Zero Alucinação" em sistemas mission-critical.
-                                            </p>
+                                            <p className="text-xs text-slate-400 leading-relaxed">Com forte background em Legal Tech, minha engenharia foca na mitigação de riscos. Utilizo Vector DBs (RAG) combinados com escudos lógicos via Regex para garantir auditorias técnicas impecáveis e "Zero Alucinação" em sistemas mission-critical.</p>
                                         </div>
                                     </div>
-
-                                    <p>
-                                        Minha abordagem arquitetural transcende linguagens isoladas (Node.js, Python, Java). Desenho pipelines voltados a otimização de custo (Model Routing), redução de latência e integração profunda com serviços em nuvem (AWS/GCP), sempre garantindo a conformidade regulatória e a estabilidade do sistema em ambiente corporativo.
-                                    </p>
-
-                                    <p className="italic border-l-2 border-slate-700 pl-4 text-slate-400 text-left font-semibold">
-                                        "A verdadeira senioridade não se mede pelo número de frameworks, mas pela capacidade de orquestrar a complexidade tecnológica para entregar resultados previsíveis, escaláveis e seguros."
-                                    </p>
+                                    <p>Minha abordagem arquitetural transcende linguagens isoladas (Node.js, Python, Java). Desenho pipelines voltados a otimização de custo (Model Routing), redução de latência e integração profunda com serviços em nuvem (AWS/GCP), sempre garantindo a conformidade regulatória e a estabilidade do sistema em ambiente corporativo.</p>
+                                    <p className="italic border-l-2 border-slate-700 pl-4 text-slate-400 text-left font-semibold">"A verdadeira senioridade não se mede pelo número de frameworks, mas pela capacidade de orquestrar a complexidade tecnológica para entregar resultados previsíveis, escaláveis e seguros."</p>
                                 </div>
-
                                 <div className="pt-8 mt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
                                     <div className="text-center md:text-left">
                                         <p className="font-black text-white text-2xl uppercase tracking-tighter">Adriana Mendes da Cruz Sousa</p>
