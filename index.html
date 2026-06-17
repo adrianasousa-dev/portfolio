@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Adriana Sousa - AI Security Architect & Engenheira de Software Sênior. Especialista em Segurança da Informação, Agentes Autônomos e Sistemas de Missão Crítica.">
+    <meta name="description" content="Portfólio de Adriana Sousa - AI Security Architect & Engenheira de Software Sênior.">
     <meta name="theme-color" content="#020617">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Adriana Sousa | AI Security Architect & Software Engineer">
-    <meta property="og:description" content="Especialista em transformar dados massivos em ecossistemas inteligentes e seguros. +28 sistemas entregues em IA, Legal Tech, ERPs e Governança Corporativa.">
+    <meta property="og:description" content="Especialista em transformar dados massivos em ecossistemas inteligentes e seguros.">
     <meta property="og:image" content="./perfil.jpg">
     <title>Adriana Sousa | AI Security & Software Architect</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,9 +19,9 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f8fafc; overflow-x: hidden; }
-        .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(51, 65, 85, 0.5); }
+        .glass { background: rgba(15,23,42,0.6); backdrop-filter: blur(12px); border: 1px solid rgba(51,65,85,0.5); }
         .gradient-text { background: linear-gradient(90deg, #38bdf8, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-glow { position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 80%; height: 500px; background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%); z-index: -1; }
+        .hero-glow { position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 80%; height: 500px; background: radial-gradient(circle, rgba(56,189,248,0.15) 0%, transparent 70%); z-index: -1; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .animate-fade { animation: fadeIn 0.4s ease-out forwards; }
         ::-webkit-scrollbar { width: 8px; }
@@ -31,473 +31,447 @@
     </style>
 </head>
 <body>
-    <div id="root"></div>
+<div id="root"></div>
+<script type="text/babel" data-presets="react">
+    const { useState, useMemo } = React;
 
-    <script type="text/babel" data-presets="react">
-        const { useState, useMemo, useRef } = React;
-
-        // ─── BADGE CISCO ───────────────────────────────────────────────
-        const CiscoBadge = () => {
-            const [hovered, setHovered] = React.useState(false);
-            return (
-                <a href="https://www.credly.com/badges/a0452422-2292-4247-9577-e3c46e6d71fe/public_url"
-                   target="_blank" rel="noopener noreferrer"
-                   onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
-                   className="mt-6 block animate-fade" style={{ textDecoration: 'none' }}>
-                    <div className="glass p-4 rounded-2xl transition-all duration-300"
-                         style={{ border: '1px solid', borderColor: hovered ? 'rgba(52,211,153,0.6)' : 'rgba(51,65,85,0.5)', boxShadow: hovered ? '0 8px 32px rgba(52,211,153,0.1)' : 'none' }}>
-                        <div className="flex items-center gap-4">
-                            <div className="relative flex-shrink-0">
-                                <div className="w-16 h-16 rounded-xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a3a1a, #0f2010)' }}>
-                                    <img src="./I2CS__1.png" alt="Cisco Intro to Cybersecurity"
-                                         className="w-full h-full object-contain p-0.5"
-                                         style={{ filter: hovered ? 'brightness(1.1)' : 'brightness(0.9)', transition: 'filter 0.3s ease' }} />
-                                </div>
-                                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full border-2 border-slate-900 flex items-center justify-center">
-                                    <i className="fa-solid fa-check text-slate-900" style={{ fontSize: '7px' }}></i>
-                                </div>
+    const CiscoBadge = () => {
+        const [hovered, setHovered] = React.useState(false);
+        return (
+            <a href="https://www.credly.com/badges/a0452422-2292-4247-9577-e3c46e6d71fe/public_url"
+               target="_blank" rel="noopener noreferrer"
+               onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
+               className="mt-6 block animate-fade" style={{textDecoration:'none'}}>
+                <div className="glass p-4 rounded-2xl transition-all duration-300"
+                     style={{border:'1px solid', borderColor: hovered ? 'rgba(52,211,153,0.6)' : 'rgba(51,65,85,0.5)', boxShadow: hovered ? '0 8px 32px rgba(52,211,153,0.1)' : 'none'}}>
+                    <div className="flex items-center gap-4">
+                        <div className="relative flex-shrink-0">
+                            <div className="w-16 h-16 rounded-xl overflow-hidden" style={{background:'linear-gradient(135deg,#1a3a1a,#0f2010)'}}>
+                                <img src="./I2CS__1.png" alt="Cisco Intro to Cybersecurity"
+                                     className="w-full h-full object-contain p-0.5"
+                                     style={{filter: hovered ? 'brightness(1.1)' : 'brightness(0.9)', transition:'filter 0.3s ease'}} />
                             </div>
-                            <div className="flex-1 text-left min-w-0">
-                                <p className="text-[9px] uppercase tracking-[3px] text-emerald-400 font-black mb-0.5">Cisco Networking Academy</p>
-                                <p className="text-white font-black text-sm leading-tight">Intro to Cybersecurity</p>
-                                <div className="flex items-center gap-1.5 mt-1.5">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
-                                    <span className="text-[9px] text-emerald-400/80 font-bold uppercase tracking-widest">Verified · Credly</span>
-                                </div>
-                            </div>
-                            <div className={`flex-shrink-0 transition-all duration-300 ${hovered ? 'translate-x-1 opacity-100' : 'opacity-30'}`}>
-                                <i className="fa-solid fa-arrow-up-right-from-square text-emerald-400 text-xs"></i>
+                            <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full border-2 border-slate-900 flex items-center justify-center">
+                                <i className="fa-solid fa-check text-slate-900" style={{fontSize:'7px'}}></i>
                             </div>
                         </div>
-                        <div className={`transition-all duration-300 overflow-hidden text-center ${hovered ? 'max-h-8 opacity-100 mt-3' : 'max-h-0 opacity-0 mt-0'}`}>
-                            <div className="border-t border-slate-700/60 pt-2">
-                                <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest">
-                                    Ver Credencial <i className="fa-solid fa-shield-check ml-1"></i>
-                                </span>
+                        <div className="flex-1 text-left min-w-0">
+                            <p className="text-[9px] uppercase tracking-[3px] text-emerald-400 font-black mb-0.5">Cisco Networking Academy</p>
+                            <p className="text-white font-black text-sm leading-tight">Intro to Cybersecurity</p>
+                            <div className="flex items-center gap-1.5 mt-1.5">
+                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
+                                <span className="text-[9px] text-emerald-400/80 font-bold uppercase tracking-widest">Verified · Credly</span>
                             </div>
+                        </div>
+                        <div className={`flex-shrink-0 transition-all duration-300 ${hovered ? 'translate-x-1 opacity-100' : 'opacity-30'}`}>
+                            <i className="fa-solid fa-arrow-up-right-from-square text-emerald-400 text-xs"></i>
                         </div>
                     </div>
-                </a>
-            );
-        };
-
-        // ─── DADOS DAS CERTIFICAÇÕES ───────────────────────────────────
-        const certGroups = [
-            {
-                institution: "Amazon Web Services",
-                color: "#FF9900",
-                bgColor: "rgba(255,153,0,0.08)",
-                borderColor: "rgba(255,153,0,0.3)",
-                textColor: "text-amber-400",
-                icon: "fa-brands fa-aws",
-                certs: [
-                    {
-                        title: "AWS Cloud Practitioner",
-                        subtitle: "Certificação Principal",
-                        tag: "⭐ DESTAQUE",
-                        tagColor: "bg-amber-500 text-black",
-                        file: "./CERTIFICADO-MAIS-IMPORTANTE_AWS-Cloud-Practitioner.pdf",
-                        date: "Mar 2026",
-                        hours: null
-                    },
-                    {
-                        title: "AWS Cloud Practitioner Essentials",
-                        subtitle: "Completion Certificate",
-                        tag: "CONCLUÍDO",
-                        tagColor: "bg-amber-500/20 text-amber-400",
-                        file: "./aws.jpg",
-                        date: "Mar 2026",
-                        hours: null
-                    },
-                    {
-                        title: "AWS Technical Essentials",
-                        subtitle: "Training & Certification",
-                        tag: "CONCLUÍDO",
-                        tagColor: "bg-amber-500/20 text-amber-400",
-                        file: "./CERTIFICADO-AWS-Technical-Essentials.pdf",
-                        date: "2026",
-                        hours: null
-                    },
-                    {
-                        title: "AWS Cloud Quest",
-                        subtitle: "Cloud Practitioner",
-                        tag: "CONCLUÍDO",
-                        tagColor: "bg-amber-500/20 text-amber-400",
-                        file: "./Certificado-AWS-Cloud-Quest_Cloud-Practitioner.pdf",
-                        date: "2026",
-                        hours: null
-                    }
-                ]
-            },
-            {
-                institution: "FIAP — Centro Universitário",
-                color: "#e91e8c",
-                bgColor: "rgba(233,30,140,0.08)",
-                borderColor: "rgba(233,30,140,0.3)",
-                textColor: "text-pink-400",
-                icon: "fa-solid fa-graduation-cap",
-                certs: [
-                    {
-                        title: "IA Responsável",
-                        subtitle: "Nano Course · FIAP",
-                        tag: "80h",
-                        tagColor: "bg-pink-500/20 text-pink-400",
-                        file: "./Prova-de-Certificacao-Inteligencia-Artificial-Responsavel.jpg",
-                        date: "Abr 2026",
-                        hours: "80h"
-                    },
-                    {
-                        title: "IA e Computacional",
-                        subtitle: "Nano Course · FIAP",
-                        tag: "80h",
-                        tagColor: "bg-pink-500/20 text-pink-400",
-                        file: "./Prova-certificacao-Inteligencia-artificial-e-Computacional.jpg",
-                        date: "Abr 2026",
-                        hours: "80h"
-                    }
-                ]
-            },
-            {
-                institution: "Fundação Bradesco",
-                color: "#cc0000",
-                bgColor: "rgba(204,0,0,0.08)",
-                borderColor: "rgba(204,0,0,0.3)",
-                textColor: "text-red-400",
-                icon: "fa-solid fa-building-columns",
-                certs: [
-                    {
-                        title: "Projetos de Sistemas de TI",
-                        subtitle: "Escola Virtual · Bradesco",
-                        tag: "15h",
-                        tagColor: "bg-red-500/20 text-red-400",
-                        file: "./Certificado-de-conclusao-PROJETOS-DE-SISTEMAS-DE-TI.pdf",
-                        date: "Mar 2026",
-                        hours: "15h"
-                    },
-                    {
-                        title: "Modelagem de Dados",
-                        subtitle: "Escola Virtual · Bradesco",
-                        tag: "CONCLUÍDO",
-                        tagColor: "bg-red-500/20 text-red-400",
-                        file: "./Certificado-MODELAGEM-DE-DADOS.pdf",
-                        date: "2026",
-                        hours: null
-                    },
-                    {
-                        title: "Python — Orientado a Objetos",
-                        subtitle: "Escola Virtual · Bradesco",
-                        tag: "CONCLUÍDO",
-                        tagColor: "bg-red-500/20 text-red-400",
-                        file: "./Certificado-Desenvolvimento-orientado-a-objetos-utilizando-a-linguagem-python.pdf",
-                        date: "2026",
-                        hours: null
-                    },
-                    {
-                        title: "IA para Profissionais do Direito",
-                        subtitle: "Escola Virtual · Bradesco",
-                        tag: "JURÍDICO",
-                        tagColor: "bg-red-500/20 text-red-400",
-                        file: "./Certificado-DE-CONCLUSAO-IA-PARA-PROFISSIONAIS-DO-DIREITO.pdf",
-                        date: "2026",
-                        hours: null
-                    }
-                ]
-            }
-        ];
-
-        // ─── CARD DE CERTIFICAÇÃO ──────────────────────────────────────
-        const CertCard = ({ cert, color, textColor }) => {
-            const [hovered, setHovered] = React.useState(false);
-            return (
-                <a href={cert.file} target="_blank" rel="noopener noreferrer"
-                   onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
-                   className="block" style={{ textDecoration: 'none' }}>
-                    <div className="glass p-4 rounded-xl transition-all duration-300 h-full"
-                         style={{
-                             borderColor: hovered ? color : 'rgba(51,65,85,0.5)',
-                             boxShadow: hovered ? `0 4px 20px ${color}20` : 'none'
-                         }}>
-                        <div className="flex items-start justify-between gap-3">
-                            <div className="flex-1 min-w-0">
-                                <div className="flex items-center gap-2 mb-2 flex-wrap">
-                                    <span className={`text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full ${cert.tagColor}`}>
-                                        {cert.tag}
-                                    </span>
-                                    <span className="text-[9px] text-slate-500 font-mono">{cert.date}</span>
-                                </div>
-                                <p className="text-white font-black text-sm leading-tight mb-1">{cert.title}</p>
-                                <p className={`text-[10px] font-semibold ${textColor} opacity-70`}>{cert.subtitle}</p>
-                            </div>
-                            <div className={`flex-shrink-0 mt-1 transition-all duration-300 ${hovered ? 'opacity-100 translate-x-0.5' : 'opacity-20'}`}>
-                                <i className="fa-solid fa-arrow-up-right-from-square text-slate-400 text-xs"></i>
-                            </div>
+                    <div className={`transition-all duration-300 overflow-hidden text-center ${hovered ? 'max-h-8 opacity-100 mt-3' : 'max-h-0 opacity-0 mt-0'}`}>
+                        <div className="border-t border-slate-700/60 pt-2">
+                            <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest">
+                                Ver Credencial <i className="fa-solid fa-shield-check ml-1"></i>
+                            </span>
                         </div>
                     </div>
-                </a>
-            );
-        };
-
-        // ─── SEÇÃO CERTIFICAÇÕES ───────────────────────────────────────
-        const CertificationsSection = () => (
-            <section className="max-w-7xl mx-auto px-6 py-16 relative z-10">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tighter">
-                        Certificações & <span className="text-sky-500">Formação Técnica</span>
-                    </h2>
-                    <p className="text-slate-500 font-semibold uppercase tracking-widest text-xs">
-                        {certGroups.reduce((acc, g) => acc + g.certs.length, 0) + 1} Certificações Verificáveis · Clique para abrir
-                    </p>
                 </div>
+            </a>
+        );
+    };
 
-                <div className="space-y-8">
-                    {certGroups.map((group) => (
-                        <div key={group.institution} className="glass rounded-3xl p-6 md:p-8"
-                             style={{ borderColor: group.borderColor, background: group.bgColor }}>
-                            {/* Header do grupo */}
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                     style={{ background: group.bgColor, border: `1px solid ${group.borderColor}` }}>
-                                    <i className={`${group.icon} text-lg`} style={{ color: group.color }}></i>
-                                </div>
-                                <div>
-                                    <h3 className="text-white font-black text-base">{group.institution}</h3>
-                                    <p className="text-[10px] uppercase tracking-widest font-bold" style={{ color: group.color }}>
-                                        {group.certs.length} certificado{group.certs.length > 1 ? 's' : ''}
-                                    </p>
-                                </div>
-                            </div>
+    // Nomes exatamente como estão nos arquivos enviados
+    const certGroups = [
+        {
+            institution: "Amazon Web Services",
+            color: "#FF9900",
+            bgColor: "rgba(255,153,0,0.08)",
+            borderColor: "rgba(255,153,0,0.3)",
+            textColor: "text-amber-400",
+            icon: "fa-brands fa-aws",
+            certs: [
+                {
+                    title: "AWS Cloud Practitioner",
+                    subtitle: "Certificação Principal",
+                    tag: "⭐ DESTAQUE",
+                    tagColor: "bg-amber-500 text-black",
+                    file: "./CERTIFICADO-MAIS-IMPORTANTE_AWS-Cloud-Practitioner.pdf",
+                    date: "Mar 2026"
+                },
+                {
+                    title: "AWS Cloud Practitioner Essentials",
+                    subtitle: "Completion Certificate",
+                    tag: "CONCLUÍDO",
+                    tagColor: "bg-amber-500/20 text-amber-400",
+                    file: "./aws.jpg",
+                    date: "Mar 2026"
+                },
+                {
+                    title: "AWS Technical Essentials",
+                    subtitle: "Training & Certification",
+                    tag: "CONCLUÍDO",
+                    tagColor: "bg-amber-500/20 text-amber-400",
+                    file: "./CERTIFICADO-AWS-Technical-Essentials.pdf",
+                    date: "2026"
+                },
+                {
+                    title: "AWS Cloud Quest",
+                    subtitle: "Cloud Practitioner",
+                    tag: "CONCLUÍDO",
+                    tagColor: "bg-amber-500/20 text-amber-400",
+                    file: "./Certificado-AWS-Cloud-Quest_Cloud-Practitioner.pdf",
+                    date: "2026"
+                }
+            ]
+        },
+        {
+            institution: "FIAP — Centro Universitário",
+            color: "#e91e8c",
+            bgColor: "rgba(233,30,140,0.08)",
+            borderColor: "rgba(233,30,140,0.3)",
+            textColor: "text-pink-400",
+            icon: "fa-solid fa-graduation-cap",
+            certs: [
+                {
+                    title: "IA Responsável",
+                    subtitle: "Nano Course · 80 horas",
+                    tag: "CONCLUÍDO",
+                    tagColor: "bg-pink-500/20 text-pink-400",
+                    file: "./Prova-de-Certificacao-Inteligencia-Artificial-Responsavel.jpg",
+                    date: "Abr 2026"
+                },
+                {
+                    title: "IA e Computacional",
+                    subtitle: "Nano Course · 80 horas",
+                    tag: "CONCLUÍDO",
+                    tagColor: "bg-pink-500/20 text-pink-400",
+                    file: "./Prova-certificacao-Inteligencia-artificial-e-Computacional.jpg",
+                    date: "Abr 2026"
+                }
+            ]
+        },
+        {
+            institution: "Fundação Bradesco",
+            color: "#cc0000",
+            bgColor: "rgba(204,0,0,0.08)",
+            borderColor: "rgba(204,0,0,0.3)",
+            textColor: "text-red-400",
+            icon: "fa-solid fa-building-columns",
+            certs: [
+                {
+                    title: "Projetos de Sistemas de TI",
+                    subtitle: "Escola Virtual · 15 horas",
+                    tag: "CONCLUÍDO",
+                    tagColor: "bg-red-500/20 text-red-400",
+                    file: "./Certificado-de-conclusao-PROJETOS-DE-SISTEMAS-DE-TI.pdf",
+                    date: "Mar 2026"
+                },
+                {
+                    title: "Modelagem de Dados",
+                    subtitle: "Escola Virtual · Bradesco",
+                    tag: "CONCLUÍDO",
+                    tagColor: "bg-red-500/20 text-red-400",
+                    file: "./Certificado-MODELAGEM-DE-DADOS.pdf",
+                    date: "2026"
+                },
+                {
+                    title: "Python — Orientado a Objetos",
+                    subtitle: "Escola Virtual · Bradesco",
+                    tag: "CONCLUÍDO",
+                    tagColor: "bg-red-500/20 text-red-400",
+                    file: "./Certificado-Desenvolvimento-orientado-a-objetos-utilizando-a-linguagem-python.pdf",
+                    date: "2026"
+                },
+                {
+                    title: "IA para Profissionais do Direito",
+                    subtitle: "Escola Virtual · Bradesco",
+                    tag: "CONCLUÍDO",
+                    tagColor: "bg-red-500/20 text-red-400",
+                    file: "./Certificado-DE-CONCLUSAO-IA-PARA-PROFISSIONAIS-DO-DIREITO.pdf",
+                    date: "2026"
+                }
+            ]
+        }
+    ];
 
-                            {/* Grid de certificados */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                                {group.certs.map((cert) => (
-                                    <CertCard key={cert.title} cert={cert} color={group.color} textColor={group.textColor} />
-                                ))}
+    const CertCard = ({ cert, color, textColor }) => {
+        const [hovered, setHovered] = React.useState(false);
+        return (
+            <a href={cert.file} target="_blank" rel="noopener noreferrer"
+               onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
+               className="block" style={{textDecoration:'none'}}>
+                <div className="glass p-4 rounded-xl transition-all duration-300 h-full"
+                     style={{borderColor: hovered ? color : 'rgba(51,65,85,0.5)', boxShadow: hovered ? `0 4px 20px ${color}20` : 'none'}}>
+                    <div className="flex items-start justify-between gap-3">
+                        <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-2 mb-2 flex-wrap">
+                                <span className={`text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full ${cert.tagColor}`}>{cert.tag}</span>
+                                <span className="text-[9px] text-slate-500 font-mono">{cert.date}</span>
                             </div>
+                            <p className="text-white font-black text-sm leading-tight mb-1">{cert.title}</p>
+                            <p className={`text-[10px] font-semibold ${textColor} opacity-70`}>{cert.subtitle}</p>
                         </div>
-                    ))}
+                        <div className={`flex-shrink-0 mt-1 transition-all duration-300 ${hovered ? 'opacity-100 translate-x-0.5' : 'opacity-20'}`}>
+                            <i className="fa-solid fa-arrow-up-right-from-square text-slate-400 text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        );
+    };
 
-                    {/* Cisco — card único especial */}
-                    <div className="glass rounded-3xl p-6 md:p-8"
-                         style={{ borderColor: 'rgba(52,211,153,0.3)', background: 'rgba(52,211,153,0.05)' }}>
+    const CertificationsSection = () => (
+        <section className="max-w-7xl mx-auto px-6 py-16 relative z-10">
+            <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tighter">
+                    Certificações & <span className="text-sky-500">Formação Técnica</span>
+                </h2>
+                <p className="text-slate-500 font-semibold uppercase tracking-widest text-xs">
+                    {certGroups.reduce((acc, g) => acc + g.certs.length, 0) + 1} Certificações · Clique para abrir
+                </p>
+            </div>
+            <div className="space-y-8">
+                {certGroups.map((group) => (
+                    <div key={group.institution} className="glass rounded-3xl p-6 md:p-8"
+                         style={{borderColor: group.borderColor, background: group.bgColor}}>
                         <div className="flex items-center gap-4 mb-6">
                             <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                 style={{ background: 'rgba(52,211,153,0.1)', border: '1px solid rgba(52,211,153,0.3)' }}>
+                                 style={{background: group.bgColor, border: `1px solid ${group.borderColor}`}}>
+                                <i className={`${group.icon} text-lg`} style={{color: group.color}}></i>
+                            </div>
+                            <div>
+                                <h3 className="text-white font-black text-base">{group.institution}</h3>
+                                <p className="text-[10px] uppercase tracking-widest font-bold" style={{color: group.color}}>
+                                    {group.certs.length} certificado{group.certs.length > 1 ? 's' : ''}
+                                </p>
+                            </div>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                            {group.certs.map((cert) => (
+                                <CertCard key={cert.title} cert={cert} color={group.color} textColor={group.textColor} />
+                            ))}
+                        </div>
+                    </div>
+                ))}
+
+                {/* Cisco */}
+                <div className="glass rounded-3xl p-6 md:p-8"
+                     style={{borderColor:'rgba(52,211,153,0.3)', background:'rgba(52,211,153,0.05)'}}>
+                    <div className="flex items-center justify-between gap-4 mb-6 flex-wrap">
+                        <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                 style={{background:'rgba(52,211,153,0.1)', border:'1px solid rgba(52,211,153,0.3)'}}>
                                 <i className="fa-solid fa-shield-halved text-emerald-400 text-lg"></i>
                             </div>
                             <div>
                                 <h3 className="text-white font-black text-base">Cisco Networking Academy</h3>
-                                <p className="text-[10px] uppercase tracking-widest font-bold text-emerald-400">
-                                    1 certificado · Verificado via Credly
-                                </p>
+                                <p className="text-[10px] uppercase tracking-widest font-bold text-emerald-400">1 certificado · Verificado via Credly</p>
                             </div>
                         </div>
-                        <div className="max-w-sm">
+                        <a href="./Introduction_to_Cybersecurity_certificate_adrianasousa-dev-gmail-com_64453c84-1152-42e3-afce-9779c7fde651.pdf"
+                           target="_blank" rel="noopener noreferrer"
+                           className="flex items-center gap-2 px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all"
+                           style={{background:'rgba(52,211,153,0.15)', border:'1px solid rgba(52,211,153,0.4)', color:'#34d399', textDecoration:'none'}}
+                           onMouseEnter={e => e.currentTarget.style.background='rgba(52,211,153,0.25)'}
+                           onMouseLeave={e => e.currentTarget.style.background='rgba(52,211,153,0.15)'}>
+                            <i className="fa-solid fa-file-pdf"></i> Ver Certificado PDF
+                        </a>
+                    </div>
+                    <div className="max-w-sm">
+                        <CiscoBadge />
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+
+    const allProjects = [
+        { id: 29, title: "ROO ADRIANA (Themis M.A)", category: "IA & Big Data", tag: "Agentic Swarm", desc: "Arquitetura avançada de orquestração de múltiplos agentes com memória persistente (PostgreSQL) e sistema de backup resiliente. Especializado em fluxos jurídicos e auditoria de contexto massivo.", icon: "fa-solid fa-brain-circuit", stats: "SWARM & LONG-TERM MEMORY" },
+        { id: 1, title: "The Market Architect v13.1", category: "IA & Big Data", tag: "Data Engineering", desc: "Motor de inteligência massiva. Processamento contínuo de +390k logs usando IA Generativa (Gemini API) para extração tática de dados e estruturação de pipelines de RAG.", icon: "fa-solid fa-database", stats: "+390.000 LOGS" },
+        { id: 2, title: "NEXUS AI Command Center", category: "IA & Big Data", tag: "Multi-Agent Systems", desc: "Orquestrador de Agentes Autônomos (LangGraph). Implementa State Machines e integração MCP (Model Context Protocol) para fluxos cognitivos complexos.", icon: "fa-solid fa-network-wired", stats: "AGENTES AUTÔNOMOS" },
+        { id: 3, title: "Sentinel Core Engine", category: "IA & Big Data", tag: "AI Observability", desc: "Camada de AgentOps e Guardrails. Monitora latência, consumo de tokens e atua como escudo lógico para mitigação de alucinações de LLMs em produção.", icon: "fa-solid fa-shield-halved", stats: "ZERO ALUCINAÇÃO" },
+        { id: 4, title: "JurisVision (OAB Prep)", category: "IA & Big Data", tag: "EdTech & Acessibilidade", desc: "Plataforma adaptativa baseada em RAG e Vector DBs (Pinecone). Focada em acessibilidade (WCAG) e análise de desempenho via LLMs para educação jurídica.", icon: "fa-solid fa-graduation-cap", stats: "RAG & VECTOR DB" },
+        { id: 5, title: "Sistema Jud (Themis)", category: "IA & Big Data", tag: "Automação Legal", desc: "Auditor de processos com deploy em Streamlit e Python. Automação de extração de inteligência em peças jurídicas com rigor absoluto de compliance.", icon: "fa-solid fa-scale-unbalanced", stats: "LEGAL TECH" },
+        { id: 6, title: "SoftGestão Enterprise", category: "ERP & Gestão", tag: "B2B SaaS", desc: "ERP modular em nuvem (arquitetura serverless AWS). Foco em automação financeira, alta disponibilidade e processamento assíncrono.", icon: "fa-solid fa-building-columns" },
+        { id: 7, title: "MarketMaster ERP", category: "ERP & Gestão", tag: "Varejo", desc: "Ecossistema de PDV e gestão comercial. Sincronização offline-first inteligente e conciliação bancária em tempo real.", icon: "fa-solid fa-store" },
+        { id: 8, title: "AutoDrive System", category: "ERP & Gestão", tag: "Automotivo", desc: "Solução verticalizada integrando ordens de serviço, controle preditivo de peças automotivas e faturamento.", icon: "fa-solid fa-car-side" },
+        { id: 9, title: "Estoque Pro Cloud", category: "ERP & Gestão", tag: "Logística", desc: "Gestão de inventário distribuído. Arquitetura orientada a eventos (Event-Driven) para alertas preditivos de ruptura de estoque.", icon: "fa-solid fa-boxes-stacked" },
+        { id: 10, title: "Gestão 360 Analytics", category: "ERP & Gestão", tag: "Business Intelligence", desc: "Painel gerencial multi-tenant. Agrega dados de filiais usando pipelines robustos de BI para tomada de decisão em nível C-Level.", icon: "fa-solid fa-chart-pie" },
+        { id: 11, title: "PDV Fast API", category: "ERP & Gestão", tag: "Checkout", desc: "Frente de caixa ultra-otimizada. Foco em performance extrema (tempo de resposta em milissegundos) para operações de alta rotatividade.", icon: "fa-solid fa-cash-register" },
+        { id: 12, title: "LexGuard Auditor", category: "Jurídico & Compliance", tag: "NLP & Contratos", desc: "Analista de contratos movido a Inteligência Artificial. Identifica inconsistências e riscos de conformidade usando NLP.", icon: "fa-solid fa-file-contract" },
+        { id: 13, title: "Protocolo LGPD Monitor", category: "Jurídico & Compliance", tag: "Privacidade e Dados", desc: "Motor de conformidade automatizada. Varre bases SQL/NoSQL para garantir a anonimização e aderência estrita à LGPD e GDPR.", icon: "fa-solid fa-user-shield" },
+        { id: 14, title: "Compliance Flow RBAC", category: "Jurídico & Compliance", tag: "Governança", desc: "Workflow de aprovação e auditoria de acessos. Rastreia e documenta a cadeia de custódia de dados sensíveis e Logs de sistema.", icon: "fa-solid fa-list-check" },
+        { id: 15, title: "Legal Miner AI", category: "Jurídico & Compliance", tag: "Busca Semântica", desc: "Motor de busca em jurisprudência. Converte linguagem natural em queries complexas sobre bases não estruturadas.", icon: "fa-solid fa-magnifying-glass" },
+        { id: 16, title: "Contract Vault Zero", category: "Jurídico & Compliance", tag: "Segurança", desc: "Cofre digital imutável para documentos de risco. Utiliza criptografia avançada e trilhas de auditoria ponta a ponta.", icon: "fa-solid fa-vault" },
+        { id: 17, title: "Meu Editor Video", category: "Core & Performance", tag: "Desktop App & Cloud", desc: "Software de edição de vídeo de alta performance. Arquitetado em React, Electron, processamento C/FFMPEG e modelagem NoSQL avançada (DynamoDB).", icon: "fa-solid fa-film", stats: "REACT + DYNAMODB" },
+        { id: 18, title: "WebCut Studio", category: "Core & Performance", tag: "Web Assembly", desc: "Editor multimídia web. Utiliza manipulação direta de Canvas API e WebGL para renderização fluida no lado do cliente.", icon: "fa-solid fa-photo-film" },
+        { id: 19, title: "Brand Architect UI", category: "Core & Performance", tag: "Design System", desc: "Biblioteca de components React proprietária. Focada em escalabilidade, acessibilidade (WCAG 2.1) e micro-interações.", icon: "fa-solid fa-pen-nib" },
+        { id: 20, title: "Conversion Optimizer", category: "Core & Performance", tag: "A/B Testing", desc: "Plataforma de testes programáticos. Roteamento dinâmico de tráfego para otimização contínua de funis de conversão.", icon: "fa-solid fa-bullseye" },
+        { id: 21, title: "UX Telemetry Engine", category: "Core & Performance", tag: "Observabilidade UX", desc: "Rastreador de telemetria de interface. Processa e armazena milhares de eventos assíncronos via WebSockets.", icon: "fa-solid fa-satellite-dish" },
+        { id: 22, title: "PWA Personal Master", category: "Mobile & Automação", tag: "HealthTech", desc: "Progressive Web App para o setor de saúde. Cache inteligente com Service Workers para funcionamento offline.", icon: "fa-solid fa-dumbbell" },
+        { id: 23, title: "Health Track Native", category: "Mobile & Automação", tag: "Mobile OS", desc: "App para monitoramento de sinais vitais. Integrações Bluetooth para captura de dados de dispositivos médicos/wearables.", icon: "fa-solid fa-heart-pulse" },
+        { id: 24, title: "TaskFlow Mobile", category: "Mobile & Automação", tag: "Edge Computing", desc: "Gerenciador offline-first para equipes de campo. Motor de resolução automática de conflitos de banco de dados na reconexão.", icon: "fa-solid fa-mobile-screen" },
+        { id: 25, title: "IoT Monitor Hub", category: "Mobile & Automação", tag: "Cloud Architecture", desc: "Central de telemetria IoT. Consome filas AWS SQS/MQTT e aciona webhooks em caso de anomalias industriais.", icon: "fa-solid fa-tower-broadcast" },
+        { id: 26, title: "Script Sentinela 2.0", category: "Mobile & Automação", tag: "DevOps & Automação", desc: "Orquestrador de tarefas de infraestrutura. Automação de pipelines CI/CD e rotinas de manutenção preditiva em servidores.", icon: "fa-solid fa-terminal" },
+        { id: 27, title: "Nexus Quant B3 (Mini Índice)", category: "Fintech & Trading", tag: "Algorithmic Trading", desc: "Robô de operações automatizadas para mini índice (WIN) na B3. Implementa gestão de risco tática, trailing stop e análise de price action em tempo real.", icon: "fa-solid fa-arrow-trend-up", stats: "ALGO TRADING" },
+        { id: 28, title: "iGaming Odds Sentinel", category: "Fintech & Trading", tag: "Risk Management", desc: "Monitor de anomalias para plataformas de iGaming. Analisa padrões de probabilidade e aplica regras de AML (Anti-Lavagem de Dinheiro) em tempo real.", icon: "fa-solid fa-dice-d20", stats: "COMPLIANCE" }
+    ];
+
+    const ProjectCard = ({ project }) => (
+        <div className="glass p-6 md:p-8 rounded-3xl hover:border-sky-500/50 transition-all duration-300 group flex flex-col h-full animate-fade">
+            <div className="flex justify-between items-start mb-4">
+                <div className="text-sky-400 text-3xl"><i className={project.icon}></i></div>
+                <span className="text-[10px] bg-slate-800 text-slate-300 px-3 py-1 rounded-full font-bold uppercase tracking-wider">#{project.id}</span>
+            </div>
+            <span className="text-[10px] uppercase tracking-[2px] text-sky-500 font-bold mb-2">{project.tag}</span>
+            <h3 className="text-xl font-black mt-1 mb-3 group-hover:text-sky-400 transition-colors">{project.title}</h3>
+            <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">{project.desc}</p>
+            {project.stats && (
+                <div className="bg-sky-500/10 border border-sky-500/20 p-3 rounded-xl text-sky-400 font-mono text-[10px] text-center font-bold mt-auto tracking-widest uppercase">
+                    {project.stats}
+                </div>
+            )}
+        </div>
+    );
+
+    const App = () => {
+        const [activeFilter, setActiveFilter] = useState("Todos");
+        const [showLetter, setShowLetter] = useState(false);
+        const categories = ["Todos","IA & Big Data","ERP & Gestão","Jurídico & Compliance","Core & Performance","Mobile & Automação","Fintech & Trading"];
+        const filteredProjects = useMemo(() => activeFilter === "Todos" ? allProjects : allProjects.filter(p => p.category === activeFilter), [activeFilter]);
+
+        return (
+            <div className="min-h-screen relative">
+                <div className="hero-glow"></div>
+
+                <nav className="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center relative z-10">
+                    <div className="text-xl font-black tracking-tighter">ADRIANA<span className="text-sky-500">.</span>TECH</div>
+                    <div className="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-slate-400">
+                        <a href="#certs" className="hover:text-white transition-colors">Certificações</a>
+                        <a href="#portfolio" className="hover:text-white transition-colors">Ecossistema</a>
+                        <a href="https://github.com/adrianasousa-dev" target="_blank" className="hover:text-white transition-colors">GitHub</a>
+                        <a href="https://www.linkedin.com/in/adriana-sousa-tech/" target="_blank" className="hover:text-white transition-colors">LinkedIn</a>
+                    </div>
+                    <a href="mailto:adrianasousa.dev@gmail.com" className="bg-white text-black px-6 py-2 rounded-full text-xs font-black uppercase hover:bg-sky-500 hover:text-white transition-all">Contato</a>
+                </nav>
+
+                <header className="max-w-6xl mx-auto px-6 pt-12 pb-24 relative z-10 flex flex-col-reverse md:flex-row items-center gap-12 text-center md:text-left">
+                    <div className="w-full md:w-3/5">
+                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-8">
+                            Não faço apenas código. <br className="hidden md:block"/>Eu <span className="gradient-text">arquiteto inteligência.</span>
+                        </h1>
+                        <p className="text-lg md:text-xl text-slate-400 leading-relaxed mb-6 max-w-2xl">
+                            AI Security Architect & Engenheira de Software. Transformando processos críticos em ecossistemas escaláveis e seguros através de observabilidade, IA Generativa e rigor técnico.
+                        </p>
+                        <div className="flex flex-wrap justify-center md:justify-start items-center gap-3 mb-10">
+                            <span className="bg-sky-500/10 border border-sky-500/30 text-sky-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2 w-fit">
+                                <i className="fa-solid fa-shield-halved"></i> Segurança da Informação - FMU
+                            </span>
+                            <span className="bg-amber-500/10 border border-amber-500/30 text-amber-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2 w-fit">
+                                <i className="fa-brands fa-aws"></i> AWS Certified
+                            </span>
+                        </div>
+                        <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                            <button onClick={() => setShowLetter(true)} className="bg-sky-600 hover:bg-sky-500 text-white px-8 py-4 rounded-full font-black uppercase tracking-widest transition-all flex items-center justify-center gap-3 shadow-lg shadow-sky-500/25">
+                                <i className="fa-solid fa-code-branch"></i> Manifesto Técnico
+                            </button>
+                            <a href="https://github.com/adrianasousa-dev" target="_blank" className="glass hover:bg-slate-800 text-white px-8 py-4 rounded-full font-black uppercase tracking-widest transition-all flex items-center justify-center gap-3">
+                                <i className="fa-brands fa-github text-xl"></i> Ver Repositórios
+                            </a>
+                        </div>
+                    </div>
+                    <div className="w-full md:w-2/5 flex flex-col items-center justify-center">
+                        <img src="./perfil.jpg" alt="Adriana Sousa" className="w-56 h-56 md:w-72 md:h-72 object-cover rounded-full border-4 border-slate-800 shadow-2xl z-10" />
+                        <div className="w-full max-w-xs mt-2">
                             <CiscoBadge />
                         </div>
                     </div>
-                </div>
-            </section>
-        );
+                </header>
 
-        // ─── PROJETOS ──────────────────────────────────────────────────
-        const allProjects = [
-            { id: 29, title: "ROO ADRIANA (Themis M.A)", category: "IA & Big Data", tag: "Agentic Swarm", desc: "Arquitetura avançada de orquestração de múltiplos agentes com memória persistente (PostgreSQL) e sistema de backup resiliente. Especializado em fluxos jurídicos e auditoria de contexto massivo.", icon: "fa-solid fa-brain-circuit", stats: "SWARM & LONG-TERM MEMORY" },
-            { id: 1, title: "The Market Architect v13.1", category: "IA & Big Data", tag: "Data Engineering", desc: "Motor de inteligência massiva. Processamento contínuo de +390k logs usando IA Generativa (Gemini API) para extração tática de dados e estruturação de pipelines de RAG.", icon: "fa-solid fa-database", stats: "+390.000 LOGS" },
-            { id: 2, title: "NEXUS AI Command Center", category: "IA & Big Data", tag: "Multi-Agent Systems", desc: "Orquestrador de Agentes Autônomos (LangGraph). Implementa State Machines e integração MCP (Model Context Protocol) para fluxos cognitivos complexos.", icon: "fa-solid fa-network-wired", stats: "AGENTES AUTÔNOMOS" },
-            { id: 3, title: "Sentinel Core Engine", category: "IA & Big Data", tag: "AI Observability", desc: "Camada de AgentOps e Guardrails. Monitora latência, consumo de tokens e atua como escudo lógico para mitigação de alucinações de LLMs em produção.", icon: "fa-solid fa-shield-halved", stats: "ZERO ALUCINAÇÃO" },
-            { id: 4, title: "JurisVision (OAB Prep)", category: "IA & Big Data", tag: "EdTech & Acessibilidade", desc: "Plataforma adaptativa baseada em RAG e Vector DBs (Pinecone). Focada em acessibilidade (WCAG) e análise de desempenho via LLMs para educação jurídica.", icon: "fa-solid fa-graduation-cap", stats: "RAG & VECTOR DB" },
-            { id: 5, title: "Sistema Jud (Themis)", category: "IA & Big Data", tag: "Automação Legal", desc: "Auditor de processos com deploy em Streamlit e Python. Automação de extração de inteligência em peças jurídicas com rigor absoluto de compliance.", icon: "fa-solid fa-scale-unbalanced", stats: "LEGAL TECH" },
-            { id: 6, title: "SoftGestão Enterprise", category: "ERP & Gestão", tag: "B2B SaaS", desc: "ERP modular em nuvem (arquitetura serverless AWS). Foco em automação financeira, alta disponibilidade e processamento assíncrono.", icon: "fa-solid fa-building-columns" },
-            { id: 7, title: "MarketMaster ERP", category: "ERP & Gestão", tag: "Varejo", desc: "Ecossistema de PDV e gestão comercial. Sincronização offline-first inteligente e conciliação bancária em tempo real.", icon: "fa-solid fa-store" },
-            { id: 8, title: "AutoDrive System", category: "ERP & Gestão", tag: "Automotivo", desc: "Solução verticalizada integrando ordens de serviço, controle preditivo de peças automotivas e faturamento.", icon: "fa-solid fa-car-side" },
-            { id: 9, title: "Estoque Pro Cloud", category: "ERP & Gestão", tag: "Logística", desc: "Gestão de inventário distribuído. Arquitetura orientada a eventos (Event-Driven) para alertas preditivos de ruptura de estoque.", icon: "fa-solid fa-boxes-stacked" },
-            { id: 10, title: "Gestão 360 Analytics", category: "ERP & Gestão", tag: "Business Intelligence", desc: "Painel gerencial multi-tenant. Agrega dados de filiais usando pipelines robustos de BI para tomada de decisão em nível C-Level.", icon: "fa-solid fa-chart-pie" },
-            { id: 11, title: "PDV Fast API", category: "ERP & Gestão", tag: "Checkout", desc: "Frente de caixa ultra-otimizada. Foco em performance extrema (tempo de resposta em milissegundos) para operações de alta rotatividade.", icon: "fa-solid fa-cash-register" },
-            { id: 12, title: "LexGuard Auditor", category: "Jurídico & Compliance", tag: "NLP & Contratos", desc: "Analista de contratos movido a Inteligência Artificial. Identifica inconsistências e riscos de conformidade usando NLP.", icon: "fa-solid fa-file-contract" },
-            { id: 13, title: "Protocolo LGPD Monitor", category: "Jurídico & Compliance", tag: "Privacidade e Dados", desc: "Motor de conformidade automatizada. Varre bases SQL/NoSQL para garantir a anonimização e aderência estrita à LGPD e GDPR.", icon: "fa-solid fa-user-shield" },
-            { id: 14, title: "Compliance Flow RBAC", category: "Jurídico & Compliance", tag: "Governança", desc: "Workflow de aprovação e auditoria de acessos. Rastreia e documenta a cadeia de custódia de dados sensíveis e Logs de sistema.", icon: "fa-solid fa-list-check" },
-            { id: 15, title: "Legal Miner AI", category: "Jurídico & Compliance", tag: "Busca Semântica", desc: "Motor de busca em jurisprudência. Converte linguagem natural em queries complexas sobre bases não estruturadas.", icon: "fa-solid fa-magnifying-glass" },
-            { id: 16, title: "Contract Vault Zero", category: "Jurídico & Compliance", tag: "Segurança", desc: "Cofre digital imutável para documentos de risco. Utiliza criptografia avançada e trilhas de auditoria ponta a ponta.", icon: "fa-solid fa-vault" },
-            { id: 17, title: "Meu Editor Video", category: "Core & Performance", tag: "Desktop App & Cloud", desc: "Software de edição de vídeo de alta performance. Arquitetado em React, Electron, processamento C/FFMPEG e modelagem NoSQL avançada (DynamoDB).", icon: "fa-solid fa-film", stats: "REACT + DYNAMODB" },
-            { id: 18, title: "WebCut Studio", category: "Core & Performance", tag: "Web Assembly", desc: "Editor multimídia web. Utiliza manipulação direta de Canvas API e WebGL para renderização fluida no lado do cliente.", icon: "fa-solid fa-photo-film" },
-            { id: 19, title: "Brand Architect UI", category: "Core & Performance", tag: "Design System", desc: "Biblioteca de components React proprietária. Focada em escalabilidade, acessibilidade (WCAG 2.1) e micro-interações.", icon: "fa-solid fa-pen-nib" },
-            { id: 20, title: "Conversion Optimizer", category: "Core & Performance", tag: "A/B Testing", desc: "Plataforma de testes programáticos. Roteamento dinâmico de tráfego para otimização contínua de funis de conversão.", icon: "fa-solid fa-bullseye" },
-            { id: 21, title: "UX Telemetry Engine", category: "Core & Performance", tag: "Observabilidade UX", desc: "Rastreador de telemetria de interface. Processa e armazena milhares de eventos assíncronos via WebSockets.", icon: "fa-solid fa-satellite-dish" },
-            { id: 22, title: "PWA Personal Master", category: "Mobile & Automação", tag: "HealthTech", desc: "Progressive Web App para o setor de saúde. Cache inteligente com Service Workers para funcionamento offline.", icon: "fa-solid fa-dumbbell" },
-            { id: 23, title: "Health Track Native", category: "Mobile & Automação", tag: "Mobile OS", desc: "App para monitoramento de sinais vitais. Integrações Bluetooth para captura de dados de dispositivos médicos/wearables.", icon: "fa-solid fa-heart-pulse" },
-            { id: 24, title: "TaskFlow Mobile", category: "Mobile & Automação", tag: "Edge Computing", desc: "Gerenciador offline-first para equipes de campo. Motor de resolução automática de conflitos de banco de dados na reconexão.", icon: "fa-solid fa-mobile-screen" },
-            { id: 25, title: "IoT Monitor Hub", category: "Mobile & Automação", tag: "Cloud Architecture", desc: "Central de telemetria IoT. Consome filas AWS SQS/MQTT e aciona webhooks em caso de anomalias industriais.", icon: "fa-solid fa-tower-broadcast" },
-            { id: 26, title: "Script Sentinela 2.0", category: "Mobile & Automação", tag: "DevOps & Automação", desc: "Orquestrador de tarefas de infraestrutura. Automação de pipelines CI/CD e rotinas de manutenção preditiva em servidores.", icon: "fa-solid fa-terminal" },
-            { id: 27, title: "Nexus Quant B3 (Mini Índice)", category: "Fintech & Trading", tag: "Algorithmic Trading", desc: "Robô de operações automatizadas para mini índice (WIN) na B3. Implementa gestão de risco tática, trailing stop e análise de price action em tempo real.", icon: "fa-solid fa-arrow-trend-up", stats: "ALGO TRADING" },
-            { id: 28, title: "iGaming Odds Sentinel", category: "Fintech & Trading", tag: "Risk Management", desc: "Monitor de anomalias para plataformas de iGaming. Analisa padrões de probabilidade e aplica regras de AML (Anti-Lavagem de Dinheiro) em tempo real.", icon: "fa-solid fa-dice-d20", stats: "COMPLIANCE" }
-        ];
+                <div id="certs"><CertificationsSection /></div>
 
-        const ProjectCard = ({ project }) => (
-            <div className="glass p-6 md:p-8 rounded-3xl hover:border-sky-500/50 transition-all duration-300 group flex flex-col h-full animate-fade">
-                <div className="flex justify-between items-start mb-4">
-                    <div className="text-sky-400 text-3xl"><i className={project.icon}></i></div>
-                    <span className="text-[10px] bg-slate-800 text-slate-300 px-3 py-1 rounded-full font-bold uppercase tracking-wider">#{project.id}</span>
-                </div>
-                <span className="text-[10px] uppercase tracking-[2px] text-sky-500 font-bold mb-2">{project.tag}</span>
-                <h3 className="text-xl font-black mt-1 mb-3 group-hover:text-sky-400 transition-colors">{project.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">{project.desc}</p>
-                {project.stats && (
-                    <div className="bg-sky-500/10 border border-sky-500/20 p-3 rounded-xl text-sky-400 font-mono text-[10px] text-center font-bold mt-auto tracking-widest uppercase">
-                        {project.stats}
+                <section id="portfolio" className="max-w-7xl mx-auto px-6 py-10 relative z-10">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tighter">Meu <span className="text-sky-500">Ecossistema</span> de Soluções</h2>
+                        <p className="text-slate-500 mb-8 font-semibold uppercase tracking-widest text-xs">Catálogo Enterprise: {allProjects.length} Sistemas Arquitetados e Entregues</p>
+                        <div className="flex flex-wrap justify-center gap-2 mb-12">
+                            {categories.map(cat => (
+                                <button key={cat} onClick={() => setActiveFilter(cat)}
+                                        className={`px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all ${activeFilter === cat ? "bg-sky-500 text-white shadow-lg shadow-sky-500/20" : "glass text-slate-400 hover:text-white"}`}>
+                                    {cat}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {filteredProjects.map(project => <ProjectCard key={project.id} project={project} />)}
+                    </div>
+                </section>
+
+                <section className="max-w-7xl mx-auto px-6 py-24 relative z-10 text-center">
+                    <div className="glass p-12 rounded-[3rem] border-sky-500/30">
+                        <h2 className="text-4xl font-black mb-6">Procurando um perfil de <span className="text-sky-500">Liderança Técnica em IA?</span></h2>
+                        <p className="text-slate-400 max-w-2xl mx-auto mb-10 text-lg">
+                            Minha trajetória é validada por entregas robustas. Se sua empresa enfrenta desafios em orquestração de Agentes, RAG e escalabilidade em nuvem, nós precisamos conversar.
+                        </p>
+                        <div className="flex justify-center gap-6">
+                            <a href="https://www.linkedin.com/in/adriana-sousa-tech/" target="_blank" className="text-4xl text-slate-400 hover:text-sky-400 transition-colors"><i className="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://github.com/adrianasousa-dev" target="_blank" className="text-4xl text-slate-400 hover:text-white transition-colors"><i className="fa-brands fa-github"></i></a>
+                            <a href="mailto:adrianasousa.dev@gmail.com" className="text-4xl text-slate-400 hover:text-red-400 transition-colors"><i className="fa-solid fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </section>
+
+                <footer className="max-w-7xl mx-auto px-6 py-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
+                    <p className="text-xs text-slate-400 font-semibold tracking-widest uppercase">ADRIANA.TECH © 2026 | BUILT FOR SCALE</p>
+                    <p className="text-[10px] text-slate-600 font-bold uppercase tracking-widest">React • Tailwind • Cloud Native</p>
+                </footer>
+
+                {showLetter && (
+                    <div className="fixed inset-0 bg-black/95 backdrop-blur-md z-50 flex items-center justify-center p-4">
+                        <div className="bg-slate-900 border border-slate-700 rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl relative p-8 md:p-12 animate-fade">
+                            <button onClick={() => setShowLetter(false)} className="absolute top-6 right-6 text-slate-400 hover:text-white text-2xl"><i className="fa-solid fa-xmark"></i></button>
+                            <div className="mb-8 border-b border-slate-800 pb-6 text-center md:text-left">
+                                <h2 className="text-4xl font-black text-white mb-2 tracking-tighter uppercase italic">Manifesto Técnico & Visão</h2>
+                                <p className="text-sky-500 font-bold text-sm uppercase tracking-[4px]">Cloud Architecture · Multi-Agents · Compliance</p>
+                            </div>
+                            <div className="space-y-8 text-slate-300 leading-relaxed text-sm md:text-base text-justify">
+                                <p>Atuo na intersecção crítica onde a <strong>Arquitetura Cloud</strong> encontra a <strong>Inteligência Artificial Aplicada</strong> e a <strong>Cibersegurança</strong>. Como fundadora da SoftGestão, concebi e entreguei <strong>28 sistemas de produção</strong> end-to-end, transformando gargalos operacionais em ecossistemas digitais de alta performance e resiliência.</p>
+                                <p>Atualmente, consolido essa expertise prática através do <strong>Tecnólogo em Segurança da Informação pela FMU Level Up (2026-2028)</strong>. Minha formação tem foco em Computação Forense, Auditoria de Sistemas, Cloud Security, Criptografia, Governança de TI e Gestão de Riscos (Alinhado à ISO/IEC 27000).</p>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4 text-left">
+                                    <div className="glass p-6 rounded-2xl border-l-4 border-l-sky-500">
+                                        <h4 className="text-white font-black mb-2 uppercase text-xs tracking-widest">AgentOps & Escala Massiva</h4>
+                                        <p className="text-xs text-slate-400 leading-relaxed">Especialista no processamento paralelo de <strong>+390 mil logs</strong> e na orquestração de Agentes Autônomos. Através do NEXUS Sentinel e de frameworks como LangGraph, implemento observabilidade e protocolos de segurança (MCP) em fluxos de IA Generativa.</p>
+                                    </div>
+                                    <div className="glass p-6 rounded-2xl border-l-4 border-l-amber-500">
+                                        <h4 className="text-white font-black mb-2 uppercase text-xs tracking-widest">Compliance & Zero Alucinação</h4>
+                                        <p className="text-xs text-slate-400 leading-relaxed">Com forte background em Legal Tech, minha engenharia foca na mitigação de riscos. Utilizo Vector DBs (RAG) combinados com escudos lógicos via Regex para garantir auditorias técnicas impecáveis e "Zero Alucinação" em sistemas mission-critical.</p>
+                                    </div>
+                                </div>
+                                <p>Minha abordagem arquitetural transcende linguagens isoladas (Node.js, Python, Java). Desenho pipelines voltados a otimização de custo (Model Routing), redução de latência e integração profunda com serviços em nuvem (AWS/GCP), sempre garantindo a conformidade regulatória e a estabilidade do sistema em ambiente corporativo.</p>
+                                <p className="italic border-l-2 border-slate-700 pl-4 text-slate-400 text-left font-semibold">"A verdadeira senioridade não se mede pelo número de frameworks, mas pela capacidade de orquestrar a complexidade tecnológica para entregar resultados previsíveis, escaláveis e seguros."</p>
+                            </div>
+                            <div className="pt-8 mt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+                                <div className="text-center md:text-left">
+                                    <p className="font-black text-white text-2xl uppercase tracking-tighter">Adriana Mendes da Cruz Sousa</p>
+                                    <div className="flex gap-4 mt-2 justify-center md:justify-start">
+                                        <span className="text-sky-500 font-bold text-[10px] uppercase tracking-widest bg-sky-500/10 px-2 py-1 rounded">AI Security Architect</span>
+                                        <span className="text-amber-500 font-bold text-[10px] uppercase tracking-widest bg-amber-500/10 px-2 py-1 rounded">Senior Engineer</span>
+                                    </div>
+                                </div>
+                                <div className="flex gap-4">
+                                    <a href="https://www.linkedin.com/in/adriana-sousa-tech/" target="_blank" className="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-sky-400 transition-all"><i className="fa-brands fa-linkedin-in"></i></a>
+                                    <a href="https://github.com/adrianasousa-dev" target="_blank" className="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white transition-all"><i className="fa-brands fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 )}
             </div>
         );
+    };
 
-        // ─── APP PRINCIPAL ─────────────────────────────────────────────
-        const App = () => {
-            const [activeFilter, setActiveFilter] = useState("Todos");
-            const [showLetter, setShowLetter] = useState(false);
-            const categories = ["Todos", "IA & Big Data", "ERP & Gestão", "Jurídico & Compliance", "Core & Performance", "Mobile & Automação", "Fintech & Trading"];
-
-            const filteredProjects = useMemo(() => {
-                return activeFilter === "Todos" ? allProjects : allProjects.filter(p => p.category === activeFilter);
-            }, [activeFilter]);
-
-            return (
-                <div className="min-h-screen relative">
-                    <div className="hero-glow"></div>
-
-                    {/* NAV */}
-                    <nav className="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center relative z-10">
-                        <div className="text-xl font-black tracking-tighter">ADRIANA<span className="text-sky-500">.</span>TECH</div>
-                        <div className="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-slate-400">
-                            <a href="#portfolio" className="hover:text-white transition-colors">Ecossistema</a>
-                            <a href="#certs" className="hover:text-white transition-colors">Certificações</a>
-                            <a href="https://github.com/adrianasousa-dev" target="_blank" className="hover:text-white transition-colors">GitHub</a>
-                            <a href="https://www.linkedin.com/in/adriana-sousa-tech/" target="_blank" className="hover:text-white transition-colors">LinkedIn</a>
-                        </div>
-                        <a href="mailto:adrianasousa.dev@gmail.com" className="bg-white text-black px-6 py-2 rounded-full text-xs font-black uppercase hover:bg-sky-500 hover:text-white transition-all">Contato</a>
-                    </nav>
-
-                    {/* HERO */}
-                    <header className="max-w-6xl mx-auto px-6 pt-12 pb-24 relative z-10 flex flex-col-reverse md:flex-row items-center gap-12 text-center md:text-left">
-                        <div className="w-full md:w-3/5">
-                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-8">
-                                Não faço apenas código. <br className="hidden md:block"/>Eu <span className="gradient-text">arquiteto inteligência.</span>
-                            </h1>
-                            <p className="text-lg md:text-xl text-slate-400 leading-relaxed mb-6 max-w-2xl">
-                                AI Security Architect & Engenheira de Software. Transformando processos críticos em ecossistemas escaláveis e seguros através de observabilidade, IA Generativa e rigor técnico.
-                            </p>
-                            <div className="flex flex-wrap justify-center md:justify-start items-center gap-3 mb-10">
-                                <span className="bg-sky-500/10 border border-sky-500/30 text-sky-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2 w-fit">
-                                    <i className="fa-solid fa-shield-halved"></i> Segurança da Informação - FMU
-                                </span>
-                                <span className="bg-amber-500/10 border border-amber-500/30 text-amber-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2 w-fit">
-                                    <i className="fa-brands fa-aws"></i> AWS Certified
-                                </span>
-                            </div>
-                            <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-                                <button onClick={() => setShowLetter(true)} className="bg-sky-600 hover:bg-sky-500 text-white px-8 py-4 rounded-full font-black uppercase tracking-widest transition-all flex items-center justify-center gap-3 shadow-lg shadow-sky-500/25">
-                                    <i className="fa-solid fa-code-branch"></i> Manifesto Técnico
-                                </button>
-                                <a href="https://github.com/adrianasousa-dev" target="_blank" className="glass hover:bg-slate-800 text-white px-8 py-4 rounded-full font-black uppercase tracking-widest transition-all flex items-center justify-center gap-3">
-                                    <i className="fa-brands fa-github text-xl"></i> Ver Repositórios
-                                </a>
-                            </div>
-                        </div>
-                        <div className="w-full md:w-2/5 flex flex-col items-center justify-center">
-                            <img src="./perfil.jpg" alt="Adriana Sousa" className="w-56 h-56 md:w-72 md:h-72 object-cover rounded-full border-4 border-slate-800 shadow-2xl z-10" />
-                            <div className="w-full max-w-xs mt-2">
-                                <CiscoBadge />
-                            </div>
-                        </div>
-                    </header>
-
-                    {/* CERTIFICAÇÕES */}
-                    <div id="certs">
-                        <CertificationsSection />
-                    </div>
-
-                    {/* PORTFÓLIO */}
-                    <section id="portfolio" className="max-w-7xl mx-auto px-6 py-10 relative z-10">
-                        <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tighter">Meu <span className="text-sky-500">Ecossistema</span> de Soluções</h2>
-                            <p className="text-slate-500 mb-8 font-semibold uppercase tracking-widest text-xs">Catálogo Enterprise: {allProjects.length} Sistemas Arquitetados e Entregues</p>
-                            <div className="flex flex-wrap justify-center gap-2 mb-12">
-                                {categories.map(cat => (
-                                    <button key={cat} onClick={() => setActiveFilter(cat)} className={`px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all ${activeFilter === cat ? "bg-sky-500 text-white shadow-lg shadow-sky-500/20" : "glass text-slate-400 hover:text-white"}`}>{cat}</button>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {filteredProjects.map(project => <ProjectCard key={project.id} project={project} />)}
-                        </div>
-                    </section>
-
-                    {/* CTA */}
-                    <section className="max-w-7xl mx-auto px-6 py-24 relative z-10 text-center">
-                        <div className="glass p-12 rounded-[3rem] border-sky-500/30">
-                            <h2 className="text-4xl font-black mb-6">Procurando um perfil de <span className="text-sky-500">Liderança Técnica em IA?</span></h2>
-                            <p className="text-slate-400 max-w-2xl mx-auto mb-10 text-lg">
-                                Minha trajetória é validada por entregas robustas. Se sua empresa enfrenta desafios em orquestração de Agentes, RAG e escalabilidade em nuvem, nós precisamos conversar.
-                            </p>
-                            <div className="flex justify-center gap-6">
-                                <a href="https://www.linkedin.com/in/adriana-sousa-tech/" target="_blank" className="text-4xl text-slate-400 hover:text-sky-400 transition-colors"><i className="fa-brands fa-linkedin-in"></i></a>
-                                <a href="https://github.com/adrianasousa-dev" target="_blank" className="text-4xl text-slate-400 hover:text-white transition-colors"><i className="fa-brands fa-github"></i></a>
-                                <a href="mailto:adrianasousa.dev@gmail.com" className="text-4xl text-slate-400 hover:text-red-400 transition-colors"><i className="fa-solid fa-envelope"></i></a>
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* FOOTER */}
-                    <footer className="max-w-7xl mx-auto px-6 py-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
-                        <p className="text-xs text-slate-400 font-semibold tracking-widest uppercase">ADRIANA.TECH © 2026 | BUILT FOR SCALE</p>
-                        <p className="text-[10px] text-slate-600 font-bold uppercase tracking-widest">React • Tailwind • Cloud Native</p>
-                    </footer>
-
-                    {/* MANIFESTO MODAL */}
-                    {showLetter && (
-                        <div className="fixed inset-0 bg-black/95 backdrop-blur-md z-50 flex items-center justify-center p-4">
-                            <div className="bg-slate-900 border border-slate-700 rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl relative p-8 md:p-12 animate-fade">
-                                <button onClick={() => setShowLetter(false)} className="absolute top-6 right-6 text-slate-400 hover:text-white text-2xl"><i className="fa-solid fa-xmark"></i></button>
-                                <div className="mb-8 border-b border-slate-800 pb-6 text-center md:text-left">
-                                    <h2 className="text-4xl font-black text-white mb-2 tracking-tighter uppercase italic">Manifesto Técnico & Visão</h2>
-                                    <p className="text-sky-500 font-bold text-sm uppercase tracking-[4px]">Cloud Architecture · Multi-Agents · Compliance</p>
-                                </div>
-                                <div className="space-y-8 text-slate-300 leading-relaxed text-sm md:text-base text-justify">
-                                    <p>Atuo na intersecção crítica onde a <strong>Arquitetura Cloud</strong> encontra a <strong>Inteligência Artificial Aplicada</strong> e a <strong>Cibersegurança</strong>. Como fundadora da SoftGestão, concebi e entreguei <strong>28 sistemas de produção</strong> end-to-end, transformando gargalos operacionais em ecossistemas digitais de alta performance e resiliência.</p>
-                                    <p>Atualmente, consolido essa expertise prática através do <strong>Tecnólogo em Segurança da Informação pela FMU Level Up (2026-2028)</strong>. Minha formação tem foco em Computação Forense, Auditoria de Sistemas, Cloud Security, Criptografia, Governança de TI e Gestão de Riscos (Alinhado à ISO/IEC 27000).</p>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4 text-left">
-                                        <div className="glass p-6 rounded-2xl border-l-4 border-l-sky-500">
-                                            <h4 className="text-white font-black mb-2 uppercase text-xs tracking-widest">AgentOps & Escala Massiva</h4>
-                                            <p className="text-xs text-slate-400 leading-relaxed">Especialista no processamento paralelo de <strong>+390 mil logs</strong> e na orquestração de Agentes Autônomos. Através do NEXUS Sentinel e de frameworks como LangGraph, implemento observabilidade e protocolos de segurança (MCP) em fluxos de IA Generativa.</p>
-                                        </div>
-                                        <div className="glass p-6 rounded-2xl border-l-4 border-l-amber-500">
-                                            <h4 className="text-white font-black mb-2 uppercase text-xs tracking-widest">Compliance & Zero Alucinação</h4>
-                                            <p className="text-xs text-slate-400 leading-relaxed">Com forte background em Legal Tech, minha engenharia foca na mitigação de riscos. Utilizo Vector DBs (RAG) combinados com escudos lógicos via Regex para garantir auditorias técnicas impecáveis e "Zero Alucinação" em sistemas mission-critical.</p>
-                                        </div>
-                                    </div>
-                                    <p>Minha abordagem arquitetural transcende linguagens isoladas (Node.js, Python, Java). Desenho pipelines voltados a otimização de custo (Model Routing), redução de latência e integração profunda com serviços em nuvem (AWS/GCP), sempre garantindo a conformidade regulatória e a estabilidade do sistema em ambiente corporativo.</p>
-                                    <p className="italic border-l-2 border-slate-700 pl-4 text-slate-400 text-left font-semibold">"A verdadeira senioridade não se mede pelo número de frameworks, mas pela capacidade de orquestrar a complexidade tecnológica para entregar resultados previsíveis, escaláveis e seguros."</p>
-                                </div>
-                                <div className="pt-8 mt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
-                                    <div className="text-center md:text-left">
-                                        <p className="font-black text-white text-2xl uppercase tracking-tighter">Adriana Mendes da Cruz Sousa</p>
-                                        <div className="flex gap-4 mt-2 justify-center md:justify-start">
-                                            <span className="text-sky-500 font-bold text-[10px] uppercase tracking-widest bg-sky-500/10 px-2 py-1 rounded">AI Security Architect</span>
-                                            <span className="text-amber-500 font-bold text-[10px] uppercase tracking-widest bg-amber-500/10 px-2 py-1 rounded">Senior Engineer</span>
-                                        </div>
-                                    </div>
-                                    <div className="flex gap-4">
-                                        <a href="https://www.linkedin.com/in/adriana-sousa-tech/" target="_blank" className="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-sky-400 transition-all"><i className="fa-brands fa-linkedin-in"></i></a>
-                                        <a href="https://github.com/adrianasousa-dev" target="_blank" className="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-white transition-all"><i className="fa-brands fa-github"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    )}
-                </div>
-            );
-        };
-
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
-    </script>
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+</script>
 </body>
 </html>
