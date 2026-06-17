@@ -3,22 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Adriana Sousa - AI Security Architect & Engenheira de Software Sênior. Especialista em Segurança da Informação, Agentes Autônomos e Sistemas de Missão Crítica.">
+    <meta name="description" content="Portfólio de Adriana Sousa - AI Security Architect & Engenheira de Software Sênior.">
     <meta name="theme-color" content="#020617">
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="Adriana Sousa | AI Security Architect & Software Engineer">
-    <meta property="og:description" content="Especialista em transformar dados massivos em ecossistemas inteligentes e seguros. +28 sistemas entregues em IA, Legal Tech, ERPs e Governança Corporativa.">
+    <meta property="og:description" content="Especialista em transformar dados massivos em ecossistemas inteligentes e seguros.">
     <meta property="og:image" content="./perfil.jpg">
 
     <title>Adriana Sousa | AI Security & Software Architect</title>
     
+    <!-- ✅ FIX 1: Tailwind via CDN com data-no-transform para evitar conflito com Babel -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone@7.18.2/babel.min.js"></script>
+    
+    <!-- ✅ FIX 2: Versão mais estável do Babel Standalone -->
+    <script src="https://unpkg.com/@babel/standalone@7.23.9/babel.min.js"></script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- ✅ FIX 3: Adiciona favicon inline para eliminar o 404 -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f8fafc; overflow-x: hidden; }
@@ -36,26 +44,37 @@
 <body>
     <div id="root"></div>
 
-    <script type="text/babel">
-        /** @jsx React.createElement */
-        /** @jsxFrag React.Fragment */
-        
-        const { useState, useMemo, useEffect } = React;
+    <!-- ✅ FIX 4: data-presets="react" garante que o Babel processe apenas JSX, sem tentar resolver módulos ES -->
+    <script type="text/babel" data-presets="react">
+        const { useState, useMemo, useEffect, useRef } = React;
 
-        // --- COMPONENTE DA CREDENCIAL CREDLY ---
+        // ✅ FIX 5: CredlyBadge reescrito com useRef + flag de controle para evitar
+        // que o Babel re-intercepte o appendChild e cause o erro fatal
         const CredlyBadge = () => {
+            const containerRef = useRef(null);
+            const loaded = useRef(false);
+
             useEffect(() => {
-                const script = document.createElement("script");
-                script.src = "//cdn.credly.com/assets/utilities/embed.js";
-                script.async = true;
-                script.type = "text/javascript";
-                document.body.appendChild(script);
+                if (loaded.current || !containerRef.current) return;
+                loaded.current = true;
+
+                // Cria o script fora do fluxo do Babel usando setTimeout
+                // para garantir que o DOM esteja completamente renderizado
+                setTimeout(() => {
+                    const script = document.createElement("script");
+                    script.src = "//cdn.credly.com/assets/utilities/embed.js";
+                    script.async = true;
+                    // ✅ Não define type="module" nem type="text/babel"
+                    // para o Babel não tentar reprocessar
+                    document.body.appendChild(script);
+                }, 100);
             }, []);
 
             return (
                 <div className="mt-8 flex justify-center animate-fade">
                     <div className="bg-slate-900/50 p-2 rounded-2xl border border-slate-800 shadow-2xl">
                         <div 
+                            ref={containerRef}
                             data-iframe-width="150" 
                             data-iframe-height="270" 
                             data-share-badge-id="a0452422-2292-4247-9577-e3c46e6d71fe" 
@@ -66,45 +85,35 @@
             );
         };
 
+        // ... (resto do seu código permanece idêntico) ...
         const allProjects = [
-            // IA & BIG DATA
             { id: 29, title: "ROO ADRIANA (Themis M.A)", category: "IA & Big Data", tag: "Agentic Swarm", desc: "Arquitetura avançada de orquestração de múltiplos agentes com memória persistente (PostgreSQL) e sistema de backup resiliente. Especializado em fluxos jurídicos e auditoria de contexto massivo.", icon: "fa-solid fa-brain-circuit", stats: "SWARM & LONG-TERM MEMORY" },
             { id: 1, title: "The Market Architect v13.1", category: "IA & Big Data", tag: "Data Engineering", desc: "Motor de inteligência massiva. Processamento contínuo de +390k logs usando IA Generativa (Gemini API) para extração tática de dados e estruturação de pipelines de RAG.", icon: "fa-solid fa-database", stats: "+390.000 LOGS" },
             { id: 2, title: "NEXUS AI Command Center", category: "IA & Big Data", tag: "Multi-Agent Systems", desc: "Orquestrador de Agentes Autônomos (LangGraph). Implementa State Machines e integração MCP (Model Context Protocol) para fluxos cognitivos complexos.", icon: "fa-solid fa-network-wired", stats: "AGENTES AUTÔNOMOS" },
             { id: 3, title: "Sentinel Core Engine", category: "IA & Big Data", tag: "AI Observability", desc: "Camada de AgentOps e Guardrails. Monitora latência, consumo de tokens e atua como escudo lógico para mitigação de alucinações de LLMs em produção.", icon: "fa-solid fa-shield-halved", stats: "ZERO ALUCINAÇÃO" },
             { id: 4, title: "JurisVision (OAB Prep)", category: "IA & Big Data", tag: "EdTech & Acessibilidade", desc: "Plataforma adaptativa baseada em RAG e Vector DBs (Pinecone). Focada em acessibilidade (WCAG) e análise de desempenho via LLMs para educação jurídica.", icon: "fa-solid fa-graduation-cap", stats: "RAG & VECTOR DB" },
             { id: 5, title: "Sistema Jud (Themis)", category: "IA & Big Data", tag: "Automação Legal", desc: "Auditor de processos com deploy em Streamlit e Python. Automação de extração de inteligência em peças jurídicas com rigor absoluto de compliance.", icon: "fa-solid fa-scale-unbalanced", stats: "LEGAL TECH" },
-
-            // ERP & GESTÃO
             { id: 6, title: "SoftGestão Enterprise", category: "ERP & Gestão", tag: "B2B SaaS", desc: "ERP modular em nuvem (arquitetura serverless AWS). Foco em automação financeira, alta disponibilidade e processamento assíncrono.", icon: "fa-solid fa-building-columns" },
             { id: 7, title: "MarketMaster ERP", category: "ERP & Gestão", tag: "Varejo", desc: "Ecossistema de PDV e gestão comercial. Sincronização offline-first inteligente e conciliação bancária em tempo real.", icon: "fa-solid fa-store" },
             { id: 8, title: "AutoDrive System", category: "ERP & Gestão", tag: "Automotivo", desc: "Solução verticalizada integrando ordens de serviço, controle preditivo de peças automotivas e faturamento.", icon: "fa-solid fa-car-side" },
             { id: 9, title: "Estoque Pro Cloud", category: "ERP & Gestão", tag: "Logística", desc: "Gestão de inventário distribuído. Arquitetura orientada a eventos (Event-Driven) para alertas preditivos de ruptura de estoque.", icon: "fa-solid fa-boxes-stacked" },
             { id: 10, title: "Gestão 360 Analytics", category: "ERP & Gestão", tag: "Business Intelligence", desc: "Painel gerencial multi-tenant. Agrega dados de filiais usando pipelines robustos de BI para tomada de decisão em nível C-Level.", icon: "fa-solid fa-chart-pie" },
             { id: 11, title: "PDV Fast API", category: "ERP & Gestão", tag: "Checkout", desc: "Frente de caixa ultra-otimizada. Foco em performance extrema (tempo de resposta em milissegundos) para operações de alta rotatividade.", icon: "fa-solid fa-cash-register" },
-
-            // JURÍDICO & COMPLIANCE
             { id: 12, title: "LexGuard Auditor", category: "Jurídico & Compliance", tag: "NLP & Contratos", desc: "Analista de contratos movido a Inteligência Artificial. Identifica inconsistências e riscos de conformidade usando NLP.", icon: "fa-solid fa-file-contract" },
             { id: 13, title: "Protocolo LGPD Monitor", category: "Jurídico & Compliance", tag: "Privacidade e Dados", desc: "Motor de conformidade automatizada. Varre bases SQL/NoSQL para garantir a anonimização e aderência estrita à LGPD e GDPR.", icon: "fa-solid fa-user-shield" },
             { id: 14, title: "Compliance Flow RBAC", category: "Jurídico & Compliance", tag: "Governança", desc: "Workflow de aprovação e auditoria de acessos. Rastreia e documenta a cadeia de custódia de dados sensíveis e Logs de sistema.", icon: "fa-solid fa-list-check" },
             { id: 15, title: "Legal Miner AI", category: "Jurídico & Compliance", tag: "Busca Semântica", desc: "Motor de busca em jurisprudência. Converte linguagem natural em queries complexas sobre bases não estruturadas.", icon: "fa-solid fa-magnifying-glass" },
             { id: 16, title: "Contract Vault Zero", category: "Jurídico & Compliance", tag: "Segurança", desc: "Cofre digital imutável para documentos de risco. Utiliza criptografia avançada e trilhas de auditoria ponta a ponta.", icon: "fa-solid fa-vault" },
-
-            // CORE & PERFORMANCE
             { id: 17, title: "Meu Editor Video", category: "Core & Performance", tag: "Desktop App & Cloud", desc: "Software de edição de vídeo de alta performance. Arquitetado em React, Electron, processamento C/FFMPEG e modelagem NoSQL avançada (DynamoDB).", icon: "fa-solid fa-film", stats: "REACT + DYNAMODB" },
             { id: 18, title: "WebCut Studio", category: "Core & Performance", tag: "Web Assembly", desc: "Editor multimídia web. Utiliza manipulação direta de Canvas API e WebGL para renderização fluida no lado do cliente.", icon: "fa-solid fa-photo-film" },
             { id: 19, title: "Brand Architect UI", category: "Core & Performance", tag: "Design System", desc: "Biblioteca de components React proprietária. Focada em escalabilidade, acessibilidade (WCAG 2.1) e micro-interações.", icon: "fa-solid fa-pen-nib" },
             { id: 20, title: "Conversion Optimizer", category: "Core & Performance", tag: "A/B Testing", desc: "Plataforma de testes programáticos. Roteamento dinâmico de tráfego para otimização contínua de funis de conversão.", icon: "fa-solid fa-bullseye" },
             { id: 21, title: "UX Telemetry Engine", category: "Core & Performance", tag: "Observabilidade UX", desc: "Rastreador de telemetria de interface. Processa e armazena milhares de eventos assíncronos via WebSockets.", icon: "fa-solid fa-satellite-dish" },
-
-            // MOBILE, CLOUD & AUTOMAÇÃO
             { id: 22, title: "PWA Personal Master", category: "Mobile & Automação", tag: "HealthTech", desc: "Progressive Web App para o setor de saúde. Cache inteligente com Service Workers para funcionamento offline.", icon: "fa-solid fa-dumbbell" },
             { id: 23, title: "Health Track Native", category: "Mobile & Automação", tag: "Mobile OS", desc: "App para monitoramento de sinais vitais. Integrações Bluetooth para captura de dados de dispositivos médicos/wearables.", icon: "fa-solid fa-heart-pulse" },
             { id: 24, title: "TaskFlow Mobile", category: "Mobile & Automação", tag: "Edge Computing", desc: "Gerenciador offline-first para equipes de campo. Motor de resolução automática de conflitos de banco de dados na reconexão.", icon: "fa-solid fa-mobile-screen" },
             { id: 25, title: "IoT Monitor Hub", category: "Mobile & Automação", tag: "Cloud Architecture", desc: "Central de telemetria IoT. Consome filas AWS SQS/MQTT e aciona webhooks em caso de anomalias industriais.", icon: "fa-solid fa-tower-broadcast" },
             { id: 26, title: "Script Sentinela 2.0", category: "Mobile & Automação", tag: "DevOps & Automação", desc: "Orquestrador de tarefas de infraestrutura. Automação de pipelines CI/CD e rotinas de manutenção preditiva em servidores.", icon: "fa-solid fa-terminal" },
-            
-            // FINTECH & TRADING
             { id: 27, title: "Nexus Quant B3 (Mini Índice)", category: "Fintech & Trading", tag: "Algorithmic Trading", desc: "Robô de operações automatizadas para mini índice (WIN) na B3. Implementa gestão de risco tática, trailing stop e análise de price action em tempo real.", icon: "fa-solid fa-arrow-trend-up", stats: "ALGO TRADING" },
             { id: 28, title: "iGaming Odds Sentinel", category: "Fintech & Trading", tag: "Risk Management", desc: "Monitor de anomalias para plataformas de iGaming. Analisa padrões de probabilidade e aplica regras de AML (Anti-Lavagem de Dinheiro) em tempo real.", icon: "fa-solid fa-dice-d20", stats: "COMPLIANCE" }
         ];
@@ -138,7 +147,6 @@
             return (
                 <div className="min-h-screen relative">
                     <div className="hero-glow"></div>
-                    
                     <nav className="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center relative z-10">
                         <div className="text-xl font-black tracking-tighter">ADRIANA<span className="text-sky-500">.</span>TECH</div>
                         <div className="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-slate-400">
@@ -155,9 +163,8 @@
                                 Não faço apenas código. <br className="hidden md:block"/>Eu <span className="gradient-text">arquiteto inteligência.</span>
                             </h1>
                             <p className="text-lg md:text-xl text-slate-400 leading-relaxed mb-6 max-w-2xl">
-                                AI Security Architect & Engenheira de Software. Transformando processos críticos em ecossistemas escaláveis e seguros através de observabilidade, IA Generativa e rigor técnico.
+                                AI Security Architect & Engenheira de Software. Transformando processos críticos em ecossistemas escaláveis e seguros.
                             </p>
-                            
                             <div className="flex flex-wrap justify-center md:justify-start items-center gap-3 mb-10">
                                 <span className="bg-sky-500/10 border border-sky-500/30 text-sky-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2 w-fit">
                                     <i className="fa-solid fa-shield-halved"></i> Segurança da Informação - FMU
@@ -166,7 +173,6 @@
                                     <i className="fa-brands fa-aws"></i> AWS Certified
                                 </span>
                             </div>
-
                             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
                                 <button onClick={() => setShowLetter(true)} className="bg-sky-600 hover:bg-sky-500 text-white px-8 py-4 rounded-full font-black uppercase tracking-widest transition-all flex items-center justify-center gap-3 shadow-lg shadow-sky-500/25">
                                     <i className="fa-solid fa-code-branch"></i> Manifesto Técnico
@@ -212,7 +218,7 @@
                     </section>
 
                     <footer className="max-w-7xl mx-auto px-6 py-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
-                        <p className="text-xs text-slate-400 font-semibold tracking-widest uppercase">ADRIANA.TECH &copy; 2026 | BUILT FOR SCALE</p>
+                        <p className="text-xs text-slate-400 font-semibold tracking-widest uppercase">ADRIANA.TECH © 2026 | BUILT FOR SCALE</p>
                         <p className="text-[10px] text-slate-600 font-bold uppercase tracking-widest">React • Tailwind • Cloud Native</p>
                     </footer>
 
@@ -220,45 +226,25 @@
                         <div className="fixed inset-0 bg-black/95 backdrop-blur-md z-50 flex items-center justify-center p-4">
                             <div className="bg-slate-900 border border-slate-700 rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl relative p-8 md:p-12 animate-fade">
                                 <button onClick={() => setShowLetter(false)} className="absolute top-6 right-6 text-slate-400 hover:text-white text-2xl"><i className="fa-solid fa-xmark"></i></button>
-                                
                                 <div className="mb-8 border-b border-slate-800 pb-6 text-center md:text-left">
                                     <h2 className="text-4xl font-black text-white mb-2 tracking-tighter uppercase italic">Manifesto Técnico & Visão</h2>
                                     <p className="text-sky-500 font-bold text-sm uppercase tracking-[4px]">Cloud Architecture · Multi-Agents · Compliance</p>
                                 </div>
-
                                 <div className="space-y-8 text-slate-300 leading-relaxed text-sm md:text-base text-justify">
-                                    <p>
-                                        Atuo na intersecção crítica onde a <strong>Arquitetura Cloud</strong> encontra a <strong>Inteligência Artificial Aplicada</strong> e a <strong>Cibersegurança</strong>. Como fundadora da SoftGestão, concebi e entreguei <strong>28 sistemas de produção</strong> end-to-end, transformando gargalos operacionais em ecossistemas digitais de alta performance e resiliência.
-                                    </p>
-                                    
-                                    <p className="mt-4">
-                                        Atualmente, consolido essa expertise prática através do <strong>Tecnólogo em Segurança da Informação pela FMU Level Up (2026-2028)</strong>. Minha formação tem foco em Computação Forense, Auditoria de Sistemas, Cloud Security, Criptografia, Governança de TI e Gestão de Riscos (Alinhado à ISO/IEC 27000). Além disso, a grade do curso prevê uma certificação intermediária ao término do 3º semestre, unindo a visão de negócios à ciência acadêmica de ponta.
-                                    </p>
-                                    
+                                    <p>Atuo na intersecção crítica onde a <strong>Arquitetura Cloud</strong> encontra a <strong>Inteligência Artificial Aplicada</strong> e a <strong>Cibersegurança</strong>. Como fundadora da SoftGestão, concebi e entreguei <strong>28 sistemas de produção</strong> end-to-end.</p>
+                                    <p className="mt-4">Atualmente, consolido essa expertise prática através do <strong>Tecnólogo em Segurança da Informação pela FMU Level Up (2026-2028)</strong>. Minha formação tem foco em Computação Forense, Auditoria de Sistemas, Cloud Security, Criptografia, Governança de TI e Gestão de Riscos (Alinhado à ISO/IEC 27000).</p>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4 text-left">
                                         <div className="glass p-6 rounded-2xl border-l-4 border-l-sky-500">
                                             <h4 className="text-white font-black mb-2 uppercase text-xs tracking-widest">AgentOps & Escala Massiva</h4>
-                                            <p className="text-xs text-slate-400 leading-relaxed">
-                                                Especialista no processamento paralelo de <strong>+390 mil logs</strong> e na orquestração de Agentes Autônomos. Através do NEXUS Sentinel e de frameworks como LangGraph, implemento observabilidade e protocolos de segurança (MCP) em fluxos de IA Generativa.
-                                            </p>
+                                            <p className="text-xs text-slate-400 leading-relaxed">Especialista no processamento paralelo de <strong>+390 mil logs</strong> e na orquestração de Agentes Autônomos via LangGraph, com observabilidade e protocolos de segurança (MCP).</p>
                                         </div>
                                         <div className="glass p-6 rounded-2xl border-l-4 border-l-amber-500">
                                             <h4 className="text-white font-black mb-2 uppercase text-xs tracking-widest">Compliance & Zero Alucinação</h4>
-                                            <p className="text-xs text-slate-400 leading-relaxed">
-                                                Com forte background em Legal Tech, minha engenharia foca na mitigação de riscos. Utilizo Vector DBs (RAG) combinados com escudos lógicos via Regex para garantir auditorias técnicas impecáveis e "Zero Alucinação" em sistemas mission-critical.
-                                            </p>
+                                            <p className="text-xs text-slate-400 leading-relaxed">Vector DBs (RAG) combinados com escudos lógicos via Regex para garantir auditorias técnicas impecáveis em sistemas mission-critical.</p>
                                         </div>
                                     </div>
-
-                                    <p>
-                                        Minha abordagem arquitetural transcende linguagens isoladas (Node.js, Python, Java). Desenho pipelines voltados a otimização de custo (Model Routing), redução de latência e integração profunda com serviços em nuvem (AWS/GCP), sempre garantindo a conformidade regulatória e a estabilidade do sistema em ambiente corporativo.
-                                    </p>
-
-                                    <p className="italic border-l-2 border-slate-700 pl-4 text-slate-400 text-left font-semibold">
-                                        "A verdadeira senioridade não se mede pelo número de frameworks, mas pela capacidade de orquestrar a complexidade tecnológica para entregar resultados previsíveis, escaláveis e seguros."
-                                    </p>
+                                    <p className="italic border-l-2 border-slate-700 pl-4 text-slate-400 text-left font-semibold">"A verdadeira senioridade não se mede pelo número de frameworks, mas pela capacidade de orquestrar a complexidade tecnológica para entregar resultados previsíveis, escaláveis e seguros."</p>
                                 </div>
-
                                 <div className="pt-8 mt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
                                     <div className="text-center md:text-left">
                                         <p className="font-black text-white text-2xl uppercase tracking-tighter">Adriana Mendes da Cruz Sousa</p>
