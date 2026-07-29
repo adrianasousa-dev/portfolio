@@ -1,0 +1,13 @@
+PACOTE PRONTO PARA O GITHUB PAGES
+
+Envie todos os arquivos desta pasta para a raiz do repositório do portfólio.
+O arquivo principal precisa se chamar exatamente index.html.
+
+Antes de enviar, remova do repositório antigo:
+- index.html antigo
+- certsaws-practitioner.pdf (é uma cópia do curso Essentials e não uma certificação profissional)
+- aws.png
+- certsaws-essentials.png
+- arquivos duplicados com (1) no nome
+
+Mantenha todos os arquivos deste pacote na mesma pasta, sem criar subpastas e sem alterar os nomes.

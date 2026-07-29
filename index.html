@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio de Adriana Sousa — AI Solutions Architect, AI Engineer e Software Architect. 28 sistemas desenvolvidos para aproximadamente 50 clientes." />
+  <meta name="theme-color" content="#070b14" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Adriana Sousa | AI Solutions Architect & AI Engineer" />
+  <meta property="og:description" content="Arquitetura de software, IA generativa, RAG, LLMOps, automação e LegalTech." />
+  <meta property="og:image" content="./perfil.jpg" />
+  <title>Adriana Sousa | AI Solutions Architect & AI Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg: #070b14;
+      --panel: rgba(15, 23, 42, 0.82);
+      --panel-2: #0f172a;
+      --line: rgba(148, 163, 184, 0.18);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #fbbf24;
+      --success: #34d399;
+      --shadow: 0 24px 80px rgba(0,0,0,.28);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(56,189,248,.10), transparent 32%),
+        radial-gradient(circle at 90% 8%, rgba(251,191,36,.08), transparent 26%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+    img { max-width: 100%; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(7,11,20,.84);
+      border-bottom: 1px solid rgba(148,163,184,.12);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand { font-weight: 900; letter-spacing: -.04em; font-size: 1.12rem; text-decoration: none; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 26px; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-weight: 700; font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; }
+    .nav-links a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 0 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: .82rem;
+      letter-spacing: .04em;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+    .btn-primary { background: var(--accent); color: #04111d; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 34px rgba(56,189,248,.24); }
+    .btn-secondary { border-color: var(--line); background: rgba(15,23,42,.72); color: var(--text); }
+    .btn-secondary:hover { border-color: rgba(56,189,248,.5); transform: translateY(-2px); }
+
+    header { padding: 92px 0 54px; }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+      align-items: center;
+      gap: 56px;
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .78rem;
+      margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0 0 24px;
+      font-size: clamp(2.9rem, 7vw, 5.7rem);
+      line-height: .98;
+      letter-spacing: -.065em;
+      max-width: 860px;
+    }
+    .gradient {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero p { color: var(--muted); font-size: 1.08rem; max-width: 760px; margin: 0 0 28px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 22px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 9px; }
+    .chip { border: 1px solid rgba(56,189,248,.28); background: rgba(56,189,248,.08); color: #bae6fd; border-radius: 999px; padding: 7px 12px; font-size: .76rem; font-weight: 800; }
+
+    .portrait-wrap { display: flex; justify-content: center; }
+    .portrait-card { padding: 20px; border-radius: 32px; width: min(100%, 340px); }
+    .portrait-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 24px; border: 1px solid rgba(255,255,255,.10); }
+    .portrait-meta { padding: 18px 6px 4px; }
+    .portrait-meta strong { display: block; font-size: 1rem; }
+    .portrait-meta span { display: block; color: var(--muted); font-size: .86rem; margin-top: 4px; }
+
+    .stats { padding: 18px 0 76px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .stat { padding: 24px; border-radius: 22px; }
+    .stat strong { display: block; font-size: clamp(1.7rem, 4vw, 2.5rem); line-height: 1; letter-spacing: -.04em; }
+    .stat span { display: block; color: var(--muted); margin-top: 9px; font-size: .84rem; }
+
+    section { padding: 76px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 22px; margin-bottom: 34px; }
+    .section-head h2 { margin: 0; font-size: clamp(2rem, 5vw, 3.1rem); letter-spacing: -.045em; line-height: 1.05; }
+    .section-head p { max-width: 560px; color: var(--muted); margin: 0; }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .content-card { border-radius: 26px; padding: 30px; }
+    .content-card h3 { margin: 0 0 14px; font-size: 1.2rem; }
+    .content-card p { color: var(--muted); margin: 0; }
+    .list { display: grid; gap: 12px; margin-top: 18px; }
+    .list div { display: flex; gap: 10px; align-items: flex-start; color: #cbd5e1; }
+    .list i { color: var(--accent); margin-top: 6px; }
+
+    .filters { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 28px; }
+    .filter-btn { border: 1px solid var(--line); color: var(--muted); background: rgba(15,23,42,.65); border-radius: 999px; padding: 10px 16px; font-size: .74rem; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; cursor: pointer; }
+    .filter-btn.active, .filter-btn:hover { background: var(--accent); color: #04111d; border-color: var(--accent); }
+
+    .projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+    .project { border-radius: 26px; padding: 28px; min-height: 330px; display: flex; flex-direction: column; transition: .2s ease; }
+    .project:hover { transform: translateY(-4px); border-color: rgba(56,189,248,.5); }
+    .project-top { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
+    .project-icon { width: 46px; height: 46px; border-radius: 14px; background: rgba(56,189,248,.10); border: 1px solid rgba(56,189,248,.24); display: grid; place-items: center; color: var(--accent); font-size: 1.1rem; }
+    .project-tag { color: var(--accent); text-transform: uppercase; letter-spacing: .13em; font-size: .68rem; font-weight: 900; }
+    .project h3 { margin: 18px 0 10px; font-size: 1.25rem; letter-spacing: -.025em; line-height: 1.15; }
+    .project p { color: var(--muted); margin: 0 0 20px; font-size: .9rem; flex: 1; }
+    .project-stack { border-top: 1px solid rgba(148,163,184,.13); padding-top: 16px; color: #cbd5e1; font-size: .76rem; font-weight: 700; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+    .skill-card { border-radius: 24px; padding: 26px; }
+    .skill-card h3 { margin: 0 0 12px; font-size: 1.04rem; }
+    .skill-card p { color: var(--muted); margin: 0; font-size: .88rem; }
+
+    .cert-groups { display: grid; gap: 16px; }
+    .cert-group { border-radius: 24px; padding: 26px; }
+    .cert-group h3 { margin: 0 0 16px; font-size: 1rem; }
+    .cert-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+    .cert {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      text-decoration: none;
+      padding: 14px 16px;
+      border-radius: 15px;
+      background: rgba(15,23,42,.72);
+      border: 1px solid rgba(148,163,184,.13);
+      font-size: .85rem;
+    }
+    .cert:hover { border-color: rgba(56,189,248,.45); }
+    .cert span { color: var(--muted); display: block; font-size: .72rem; margin-top: 2px; }
+
+    .cta { border-radius: 32px; padding: 46px; text-align: center; }
+    .cta h2 { margin: 0 0 14px; font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -.045em; }
+    .cta p { color: var(--muted); max-width: 760px; margin: 0 auto 26px; }
+    .cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+
+    footer { padding: 40px 0 54px; color: #64748b; font-size: .78rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 16px; border-top: 1px solid rgba(148,163,184,.13); padding-top: 28px; }
+
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .hero p { margin-left: auto; margin-right: auto; }
+      .hero-actions, .chips { justify-content: center; }
+      .portrait-wrap { grid-row: 1; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .projects-grid, .skills-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .about-grid { grid-template-columns: 1fr; }
+      .section-head { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(100% - 26px, 1180px); }
+      .nav-links { display: none; }
+      header { padding-top: 58px; }
+      .stats-grid, .projects-grid, .skills-grid, .cert-list { grid-template-columns: 1fr; }
+      .stat, .project, .skill-card, .content-card, .cert-group { padding: 22px; }
+      .cta { padding: 34px 20px; }
+      .footer-inner { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="#inicio">ADRIANA<span>.</span>TECH</a>
+      <div class="nav-links" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#certificacoes">Certificações</a>
+        <a href="https://github.com/adrianasousa-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+      <a class="btn btn-primary" href="mailto:adrianasousa.dev@gmail.com"><i class="fa-solid fa-envelope"></i> Contato</a>
+    </div>
+  </nav>
+
+  <header id="inicio">
+    <div class="container hero">
+      <div>
+        <div class="eyebrow">AI Solutions Architect · AI Engineer · Software Architect</div>
+        <h1>Transformo regras de negócio em <span class="gradient">sistemas e soluções de IA.</span></h1>
+        <p>
+          Desenvolvo software desde 2018 e soluções sob medida para clientes desde 2019. Sou fundadora da SoftGestão, empresa pela qual já atendi aproximadamente 50 clientes e desenvolvi 28 sistemas personalizados, da descoberta do problema à implantação e evolução.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projetos"><i class="fa-solid fa-grid-2"></i> Ver projetos</a>
+          <a class="btn btn-secondary" href="./Curriculo_Adriana_Sousa_2026_LAYOUT_LIMPO.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf"></i> Abrir currículo</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/adriana-sousa-tech/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+        </div>
+        <div class="chips" aria-label="Áreas de atuação">
+          <span class="chip">RAG</span>
+          <span class="chip">LLMOps</span>
+          <span class="chip">Agentic AI</span>
+          <span class="chip">LegalTech</span>
+          <span class="chip">Automação</span>
+          <span class="chip">Remoto · CLT ou PJ</span>
+        </div>
+      </div>
+
+      <div class="portrait-wrap">
+        <div class="portrait-card glass">
+          <img src="./perfil.jpg" alt="Foto profissional de Adriana Sousa" />
+          <div class="portrait-meta">
+            <strong>Adriana Mendes da Cruz Sousa</strong>
+            <span>São Paulo, Brasil · Bacharel em Direito pela UNINOVE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="stats">
+    <div class="container stats-grid">
+      <div class="stat glass"><strong>28</strong><span>sistemas personalizados desenvolvidos</span></div>
+      <div class="stat glass"><strong>≈ 50</strong><span>clientes atendidos pela SoftGestão</span></div>
+      <div class="stat glass"><strong>2018</strong><span>início da atuação com desenvolvimento de software</span></div>
+      <div class="stat glass"><strong>6</strong><span>projetos representativos apresentados neste portfólio</span></div>
+    </div>
+  </div>
+
+  <main>
+    <section id="sobre">
+      <div class="container">
+        <div class="section-head">
+          <h2>Arquitetura, produto e execução ponta a ponta.</h2>
+          <p>Atuação técnica combinada com conhecimento jurídico e experiência na tradução de necessidades operacionais em sistemas utilizáveis.</p>
+        </div>
+
+        <div class="about-grid">
+          <article class="content-card glass">
+            <h3>Atuação profissional</h3>
+            <p>Na SoftGestão, conduzo o ciclo completo de desenvolvimento de sistemas sob medida para diferentes segmentos.</p>
+            <div class="list">
+              <div><i class="fa-solid fa-check"></i><span>Levantamento de requisitos e análise de regras de negócio.</span></div>
+              <div><i class="fa-solid fa-check"></i><span>Arquitetura da solução, UX/UI, frontend, backend e bancos de dados.</span></div>
+              <div><i class="fa-solid fa-check"></i><span>Integrações com APIs, automações, implantação, documentação e suporte.</span></div>
+              <div><i class="fa-solid fa-check"></i><span>Produtos para os setores jurídico, imobiliário, condominial, automotivo, varejista, pet, construção, segurança e gestão empresarial.</span></div>
+            </div>
+          </article>
+
+          <article class="content-card glass">
+            <h3>Diferencial interdisciplinar</h3>
+            <p>O Bacharelado em Direito amplia minha capacidade de modelar fluxos, documentos, regras e riscos em produtos LegalTech e soluções de inteligência jurídica.</p>
+            <div class="list">
+              <div><i class="fa-solid fa-check"></i><span>Interpretação de requisitos jurídicos e documentais.</span></div>
+              <div><i class="fa-solid fa-check"></i><span>RAG, processamento documental, OCR e integração com modelos de linguagem.</span></div>
+              <div><i class="fa-solid fa-check"></i><span>Controles para reduzir respostas não fundamentadas e melhorar a rastreabilidade.</span></div>
+              <div><i class="fa-solid fa-check"></i><span>Formação continuada em IA, cloud, dados e segurança cibernética.</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="container">
+        <div class="section-head">
+          <h2>Projetos representativos</h2>
+          <p>Seleção de 6 soluções entre os 28 sistemas desenvolvidos. Os projetos abaixo demonstram atuação em IA generativa, RAG, automação, dados, arquitetura web e LegalTech.</p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filtros de projetos">
+          <button class="filter-btn active" data-filter="todos">Todos</button>
+          <button class="filter-btn" data-filter="legaltech">LegalTech</button>
+          <button class="filter-btn" data-filter="dados">IA & Dados</button>
+          <button class="filter-btn" data-filter="automacao">Automação</button>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project glass" data-category="legaltech">
+            <div class="project-top"><div class="project-icon"><i class="fa-solid fa-scale-balanced"></i></div><span class="project-tag">LegalTech · RAG</span></div>
+            <h3>THEMIS M.A</h3>
+            <p>Plataforma de inteligência jurídica com análise processual, processamento documental, OCR, agentes especializados, geração de pareceres e módulo War Room para análise adversarial de teses.</p>
+            <div class="project-stack">PWA · RAG · OCR · LLM multi-provider · Streaming · Exportação documental</div>
+          </article>
+
+          <article class="project glass" data-category="legaltech automacao">
+            <div class="project-top"><div class="project-icon"><i class="fa-solid fa-briefcase"></i></div><span class="project-tag">Gestão Jurídica</span></div>
+            <h3>Conciliare Profissional</h3>
+            <p>Plataforma para gestão de escritórios, clientes, processos, conciliações, agenda, contratos, finanças e cobrança de honorários, com automações de acompanhamento processual.</p>
+            <div class="project-stack">React · Tailwind · Supabase · PostgreSQL · RLS · Vercel · DataJud · DJEN</div>
+          </article>
+
+          <article class="project glass" data-category="legaltech">
+            <div class="project-top"><div class="project-icon"><i class="fa-solid fa-graduation-cap"></i></div><span class="project-tag">EdTech · IA Jurídica</span></div>
+            <h3>Juris Vision</h3>
+            <p>Plataforma educacional para preparação da OAB, com simulados, cadernos de erros, análise de desempenho e módulos de auditoria de provas da segunda fase.</p>
+            <div class="project-stack">React · Next.js · TypeScript · Python · OCR · RAG · Playwright · Jest · Vitest</div>
+          </article>
+
+          <article class="project glass" data-category="legaltech dados">
+            <div class="project-top"><div class="project-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div><span class="project-tag">Análise Forense</span></div>
+            <h3>Themis LC-ORCRIM</h3>
+            <p>Solução de apoio à análise de casos, extratos bancários, Relatórios de Inteligência Financeira, evidências e documentos jurídicos extensos.</p>
+            <div class="project-stack">OCR · RAG · Análise documental · LLM multi-provider · Relatórios</div>
+          </article>
+
+          <article class="project glass" data-category="dados">
+            <div class="project-top"><div class="project-icon"><i class="fa-solid fa-chart-line"></i></div><span class="project-tag">IA & Engenharia de Dados</span></div>
+            <h3>Channels AI Engine</h3>
+            <p>Motor em Python para consolidar bases com mais de 390 mil interações em JSON, filtrar conteúdo relevante e produzir análises estruturadas de mercado com IA generativa.</p>
+            <div class="project-stack">Python · JSON · ETL · Gemini 2.5 · Saída estruturada · Tratamento de erros</div>
+          </article>
+
+          <article class="project glass" data-category="automacao">
+            <div class="project-top"><div class="project-icon"><i class="fa-solid fa-headset"></i></div><span class="project-tag">Assistência Operacional</span></div>
+            <h3>NEXUS AI</h3>
+            <p>Assistente para apoio operacional e organização do conhecimento, com processamento de textos copiados, análise de capturas de tela, manutenção de contexto e backup automatizado.</p>
+            <div class="project-stack">Python · IA generativa · Visão computacional · Automação · Google Drive API</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="competencias">
+      <div class="container">
+        <div class="section-head">
+          <h2>Competências técnicas</h2>
+          <p>Stack aplicada na construção de produtos, integrações, automações e sistemas de inteligência artificial.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card glass"><h3>IA & LLMs</h3><p>RAG, LLMOps, Agentic AI, integração com OpenAI, Anthropic, Gemini e Groq, streaming, prompts estruturados, OCR e processamento documental.</p></article>
+          <article class="skill-card glass"><h3>Desenvolvimento</h3><p>Python, JavaScript, TypeScript, React, Next.js, Node.js, FastAPI, Tailwind CSS, aplicações PWA e APIs.</p></article>
+          <article class="skill-card glass"><h3>Dados & Cloud</h3><p>PostgreSQL, Supabase, Firebase, modelagem de dados, JSON, ETL, Vercel, funções serverless e fundamentos de AWS Cloud.</p></article>
+          <article class="skill-card glass"><h3>Arquitetura</h3><p>Arquitetura de software, modelagem de soluções, integração de sistemas, automação de processos, documentação e evolução de produtos.</p></article>
+          <article class="skill-card glass"><h3>Qualidade</h3><p>Playwright, Jest, Vitest, validação estruturada, tratamento de erros, políticas de acesso e controles para rastreabilidade.</p></article>
+          <article class="skill-card glass"><h3>Domínio jurídico</h3><p>LegalTech, pesquisa e análise jurídica, interpretação de regras, documentos processuais e fluxos de escritórios e consultorias.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificacoes">
+      <div class="container">
+        <div class="section-head">
+          <h2>Formação e certificações</h2>
+          <p>Bacharel em Direito pela UNINOVE, com formação continuada em inteligência artificial, engenharia de software, cloud, dados e cibersegurança.</p>
+        </div>
+
+        <div class="cert-groups">
+          <div class="cert-group glass">
+            <h3>FIAP</h3>
+            <div class="cert-list">
+              <a class="cert" href="./certsfiap-ia-responsavel.pdf" target="_blank" rel="noopener noreferrer"><div><strong>Inteligência Artificial Responsável</strong><span>Nano Course · 80 horas · 2026</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a class="cert" href="./certsfiap-ia-computacional.pdf" target="_blank" rel="noopener noreferrer"><div><strong>Inteligência Artificial e Computacional</strong><span>Nano Course · 80 horas · 2026</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+          <div class="cert-group glass">
+            <h3>AWS Training & Certification</h3>
+            <div class="cert-list">
+              <a class="cert" href="./certsaws-cloud-quest.pdf" target="_blank" rel="noopener noreferrer"><div><strong>AWS Cloud Quest: Cloud Practitioner</strong><span>Training Badge · 2026</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a class="cert" href="./certsaws-essentials.pdf" target="_blank" rel="noopener noreferrer"><div><strong>AWS Cloud Practitioner Essentials</strong><span>Treinamento concluído · 2026</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a class="cert" href="./certsaws-technical.pdf" target="_blank" rel="noopener noreferrer"><div><strong>AWS Technical Essentials</strong><span>Treinamento concluído · 2026</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+          <div class="cert-group glass">
+            <h3>Fundação Bradesco e Cisco</h3>
+            <div class="cert-list">
+              <a class="cert" href="./certsbradesco-python.pdf" target="_blank" rel="noopener noreferrer"><div><strong>Desenvolvimento Orientado a Objetos utilizando Python</strong><span>10 horas · 2026</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a class="cert" href="./certsbradesco-modelagem.pdf" target="_blank" rel="noopener noreferrer"><div><strong>Modelagem de Dados</strong><span>8 horas · 2026</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a class="cert" href="./certsbradesco-projetos-ti.pdf" target="_blank" rel="noopener noreferrer"><div><strong>Projetos de Sistemas de TI</strong><span>15 horas · 2026</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a class="cert" href="./certsbradesco-ia-direito.pdf" target="_blank" rel="noopener noreferrer"><div><strong>IA para Profissionais do Direito</strong><span>2 horas · 2026</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a class="cert" href="https://www.credly.com/badges/a0452422-2292-4247-9577-e3c46e6d71fe/public_url" target="_blank" rel="noopener noreferrer"><div><strong>Introduction to Cybersecurity</strong><span>Cisco Networking Academy · Credly · 2026</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta glass">
+          <h2>Projetos de IA, arquitetura e automação.</h2>
+          <p>Disponível para oportunidades remotas CLT ou PJ em AI Solutions Architecture, AI Engineering, Software Architecture, LLM Engineering e LegalTech, além de projetos desenvolvidos pela SoftGestão.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="mailto:adrianasousa.dev@gmail.com"><i class="fa-solid fa-envelope"></i> Enviar mensagem</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/adriana-sousa-tech/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+            <a class="btn btn-secondary" href="https://github.com/adrianasousa-dev" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>Adriana Sousa © 2026</span>
+      <span>AI Solutions Architect · AI Engineer · Software Architect</span>
+    </div>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const projects = document.querySelectorAll('.project');
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        buttons.forEach((item) => item.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+
+        projects.forEach((project) => {
+          const categories = project.dataset.category.split(' ');
+          project.style.display = filter === 'todos' || categories.includes(filter) ? 'flex' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
