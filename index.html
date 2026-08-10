@@ -170,6 +170,17 @@
     .project h3 { margin: 18px 0 10px; font-size: 1.25rem; letter-spacing: -.025em; line-height: 1.15; }
     .project p { color: var(--muted); margin: 0 0 20px; font-size: .9rem; flex: 1; }
     .project-stack { border-top: 1px solid rgba(148,163,184,.13); padding-top: 16px; color: #cbd5e1; font-size: .76rem; font-weight: 700; }
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 14px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: .78rem;
+      font-weight: 800;
+    }
+    .project-link:hover { text-decoration: underline; }
 
     .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
     .skill-card { border-radius: 24px; padding: 26px; }
@@ -315,7 +326,7 @@
 <div class="container">
 <div class="section-head">
 <h2>Projetos representativos</h2>
-<p>Seleção de 6 soluções entre os 28 sistemas desenvolvidos. Os projetos abaixo demonstram desenvolvimento assistido por IA, IA generativa, RAG, automação, dados e LegalTech.</p>
+<p>Seleção de 6 soluções entre os 28 sistemas desenvolvidos. Os projetos demonstram desenvolvimento assistido por IA, IA generativa, RAG, automação, dados e LegalTech, com case studies públicos no GitHub.</p>
 </div>
 <div aria-label="Filtros de projetos" class="filters" role="group">
 <button class="filter-btn active" data-filter="todos">Todos</button>
@@ -329,36 +340,42 @@
 <h3>ROO ADRIANA</h3>
 <p>Dev Intelligence Platform desenvolvida com apoio de IA, composta por 73 componentes e 88k+ linhas de código, com TDD/QA, indexação semântica de codebase, memória de longo prazo e telemetria FinOps.</p>
 <div class="project-stack">Python · FastAPI/Flask · Gemini · PostgreSQL · Docker</div>
+<a class="project-link" href="https://github.com/adrianasousa-dev/roo-adriana-case-study" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-github"></i> Ver case study no GitHub</a>
 </article>
 <article class="project glass" data-category="legaltech dados">
 <div class="project-top"><div class="project-icon"><i class="fa-solid fa-scale-balanced"></i></div><span class="project-tag">LegalTech · AI Engine</span></div>
 <h3>ROO JURÍDICO</h3>
 <p>Ecossistema jurídico desenvolvido com apoio de IA, com 535 componentes integrados e API FastAPI com 19 rotas especializadas para auditoria por área, cálculos, prazos, juiz virtual e redação forense.</p>
 <div class="project-stack">FastAPI · Gemini · PostgreSQL · MCP</div>
+<a class="project-link" href="https://github.com/adrianasousa-dev/roo-juridico-case-study" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-github"></i> Ver case study no GitHub</a>
 </article>
 <article class="project glass" data-category="legaltech">
 <div class="project-top"><div class="project-icon"><i class="fa-solid fa-scale-balanced"></i></div><span class="project-tag">LegalTech · RAG</span></div>
 <h3>THEMIS M.A</h3>
 <p>PWA de inteligência jurídica para organização de skills, análise documental e geração assistida de documentos, com OCR, RAG, IndexedDB, web scraping e streaming multi-provider de LLMs.</p>
 <div class="project-stack">PWA · RAG · OCR · IndexedDB · Web Scraping · Streaming multi-provider</div>
+<a class="project-link" href="https://github.com/adrianasousa-dev/themis-ma-case-study" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-github"></i> Ver case study no GitHub</a>
 </article>
 <article class="project glass" data-category="legaltech automacao">
 <div class="project-top"><div class="project-icon"><i class="fa-solid fa-briefcase"></i></div><span class="project-tag">Gestão Jurídica · Automação</span></div>
 <h3>Conciliare Profissional</h3>
 <p>Aplicação jurídica com recursos real-time e rotinas serverless para DataJud, DJEN, cobranças via WhatsApp, relatórios e acompanhamento processual.</p>
 <div class="project-stack">Supabase · Vercel · Serverless · DataJud · DJEN · Real-time</div>
+<a class="project-link" href="https://github.com/adrianasousa-dev/conciliare-profissional-case-study" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-github"></i> Ver case study no GitHub</a>
 </article>
 <article class="project glass" data-category="legaltech dados">
 <div class="project-top"><div class="project-icon"><i class="fa-solid fa-graduation-cap"></i></div><span class="project-tag">EdTech · IA Jurídica</span></div>
 <h3>JurisVision</h3>
 <p>Plataforma de estudos OAB com 22.617 linhas de código e 51 casos de teste, reunindo simulados, flashcards, cronogramas, jurisprudência, auditoria, OCR e acompanhamento de desempenho.</p>
 <div class="project-stack">Vite · React · TypeScript · Supabase · Odoo · Playwright/Vitest · Vercel</div>
+<a class="project-link" href="https://github.com/adrianasousa-dev/jurisvision-case-study" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-github"></i> Ver case study no GitHub</a>
 </article>
 <article class="project glass" data-category="dados">
 <div class="project-top"><div class="project-icon"><i class="fa-solid fa-chart-line"></i></div><span class="project-tag">IA &amp; Engenharia de Dados</span></div>
 <h3>Channels AI Engine</h3>
-<p>Motor em Python para consolidar bases com mais de 390 mil interações em JSON, filtrar conteúdo relevante e produzir análises estruturadas de mercado com IA generativa.</p>
-<div class="project-stack">Python · JSON · ETL · Gemini 2.5 · Saída estruturada · Tratamento de erros</div>
+<p>Motor em Python para analisar grandes volumes de mensagens em JSON, utilizando amostragem otimizada, integração com Gemini 2.5 Flash e geração de inteligência de mercado em formato estruturado.</p>
+<div class="project-stack">Python · JSON · Gemini 2.5 Flash · Structured Output · Data Processing</div>
+<a class="project-link" href="https://github.com/adrianasousa-dev/channels-ai-engine-case-study" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-github"></i> Ver case study no GitHub</a>
 </article>
 </div>
 </div>
